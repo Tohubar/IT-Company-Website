@@ -1,489 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexora STEM Institute | Future-Ready Learning</title>
+  <meta name="description" content="A cutting-edge STEM education platform covering AI, Cyber Security, Web Development, App Development, Programming, Math, Data Science, Robotics, and Machine Learning.">
+  <link rel="icon" href="./images/image.png">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0b0f1c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-p+1C4c5p3XbBr2moT4ILMcj/6aIfvN/yF0yTLy36xC2T0b/7B0RvYwAqzPEb5zNtHK92rGk+mfS+z4Z6w9XXg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/main.js"></script>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="quick-access" aria-label="Quick access">
+    <div class="quick-access__inner">
+      <span class="tag">Popular</span>
+      <a href="#courses">AI Engineer Track</a>
+      <a href="#courses">Cyber Defense Lab</a>
+      <a href="#courses">Full-Stack Bootcamp</a>
+      <a href="#labs">Robotics Studio</a>
+      <div class="quick-access__actions">
+        <button class="mode-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+          <span>Dark</span>
+        </button>
+        <div class="language-select" role="group" aria-label="Language">
+          <i class="fa-solid fa-globe"></i>
+          <select aria-label="Select language">
+            <option>English</option>
+            <option>Español</option>
+            <option>Français</option>
+            <option>中文</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
+  <header class="site-header" id="top">
+    <div class="logo">
+      <img src="./images/image.png" alt="Nexora STEM Institute logo">
+      <span>Nexora STEM</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="navMenu" class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li class="has-dropdown">
+          <a href="#courses">Programs <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#courses">AI & Machine Learning</a></li>
+            <li><a href="#courses">Cyber Security</a></li>
+            <li><a href="#courses">Web & App Development</a></li>
+            <li><a href="#courses">Programming & Math</a></li>
+            <li><a href="#courses">Data Science & Robotics</a></li>
+          </ul>
+        </li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#dashboards">Dashboards</a></li>
+        <li><a href="#enroll">Enroll</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="ghost" type="button">Log In</button>
+      <button class="primary" type="button">Start Free Trial</button>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#top">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span id="breadcrumbCurrent">Innovation</span>
+      </div>
+      <h1>Future-Ready STEM Education, Designed for the Next Generation.</h1>
+      <p>
+        From AI to Robotics, explore immersive, project-driven learning with expert mentorship,
+        interactive labs, and personalized progress pathways.
+      </p>
+      <div class="hero-actions">
+        <button class="primary" type="button">Explore Programs</button>
+        <button class="secondary" type="button">Watch Campus Tour</button>
+      </div>
+      <div class="hero-metrics">
+        <div>
+          <h3>120+</h3>
+          <span>Hands-on Labs</span>
+        </div>
+        <div>
+          <h3>98%</h3>
+          <span>Student Satisfaction</span>
+        </div>
+        <div>
+          <h3>45k</h3>
+          <span>Global Learners</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-video">
+        <div class="orbit orbit--one"></div>
+        <div class="orbit orbit--two"></div>
+        <div class="orbit orbit--three"></div>
+        <div class="pulse-grid"></div>
+      </div>
+      <div class="hero-card">
+        <h4>Live Coding Sprint</h4>
+        <p>Build a neural net that predicts energy demand in 20 minutes.</p>
+        <span class="pill">AI Lab</span>
+        <button class="ghost" type="button">Preview Lesson</button>
+      </div>
+    </div>
   </section>
 
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
+  <section class="search-bar" aria-label="Search courses">
+    <div class="search-inner">
+      <div>
+        <h2>Find the perfect STEM pathway</h2>
+        <p>Search by topic, difficulty, format, or duration to match your goals.</p>
+      </div>
+      <form class="search-form" id="searchForm">
+        <label>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="courseSearch" placeholder="Search AI, Cyber Security, Data Science..." aria-label="Search courses">
+        </label>
+        <select id="difficultyFilter" aria-label="Filter by difficulty">
+          <option value="">All levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+        <select id="formatFilter" aria-label="Filter by format">
+          <option value="">All formats</option>
+          <option value="video">Video</option>
+          <option value="text">Text</option>
+          <option value="interactive">Interactive</option>
+        </select>
+        <select id="durationFilter" aria-label="Filter by duration">
+          <option value="">Any duration</option>
+          <option value="short">Short courses</option>
+          <option value="comprehensive">Comprehensive programs</option>
+        </select>
+        <button class="primary" type="submit">Search</button>
+      </form>
     </div>
   </section>
 
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
-      </div>
+  <section class="courses" id="courses">
+    <div class="section-title">
+      <span>STEM Academies</span>
+      <h2>Explore our modular, interactive learning grid.</h2>
+      <p>Hover for quick previews, outcomes, and prerequisites.</p>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
+    <div class="course-grid" id="courseGrid">
+      <article class="course-card" data-topic="ai" data-difficulty="intermediate" data-format="interactive" data-duration="comprehensive">
+        <div class="icon">
+          <i class="fa-solid fa-microchip"></i>
         </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
+        <h3>Artificial Intelligence</h3>
+        <p>Build neural networks, deploy models, and interpret results with confidence.</p>
+        <ul>
+          <li>Outcome: Build an AI assistant</li>
+          <li>Prerequisites: Python basics</li>
+          <li>Duration: 14 weeks</li>
+        </ul>
+        <button class="ghost" type="button">View Curriculum</button>
+      </article>
+      <article class="course-card" data-topic="cyber" data-difficulty="expert" data-format="interactive" data-duration="comprehensive">
+        <div class="icon">
+          <i class="fa-solid fa-shield-halved"></i>
         </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
+        <h3>Cyber Security</h3>
+        <p>Simulate attacks, defend infrastructure, and master ethical hacking frameworks.</p>
+        <ul>
+          <li>Outcome: Blue team certification prep</li>
+          <li>Prerequisites: Networking fundamentals</li>
+          <li>Duration: 12 weeks</li>
+        </ul>
+        <button class="ghost" type="button">Launch Lab</button>
+      </article>
+      <article class="course-card" data-topic="web" data-difficulty="beginner" data-format="video" data-duration="short">
+        <div class="icon">
+          <i class="fa-solid fa-code"></i>
         </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
+        <h3>Web Development</h3>
+        <p>Create responsive, accessible web apps with modern frameworks.</p>
+        <ul>
+          <li>Outcome: Deploy a portfolio site</li>
+          <li>Prerequisites: None</li>
+          <li>Duration: 6 weeks</li>
+        </ul>
+        <button class="ghost" type="button">Start Track</button>
+      </article>
+      <article class="course-card" data-topic="app" data-difficulty="intermediate" data-format="video" data-duration="comprehensive">
+        <div class="icon">
+          <i class="fa-solid fa-mobile-screen"></i>
         </div>
+        <h3>App Development</h3>
+        <p>Design, prototype, and ship iOS and Android apps with confidence.</p>
+        <ul>
+          <li>Outcome: Build a smart campus app</li>
+          <li>Prerequisites: JavaScript essentials</li>
+          <li>Duration: 10 weeks</li>
+        </ul>
+        <button class="ghost" type="button">Explore Studio</button>
+      </article>
+      <article class="course-card" data-topic="programming" data-difficulty="beginner" data-format="text" data-duration="short">
+        <div class="icon">
+          <i class="fa-solid fa-terminal"></i>
+        </div>
+        <h3>Programming Foundations</h3>
+        <p>Master core CS concepts, algorithms, and clean coding practices.</p>
+        <ul>
+          <li>Outcome: Build command line tools</li>
+          <li>Prerequisites: None</li>
+          <li>Duration: 4 weeks</li>
+        </ul>
+        <button class="ghost" type="button">View Modules</button>
+      </article>
+      <article class="course-card" data-topic="math" data-difficulty="intermediate" data-format="text" data-duration="short">
+        <div class="icon">
+          <i class="fa-solid fa-square-root-variable"></i>
+        </div>
+        <h3>Mathematics for STEM</h3>
+        <p>Strengthen calculus, statistics, and linear algebra for real projects.</p>
+        <ul>
+          <li>Outcome: Optimize data pipelines</li>
+          <li>Prerequisites: Algebra</li>
+          <li>Duration: 5 weeks</li>
+        </ul>
+        <button class="ghost" type="button">Enroll Now</button>
+      </article>
+      <article class="course-card" data-topic="data" data-difficulty="beginner" data-format="interactive" data-duration="short">
+        <div class="icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <h3>Data Science</h3>
+        <p>Analyze, visualize, and tell stories with structured datasets.</p>
+        <ul>
+          <li>Outcome: Build a KPI dashboard</li>
+          <li>Prerequisites: Spreadsheet basics</li>
+          <li>Duration: 6 weeks</li>
+        </ul>
+        <button class="ghost" type="button">Preview Dataset</button>
+      </article>
+      <article class="course-card" data-topic="robotics" data-difficulty="expert" data-format="interactive" data-duration="comprehensive">
+        <div class="icon">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <h3>Robotics</h3>
+        <p>Program autonomous systems, sensors, and smart hardware.</p>
+        <ul>
+          <li>Outcome: Build a navigation robot</li>
+          <li>Prerequisites: Physics basics</li>
+          <li>Duration: 16 weeks</li>
+        </ul>
+        <button class="ghost" type="button">Enter Lab</button>
+      </article>
+      <article class="course-card" data-topic="ml" data-difficulty="intermediate" data-format="interactive" data-duration="comprehensive">
+        <div class="icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <h3>Machine Learning</h3>
+        <p>Apply ML pipelines to real-world scenarios with guided mentorship.</p>
+        <ul>
+          <li>Outcome: Ship a recommendation engine</li>
+          <li>Prerequisites: Statistics 101</li>
+          <li>Duration: 12 weeks</li>
+        </ul>
+        <button class="ghost" type="button">View Pathway</button>
+      </article>
     </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <div class="course-count" id="courseCount">Showing 9 programs</div>
   </section>
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
+  <section class="experience" id="experience">
+    <div class="section-title">
+      <span>Immersive Experience</span>
+      <h2>Learn by building in collaborative, multi-format studios.</h2>
+      <p>Video lessons, interactive quizzes, downloadable resources, and real-time code labs.</p>
+    </div>
+    <div class="experience-grid">
+      <div class="experience-card fade-in">
+        <h3>Interactive Labs</h3>
+        <p>Launch cloud sandboxes for programming, robotics simulations, and data exploration.</p>
+        <div class="lab-widget">
+          <div class="lab-toolbar">
+            <span>Live Code Editor</span>
+            <div class="lab-actions">
+              <button class="ghost" type="button">Run</button>
+              <button class="ghost" type="button">Share</button>
+            </div>
           </div>
+          <pre><code id="codeSample">const model = train({epochs: 12, data: smartGrid});
+model.predict(futureLoad).plot('#forecast');</code></pre>
+        </div>
       </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
+      <div class="experience-card fade-in">
+        <h3>Project Showcases</h3>
+        <p>Explore student-built AI tutors, cyber dashboards, and IoT prototypes.</p>
+        <div class="project-preview">
+          <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Students collaborating on robotics">
+          <div class="project-overlay">
+            <h4>Robotics Control Center</h4>
+            <p>Real-time telemetry with predictive collision avoidance.</p>
           </div>
+        </div>
       </div>
-  </div>
+      <div class="experience-card fade-in">
+        <h3>Adaptive Learning</h3>
+        <p>Self-paced modules with instant feedback, coaching, and smart recommendations.</p>
+        <ul class="progress-list">
+          <li>
+            <span>AI Foundations</span>
+            <div class="progress"><div style="width: 78%"></div></div>
+            <em>78%</em>
+          </li>
+          <li>
+            <span>Cyber Defense</span>
+            <div class="progress"><div style="width: 52%"></div></div>
+            <em>52%</em>
+          </li>
+          <li>
+            <span>Data Science</span>
+            <div class="progress"><div style="width: 63%"></div></div>
+            <em>63%</em>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  <section class="labs" id="labs">
+    <div class="section-title">
+      <span>STEM Visualizations</span>
+      <h2>Animated insights that make complex concepts feel tangible.</h2>
+    </div>
+    <div class="labs-grid">
+      <div class="data-panel">
+        <h3>Data Science Pulse</h3>
+        <p>Animated dashboards with streaming signals and forecasting overlays.</p>
+        <div class="chart-anim" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="data-panel">
+        <h3>Robotics Motion Lab</h3>
+        <p>Looping kinematics simulation for autonomous navigation.</p>
+        <div class="robot-track" aria-hidden="true">
+          <div class="robot"></div>
+        </div>
+      </div>
+      <div class="data-panel">
+        <h3>Cyber Threat Map</h3>
+        <p>Real-time defense telemetry and response time analytics.</p>
+        <div class="threat-map" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboards" id="dashboards">
+    <div class="section-title">
+      <span>Personalized Dashboards</span>
+      <h2>Student and instructor workspaces built for real-time progress.</h2>
+    </div>
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h3>Student Dashboard</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Progress tracking and certificates</li>
+          <li><i class="fa-solid fa-circle-check"></i> Downloadable resources and notes</li>
+          <li><i class="fa-solid fa-circle-check"></i> Skill badges and gamified levels</li>
+        </ul>
+        <div class="badge-row">
+          <span class="badge">AI Novice</span>
+          <span class="badge">Code Sprint</span>
+          <span class="badge">Data Explorer</span>
+        </div>
+      </div>
+      <div class="dashboard-card">
+        <h3>Instructor Dashboard</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Course management and updates</li>
+          <li><i class="fa-solid fa-circle-check"></i> Live chat support and mentoring</li>
+          <li><i class="fa-solid fa-circle-check"></i> Insights on student performance</li>
+        </ul>
+        <div class="insight">
+          <span>Live Cohort Health</span>
+          <div class="progress"><div style="width: 86%"></div></div>
+          <small>86% engagement this week</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="community" id="community">
+    <div class="section-title">
+      <span>Community & Support</span>
+      <h2>Collaboration tools that keep learners connected.</h2>
+    </div>
+    <div class="community-grid">
+      <div class="community-card">
+        <h3>Discussion Forums</h3>
+        <p>Peer-to-peer support groups, topic-based threads, and expert AMAs.</p>
+        <div class="forum-tags">
+          <span>#AI</span>
+          <span>#Cyber</span>
+          <span>#Robotics</span>
+          <span>#Data</span>
+        </div>
+      </div>
+      <div class="community-card">
+        <h3>Real-time Chat + AI Bot</h3>
+        <p>Instant guidance for lessons, enrollment, or project debugging.</p>
+        <button class="ghost" type="button" id="chatToggle">Open Chat</button>
+        <div class="chat-widget" id="chatWidget" aria-live="polite">
+          <div class="chat-header">Nexora Assist</div>
+          <div class="chat-body">
+            <p><strong>Bot:</strong> Hi! Need help picking a course or finding a resource?</p>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Ask a question..." aria-label="Ask the chat bot">
+            <button class="primary" type="button">Send</button>
+          </div>
+        </div>
+      </div>
+      <div class="community-card">
+        <h3>Social Sharing</h3>
+        <p>Share your achievements and courses with your network.</p>
+        <div class="social-links">
+          <button type="button" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin"></i></button>
+          <button type="button" aria-label="Share on X"><i class="fa-brands fa-x-twitter"></i></button>
+          <button type="button" aria-label="Share on GitHub"><i class="fa-brands fa-github"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enroll" id="enroll">
+    <div class="section-title">
+      <span>Enrollment & Payment</span>
+      <h2>Fast enrollment with secure payments and flexible plans.</h2>
+      <p>Choose monthly or annual plans, with PayPal and card options.</p>
+    </div>
+    <div class="enroll-grid">
+      <div class="enroll-card">
+        <h3>Starter</h3>
+        <p class="price">$29 <span>/ month</span></p>
+        <ul>
+          <li>3 courses per term</li>
+          <li>Weekly office hours</li>
+          <li>Community access</li>
+        </ul>
+        <button class="primary" type="button">Enroll Now</button>
+      </div>
+      <div class="enroll-card highlight">
+        <h3>Pro Pathway</h3>
+        <p class="price">$79 <span>/ month</span></p>
+        <ul>
+          <li>Unlimited courses</li>
+          <li>1:1 mentor sessions</li>
+          <li>Career coaching</li>
+        </ul>
+        <button class="primary" type="button">Enroll Now</button>
+      </div>
+      <div class="enroll-card">
+        <h3>Enterprise</h3>
+        <p class="price">Custom</p>
+        <ul>
+          <li>Team analytics dashboards</li>
+          <li>Private cohorts</li>
+          <li>On-site workshops</li>
+        </ul>
+        <button class="primary" type="button">Contact Sales</button>
+      </div>
+    </div>
+    <div class="payment-logos">
+      <span><i class="fa-brands fa-cc-visa"></i></span>
+      <span><i class="fa-brands fa-cc-mastercard"></i></span>
+      <span><i class="fa-brands fa-cc-paypal"></i></span>
+      <span><i class="fa-brands fa-cc-amex"></i></span>
+    </div>
+  </section>
+
+  <section class="feedback" id="feedback">
+    <div class="section-title">
+      <span>Continuous Improvement</span>
+      <h2>Feedback loops that keep courses cutting-edge.</h2>
+    </div>
+    <div class="feedback-grid">
+      <form class="feedback-form">
+        <label>
+          Course completed
+          <input type="text" placeholder="e.g. AI Foundations">
+        </label>
+        <label>
+          Rate your experience
+          <select>
+            <option>5 - Excellent</option>
+            <option>4 - Great</option>
+            <option>3 - Good</option>
+            <option>2 - Needs work</option>
+            <option>1 - Poor</option>
+          </select>
+        </label>
+        <label>
+          Share your feedback
+          <textarea rows="4" placeholder="Tell us what you learned and what we can improve"></textarea>
+        </label>
+        <button class="primary" type="submit">Submit Feedback</button>
+      </form>
+      <div class="analytics-card">
+        <h3>Analytics & Tracking</h3>
+        <p>Integrated dashboards highlight popular courses, completion rates, and engagement.</p>
+        <div class="analytics-metrics">
+          <div>
+            <strong>Top Course</strong>
+            <span>AI Strategy Lab</span>
+          </div>
+          <div>
+            <strong>Completion Rate</strong>
+            <span>87%</span>
+          </div>
+          <div>
+            <strong>Avg. Session</strong>
+            <span>42 mins</span>
+          </div>
+        </div>
+        <p class="note">Google Analytics ready — add your tracking ID to enable.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Nexora STEM Institute</h3>
+        <p>Empowering the next generation of innovators with immersive, accessible, and future-ready STEM education.</p>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li>AI & Machine Learning</li>
+          <li>Cyber Security</li>
+          <li>Web & App Development</li>
+          <li>Robotics & IoT</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li>Downloadable Labs</li>
+          <li>Scholarships</li>
+          <li>Career Services</li>
+          <li>Accessibility Support</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>support@nexorastem.edu</li>
+          <li>+1 (212) 555-0147</li>
+          <li>New York · London · Singapore</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Nexora STEM Institute. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
