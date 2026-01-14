@@ -1,77 +1,116 @@
-$(document).ready(function(){
+const courseGrid = document.getElementById("courseGrid");
+const courseCount = document.getElementById("courseCount");
+const searchForm = document.getElementById("searchForm");
+const courseSearch = document.getElementById("courseSearch");
+const difficultyFilter = document.getElementById("difficultyFilter");
+const formatFilter = document.getElementById("formatFilter");
+const durationFilter = document.getElementById("durationFilter");
+const modeToggle = document.querySelector(".mode-toggle");
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.getElementById("navMenu");
+const breadcrumbCurrent = document.getElementById("breadcrumbCurrent");
+const chatToggle = document.getElementById("chatToggle");
+const chatWidget = document.getElementById("chatWidget");
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+const sections = document.querySelectorAll("section[id]");
+const fadeIns = document.querySelectorAll(".fade-in");
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+const applyTheme = (theme) => {
+  document.body.setAttribute("data-theme", theme);
+  const isDark = theme === "dark";
+  modeToggle.setAttribute("aria-pressed", isDark.toString());
+  modeToggle.innerHTML = isDark
+    ? "<i class=\"fa-solid fa-sun\"></i><span>Light</span>"
+    : "<i class=\"fa-solid fa-moon\"></i><span>Dark</span>";
+};
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
+const savedTheme = localStorage.getItem("theme") || "light";
+applyTheme(savedTheme);
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
+modeToggle.addEventListener("click", () => {
+  const current = document.body.getAttribute("data-theme") || "light";
+  const next = current === "light" ? "dark" : "light";
+  localStorage.setItem("theme", next);
+  applyTheme(next);
+});
 
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
+navToggle.addEventListener("click", () => {
+  const isOpen = navMenu.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", isOpen.toString());
+});
 
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
+const filterCourses = () => {
+  const query = courseSearch.value.toLowerCase();
+  const difficulty = difficultyFilter.value;
+  const format = formatFilter.value;
+  const duration = durationFilter.value;
+  let visible = 0;
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
+  courseGrid.querySelectorAll(".course-card").forEach((card) => {
+    const matchesQuery = card.textContent.toLowerCase().includes(query);
+    const matchesDifficulty = !difficulty || card.dataset.difficulty === difficulty;
+    const matchesFormat = !format || card.dataset.format === format;
+    const matchesDuration = !duration || card.dataset.duration === duration;
+
+    if (matchesQuery && matchesDifficulty && matchesFormat && matchesDuration) {
+      card.style.display = "block";
+      visible += 1;
     } else {
-        $('.back-to-top').fadeOut('slow');
+      card.style.display = "none";
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
+  });
+
+  courseCount.textContent = `Showing ${visible} program${visible === 1 ? "" : "s"}`;
+};
+
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  filterCourses();
 });
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
+[courseSearch, difficultyFilter, formatFilter, durationFilter].forEach((input) => {
+  input.addEventListener("input", filterCourses);
 });
 
-});
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+fadeIns.forEach((item) => observer.observe(item));
+
+const updateBreadcrumb = () => {
+  let activeSection = "Innovation";
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 120 && rect.bottom >= 120) {
+      activeSection = section.id.replace(/-/g, " ");
+    }
+  });
+  breadcrumbCurrent.textContent = activeSection.replace(/^\w/, (c) => c.toUpperCase());
+};
+
+window.addEventListener("scroll", updateBreadcrumb);
+updateBreadcrumb();
+
+if (chatToggle && chatWidget) {
+  chatToggle.addEventListener("click", () => {
+    const isOpen = chatWidget.style.display === "block";
+    chatWidget.style.display = isOpen ? "none" : "block";
+    chatToggle.textContent = isOpen ? "Open Chat" : "Close Chat";
+  });
+}
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => null);
+  });
+}
+
+filterCourses();
