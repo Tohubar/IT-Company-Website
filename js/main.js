@@ -11,7 +11,7 @@ $(document).ready(function(){
 
         if($(window).scrollTop()>35)
         {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
+            $('.header').css({'background':'rgba(20, 11, 44, 0.95)','box-shadow':'0 .4rem 1rem rgba(0,0,0,.35)'});
         }
         else
         {
