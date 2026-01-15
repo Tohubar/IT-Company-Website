@@ -1,77 +1,84 @@
-$(document).ready(function(){
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+const cartButton = document.getElementById('cartButton');
+const miniCart = document.getElementById('miniCart');
+const cartCount = document.getElementById('cartCount');
+const wishlistCount = document.getElementById('wishlistCount');
+const quickAddButtons = document.querySelectorAll('.quick-add');
+const wishlistButtons = document.querySelectorAll('.wishlist');
+const searchInput = document.getElementById('searchInput');
+const searchSuggestions = document.getElementById('searchSuggestions');
+const thumbnails = document.querySelectorAll('.thumbnail');
+const mainProductImage = document.getElementById('mainProductImage');
+const fitForm = document.getElementById('fitForm');
+const fitResult = document.getElementById('fitResult');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+const suggestions = [
+  '34B blush lace bra',
+  'cotton seamless brief',
+  'lace lingerie set',
+  'wireless bralette',
+  'maternity support'
+];
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
-
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
+menuToggle?.addEventListener('click', () => {
+  navbar.classList.toggle('active');
 });
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
+cartButton?.addEventListener('click', () => {
+  miniCart.classList.toggle('active');
 });
 
+quickAddButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const currentCount = Number(cartCount.textContent);
+    cartCount.textContent = currentCount + 1;
+    miniCart.classList.add('active');
+  });
+});
+
+wishlistButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const currentCount = Number(wishlistCount.textContent);
+    wishlistCount.textContent = currentCount + 1;
+    button.classList.toggle('active');
+  });
+});
+
+searchInput?.addEventListener('input', (event) => {
+  const value = event.target.value.toLowerCase();
+  if (!value) {
+    searchSuggestions.classList.remove('active');
+    searchSuggestions.innerHTML = '';
+    return;
+  }
+  const filtered = suggestions.filter((item) => item.includes(value));
+  searchSuggestions.innerHTML = filtered.map((item) => `<p>${item}</p>`).join('');
+  searchSuggestions.classList.add('active');
+});
+
+searchSuggestions?.addEventListener('click', (event) => {
+  if (event.target.tagName === 'P') {
+    searchInput.value = event.target.textContent;
+    searchSuggestions.classList.remove('active');
+  }
+});
+
+thumbnails.forEach((thumb) => {
+  thumb.addEventListener('click', () => {
+    thumbnails.forEach((item) => item.classList.remove('active'));
+    thumb.classList.add('active');
+    mainProductImage.src = thumb.src.replace('w=300', 'w=900');
+  });
+});
+
+fitForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  fitResult.textContent = 'Suggested size: 34B · Lightly supportive fit.';
+});
+
+window.addEventListener('click', (event) => {
+  if (!miniCart.contains(event.target) && !cartButton.contains(event.target)) {
+    miniCart.classList.remove('active');
+  }
 });
