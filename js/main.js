@@ -1,77 +1,185 @@
-$(document).ready(function(){
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const searchInput = document.getElementById('searchInput');
+const searchSuggestions = document.getElementById('searchSuggestions');
+const cartCount = document.getElementById('cartCount');
+const miniCart = document.getElementById('miniCart');
+const miniCartCount = document.getElementById('miniCartCount');
+const miniCartAmount = document.getElementById('miniCartAmount');
+const miniCartItems = document.getElementById('miniCartItems');
+const miniCartTotal = document.getElementById('miniCartTotal');
+const closeMiniCart = document.getElementById('closeMiniCart');
+const fitForm = document.getElementById('fit-finder');
+const fitResult = document.getElementById('fitResult');
+const sortSelect = document.getElementById('sortSelect');
+const productGrid = document.getElementById('productGrid');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+let cartItems = 0;
+let cartTotal = 0;
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+const suggestions = [
+  'Lacy bras',
+  'Cotton panties',
+  'Lavender set',
+  'Seamless bralette',
+  'Sports underwear',
+  'Size guide 34B'
+];
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
-
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
+navToggle?.addEventListener('click', () => {
+  navLinks?.classList.toggle('open');
 });
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
+const renderSuggestions = (value) => {
+  const filtered = suggestions.filter((item) => item.toLowerCase().includes(value.toLowerCase()));
+  searchSuggestions.innerHTML = '';
+  if (!value || filtered.length === 0) {
+    searchSuggestions.style.display = 'none';
+    return;
+  }
+  filtered.forEach((item) => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    li.addEventListener('click', () => {
+      searchInput.value = item;
+      searchSuggestions.style.display = 'none';
+    });
+    searchSuggestions.appendChild(li);
+  });
+  searchSuggestions.style.display = 'flex';
+};
+
+searchInput?.addEventListener('input', (event) => {
+  renderSuggestions(event.target.value);
 });
 
+const updateCart = (price) => {
+  cartItems += 1;
+  cartTotal += price;
+  cartCount.textContent = cartItems;
+  miniCartCount.textContent = cartItems;
+  miniCartAmount.textContent = `$${cartTotal.toFixed(2)}`;
+  miniCartItems.textContent = cartItems;
+  miniCartTotal.textContent = `$${cartTotal.toFixed(2)}`;
+  miniCart.style.display = 'block';
+};
+
+const quickAddButtons = document.querySelectorAll('.add-cart');
+quickAddButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.product-card');
+    const price = Number(card?.dataset.price || 0);
+    updateCart(price);
+  });
+});
+
+closeMiniCart?.addEventListener('click', () => {
+  miniCart.style.display = 'none';
+});
+
+const wishlistButtons = document.querySelectorAll('.wishlist');
+wishlistButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const icon = button.querySelector('i');
+    icon?.classList.toggle('fas');
+    icon?.classList.toggle('far');
+  });
+});
+
+fitForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const height = Number(document.getElementById('heightInput').value);
+  const weight = Number(document.getElementById('weightInput').value);
+  const preference = document.getElementById('fitPreference').value;
+  if (!height || !weight) {
+    fitResult.textContent = 'Please add height and weight for a recommendation.';
+    return;
+  }
+  let size = 'S';
+  if (weight > 140 || height > 65) {
+    size = 'M';
+  }
+  if (weight > 170 || height > 70) {
+    size = 'L';
+  }
+  if (preference === 'snug') {
+    size = size === 'S' ? 'XS' : size;
+  }
+  if (preference === 'relaxed') {
+    size = size === 'L' ? 'XL' : size;
+  }
+  fitResult.textContent = `Recommended size: ${size} (based on your preferences).`;
+});
+
+const filterButtons = document.querySelectorAll('.filters .chip');
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach((btn) => btn.classList.remove('active'));
+    button.classList.add('active');
+    const filter = button.dataset.filter;
+    document.querySelectorAll('.product-card').forEach((card) => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+sortSelect?.addEventListener('change', () => {
+  const cards = Array.from(document.querySelectorAll('.product-card'));
+  const value = sortSelect.value;
+  const sorted = cards.sort((a, b) => {
+    const priceA = Number(a.dataset.price);
+    const priceB = Number(b.dataset.price);
+    const ratingA = Number(a.dataset.rating);
+    const ratingB = Number(b.dataset.rating);
+    if (value === 'low') return priceA - priceB;
+    if (value === 'high') return priceB - priceA;
+    if (value === 'rating') return ratingB - ratingA;
+    if (value === 'new') return ratingB - ratingA;
+    return 0;
+  });
+  productGrid.innerHTML = '';
+  sorted.forEach((card) => productGrid.appendChild(card));
+});
+
+const reviewButtons = document.querySelectorAll('.review-filters .chip');
+reviewButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    reviewButtons.forEach((btn) => btn.classList.remove('active'));
+    button.classList.add('active');
+    const filter = button.dataset.review;
+    document.querySelectorAll('.review-card').forEach((card) => {
+      if (filter === 'all' || card.dataset.review === filter) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.search')) {
+    searchSuggestions.style.display = 'none';
+  }
 });
