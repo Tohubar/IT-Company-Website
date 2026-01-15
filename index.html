@@ -4,486 +4,509 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
+    <title>RoseLuxe Intimates | Premium Girls' Innerwear</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
+    <header class="site-header">
+        <div class="logo">
+            <span class="logo-mark">RL</span>
+            <div>
+                <span class="logo-name">RoseLuxe</span>
+                <span class="logo-tagline">Premium Innerwear</span>
+            </div>
+        </div>
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="primary-nav" aria-label="Main navigation">
             <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#home">Home</a></li>
+                <li class="has-dropdown">
+                    <button type="button" class="dropdown-toggle" aria-expanded="false">Shop by Category</button>
+                    <ul class="dropdown">
+                        <li><a href="#categories">Bras</a></li>
+                        <li><a href="#categories">Panties</a></li>
+                        <li><a href="#categories">Luxe Lingerie</a></li>
+                        <li><a href="#categories">Sportswear</a></li>
+                    </ul>
+                </li>
+                <li><a href="#size-guide">Size Guide</a></li>
+                <li><a href="#new-arrivals">New Arrivals</a></li>
+                <li><a href="#sale">Sale</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="header-actions">
+            <form class="search" role="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" placeholder="Search styles, fabrics, sizes" list="search-suggestions" aria-label="Search">
+                <datalist id="search-suggestions">
+                    <option value="Seamless cotton bra"></option>
+                    <option value="Lace trim brief"></option>
+                    <option value="Sports bra"></option>
+                    <option value="Silk cami set"></option>
+                    <option value="Everyday panties"></option>
+                </datalist>
+            </form>
+            <button class="icon-button" type="button" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+            <button class="icon-button cart-toggle" type="button" aria-label="Cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count">3</span>
+            </button>
+            <button class="icon-button" type="button" aria-label="Account">
+                <i class="fa-regular fa-user"></i>
+            </button>
+        </div>
     </header>
 
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Comfort meets couture</p>
+                <h1>Feel Confident, Every Day.</h1>
+                <p class="hero-subtitle">Premium innerwear crafted for girls who love a soft touch, luxe fabrics, and flawless fits.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#shop">Shop Now</a>
+                    <a class="btn ghost" href="#new-arrivals">New Arrivals</a>
                 </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
+                <div class="hero-highlights">
+                    <div>
+                        <span class="highlight-title">Free Shipping</span>
+                        <span class="highlight-text">On orders over $80</span>
+                    </div>
+                    <div>
+                        <span class="highlight-title">Fit Finder</span>
+                        <span class="highlight-text">Personalized sizing</span>
+                    </div>
+                    <div>
+                        <span class="highlight-title">Secure Checkout</span>
+                        <span class="highlight-text">SSL + trusted payment</span>
+                    </div>
                 </div>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <span>Luxury Essentials</span>
+                    <span class="pill">Rose Gold Edit</span>
                 </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
+                <h3>Velvet Touch Bralette</h3>
+                <p>Ultra-soft microfiber, breathable mesh, and a cloud-like band for all-day ease.</p>
+                <div class="hero-card-footer">
+                    <span class="price">$38</span>
+                    <button class="btn small">Quick Add</button>
                 </div>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
+        </section>
 
-                    </p>
+        <section class="section" id="categories">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Curated silhouettes for every mood, from playful sets to premium lounge pieces.</p>
+            </div>
+            <div class="category-grid">
+                <article class="category-card">
+                    <h3>Signature Bras</h3>
+                    <p>Light support, sculpted lines, and satin finishes.</p>
+                    <a href="#shop" class="text-link">Explore Bras</a>
+                </article>
+                <article class="category-card">
+                    <h3>Everyday Panties</h3>
+                    <p>Seamless comfort with lace-trim elegance.</p>
+                    <a href="#shop" class="text-link">Explore Panties</a>
+                </article>
+                <article class="category-card">
+                    <h3>Luxe Lingerie</h3>
+                    <p>Statement sets for special moments.</p>
+                    <a href="#shop" class="text-link">Explore Luxe</a>
+                </article>
+                <article class="category-card">
+                    <h3>Soft Sportswear</h3>
+                    <p>Stretch fabrics for school, dance, and play.</p>
+                    <a href="#shop" class="text-link">Explore Sports</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="shop">
+            <div class="section-header">
+                <h2>Best Sellers</h2>
+                <p>Our most loved styles, ready for quick add to cart.</p>
+            </div>
+            <div class="shop-layout">
+                <aside class="filters">
+                    <div class="filter-group">
+                        <h4>Filter by Size</h4>
+                        <label><input type="checkbox"> XS</label>
+                        <label><input type="checkbox"> S</label>
+                        <label><input type="checkbox"> M</label>
+                        <label><input type="checkbox"> L</label>
+                        <label><input type="checkbox"> XL</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Color</h4>
+                        <label><input type="checkbox"> Blush Pink</label>
+                        <label><input type="checkbox"> Pearl White</label>
+                        <label><input type="checkbox"> Jet Black</label>
+                        <label><input type="checkbox"> Rose Gold</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Material</h4>
+                        <label><input type="checkbox"> Cotton</label>
+                        <label><input type="checkbox"> Satin</label>
+                        <label><input type="checkbox"> Microfiber</label>
+                        <label><input type="checkbox"> Lace</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Sort</h4>
+                        <select>
+                            <option>Newest</option>
+                            <option>Best Sellers</option>
+                            <option>Price: Low to High</option>
+                        </select>
+                    </div>
+                </aside>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-badge">New</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt="Pink seamless bralette">
+                            <button class="wishlist" aria-label="Save to wishlist"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>Blush Seamless Bralette</h3>
+                        <p>Soft stretch, breathable lining.</p>
+                        <div class="product-meta">
+                            <span>$32</span>
+                            <button class="btn small">Quick Add</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="Black lace set">
+                            <button class="wishlist" aria-label="Save to wishlist"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>Noir Lace Set</h3>
+                        <p>Delicate lace with satin straps.</p>
+                        <div class="product-meta">
+                            <span>$45</span>
+                            <button class="btn small">Quick Add</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-badge">Limited</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80" alt="Rose gold sports bra">
+                            <button class="wishlist" aria-label="Save to wishlist"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>Rose Gold Active Bra</h3>
+                        <p>Light support, moisture-wicking.</p>
+                        <div class="product-meta">
+                            <span>$36</span>
+                            <button class="btn small">Quick Add</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-badge">Trending</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=700&q=80" alt="White cotton brief">
+                            <button class="wishlist" aria-label="Save to wishlist"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>Pearl Cotton Brief</h3>
+                        <p>Everyday essential, ultra-soft.</p>
+                        <div class="product-meta">
+                            <span>$18</span>
+                            <button class="btn small">Quick Add</button>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
+        </section>
 
-                    </p>
+        <section class="section product-showcase" id="size-guide">
+            <div class="section-header">
+                <h2>Product Spotlight</h2>
+                <p>Explore every detail, from fabric to fit.</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="gallery">
+                    <div class="gallery-main">
+                        <img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=900&q=80" alt="Blush velvet bralette main view">
+                        <span class="zoom-hint">Hover to zoom</span>
+                    </div>
+                    <div class="gallery-thumbs">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" alt="Front view">
+                        <img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=300&q=80" alt="Back view">
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=300&q=80" alt="Fabric close up">
+                    </div>
                 </div>
+                <div class="details">
+                    <h3>Velvet Touch Bralette Set</h3>
+                    <p class="price">$48 <span class="muted">(includes matching brief)</span></p>
+                    <p>Designed with a soft microfiber body, rose-gold hardware, and adjustable straps. Breathable, flexible, and made to move with you.</p>
+                    <ul class="feature-list">
+                        <li>Material: 88% microfiber, 12% elastane</li>
+                        <li>Fit: Light support, seamless edges</li>
+                        <li>Care: Hand wash cold, lay flat to dry</li>
+                    </ul>
+                    <div class="actions">
+                        <button class="btn primary">Add to Cart</button>
+                        <button class="btn ghost">Add to Wishlist</button>
+                    </div>
+                    <div class="size-guide">
+                        <h4>Size Guide</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Band (in)</th>
+                                    <th>Hip (in)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>XS</td><td>24-26</td><td>30-32</td></tr>
+                                <tr><td>S</td><td>27-29</td><td>33-35</td></tr>
+                                <tr><td>M</td><td>30-32</td><td>36-38</td></tr>
+                                <tr><td>L</td><td>33-35</td><td>39-41</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="fit-finder">
+                            <h5>Fit Finder</h5>
+                            <p>Enter measurements for a personalized size suggestion.</p>
+                            <form>
+                                <input type="text" placeholder="Band size (in)">
+                                <input type="text" placeholder="Hip size (in)">
+                                <button class="btn small" type="button">Find My Size</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reviews">
+            <div class="section-header">
+                <h2>Customer Reviews</h2>
+                <p>Rated 4.9/5 by girls who love comfort and confidence.</p>
+            </div>
+            <div class="review-grid">
+                <article class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"The fabric feels amazing and the fit is perfect for all-day wear."</p>
+                    <span class="reviewer">Arielle, verified buyer</span>
+                </article>
+                <article class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Love the rose gold accents and the quick add feature is so handy."</p>
+                    <span class="reviewer">Maya, verified buyer</span>
+                </article>
+                <article class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p>"Fit finder recommended the right size on the first try!"</p>
+                    <span class="reviewer">Sara, verified buyer</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="new-arrivals">
+            <div class="section-header">
+                <h2>You May Also Like</h2>
+                <p>Personalized picks based on your browsing.</p>
+            </div>
+            <div class="recommendation-grid">
+                <article class="recommendation-card">
+                    <h3>Cloud Knit Lounge Set</h3>
+                    <p>Breathable and cozy for sleep or study sessions.</p>
+                    <button class="btn small">Add to Cart</button>
+                </article>
+                <article class="recommendation-card">
+                    <h3>Petal Lace Trim Brief</h3>
+                    <p>Soft stretch with a playful lace edge.</p>
+                    <button class="btn small">Add to Cart</button>
+                </article>
+                <article class="recommendation-card">
+                    <h3>Studio Support Sports Bra</h3>
+                    <p>Designed for movement with flexible support.</p>
+                    <button class="btn small">Add to Cart</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="section sale" id="sale">
+            <div>
+                <h2>Seasonal Sale</h2>
+                <p>Save up to 30% on curated sets and get exclusive member perks.</p>
+            </div>
+            <div class="sale-actions">
+                <button class="btn primary">Shop Sale</button>
+                <button class="btn ghost">Join Our Community</button>
+            </div>
+        </section>
+
+        <section class="section checkout" id="contact">
+            <div class="section-header">
+                <h2>Fast & Secure Checkout</h2>
+                <p>Order tracking, secure payments, and guest checkout available.</p>
+            </div>
+            <div class="checkout-grid">
+                <div class="checkout-card">
+                    <h3>Mini Cart</h3>
+                    <ul>
+                        <li>
+                            <span>Blush Seamless Bralette</span>
+                            <span>1 × $32</span>
+                        </li>
+                        <li>
+                            <span>Noir Lace Set</span>
+                            <span>1 × $45</span>
+                        </li>
+                    </ul>
+                    <div class="total">
+                        <span>Total</span>
+                        <strong>$77</strong>
+                    </div>
+                    <button class="btn primary">Go to Checkout</button>
+                </div>
+                <div class="checkout-card">
+                    <h3>Checkout Essentials</h3>
+                    <ul class="checklist">
+                        <li><i class="fa-solid fa-check"></i> Auto-fill shipping address</li>
+                        <li><i class="fa-solid fa-check"></i> Guest checkout option</li>
+                        <li><i class="fa-solid fa-check"></i> Order tracking with ETA</li>
+                        <li><i class="fa-solid fa-check"></i> Live chat for size help</li>
+                    </ul>
+                    <div class="payments">
+                        <span>Payment Options</span>
+                        <div class="payment-icons">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-paypal"></i>
+                            <span class="bkash">bKash</span>
+                        </div>
+                        <div class="secure">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>SSL Secure Payment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-card">
+                    <h3>Need Help?</h3>
+                    <p>Our stylists are ready to help with sizing, style tips, and order tracking.</p>
+                    <button class="btn ghost">Start Live Chat</button>
+                    <div class="contact-info">
+                        <span><i class="fa-solid fa-phone"></i> +880 1234 567 890</span>
+                        <span><i class="fa-solid fa-envelope"></i> hello@roseluxe.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>About RoseLuxe</h4>
+                <p>We craft premium innerwear for girls who love comfort, confidence, and a modern luxe aesthetic.</p>
+                <div class="social">
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#shop">Shop All</a></li>
+                    <li><a href="#new-arrivals">New Arrivals</a></li>
+                    <li><a href="#sale">Sale</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Join Our Community</h4>
+                <p>Sign up for early access, promos, and exclusive drops.</p>
+                <form class="newsletter">
+                    <input type="email" placeholder="Enter your email">
+                    <button class="btn small" type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
+        <div class="footer-bottom">
+            <span>© 2024 RoseLuxe Intimates. All rights reserved.</span>
+            <span class="trust">Secure • Privacy • Terms</span>
         </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
+    </footer>
+
+    <button class="chat-bubble" type="button" aria-label="Live chat">
+        <i class="fa-solid fa-comment-dots"></i>
+        Live Chat
+    </button>
+
+    <aside class="mini-cart" aria-hidden="true">
+        <div class="mini-cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" type="button" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
         </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+        <div class="mini-cart-body">
+            <div class="mini-item">
+                <div>
+                    <h4>Blush Seamless Bralette</h4>
+                    <p>Size S · Qty 1</p>
+                </div>
+                <span>$32</span>
+            </div>
+            <div class="mini-item">
+                <div>
+                    <h4>Noir Lace Set</h4>
+                    <p>Size M · Qty 1</p>
+                </div>
+                <span>$45</span>
+            </div>
+        </div>
+        <div class="mini-cart-footer">
+            <div class="mini-total">
+                <span>Total</span>
+                <strong>$77</strong>
+            </div>
+            <button class="btn primary">Checkout</button>
+        </div>
+    </aside>
 </body>
 </html>
