@@ -11,11 +11,11 @@ $(document).ready(function(){
 
         if($(window).scrollTop()>35)
         {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
+            $('.header').addClass('scrolled');
         }
         else
         {
-            $('.header').css({'background':'none','box-shadow':'none'});
+            $('.header').removeClass('scrolled');
         }
     });
 
