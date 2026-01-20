@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop All Products | Blossom &amp; Bow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/girls-store.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">BB</span>
+        Blossom &amp; Bow
+      </a>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="product-detail.html">Product</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <label class="search-bar" aria-label="Search">
+          <input type="search" placeholder="Search by style, color, size" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <a class="icon-btn" href="cart.html">
+          <i class="fa-solid fa-bag-shopping"></i>
+          Cart
+          <span class="icon-badge">3</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Shop girls essentials</h1>
+        <p>Browse 300+ handpicked pieces. Filter by size, occasion, and ratings to find the perfect fit.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container layout">
+        <aside class="filter-card">
+          <div class="filter-group">
+            <h4>Price range</h4>
+            <label><input type="checkbox" /> Under $25</label>
+            <label><input type="checkbox" /> $25 - $50</label>
+            <label><input type="checkbox" /> $50 - $80</label>
+            <label><input type="checkbox" /> $80+</label>
+          </div>
+          <div class="filter-group">
+            <h4>Size</h4>
+            <label><input type="checkbox" /> Toddler (2-4)</label>
+            <label><input type="checkbox" /> Kids (5-8)</label>
+            <label><input type="checkbox" /> Tweens (9-12)</label>
+          </div>
+          <div class="filter-group">
+            <h4>Rating</h4>
+            <label><input type="checkbox" /> 4 stars &amp; up</label>
+            <label><input type="checkbox" /> 3 stars &amp; up</label>
+          </div>
+          <div class="filter-group">
+            <h4>Brand</h4>
+            <label><input type="checkbox" /> Bright Bloom</label>
+            <label><input type="checkbox" /> Luna Kids</label>
+            <label><input type="checkbox" /> Meadowly</label>
+          </div>
+        </aside>
+
+        <div>
+          <div class="sort-bar">
+            <input class="search-wide" type="search" placeholder="Search products" />
+            <select class="sort-select">
+              <option>Sort: Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest</option>
+              <option>Top Rated</option>
+            </select>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <img
+                src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=800&q=80"
+                alt="Pastel backpack"
+                loading="lazy"
+              />
+              <span class="badge">New</span>
+              <h3 class="product-title">Pastel backpack</h3>
+              <div class="product-meta">
+                <span>$32.00</span>
+                <span>★★★★★</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-outline">Quick view</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <img
+                src="https://images.unsplash.com/photo-1463107971871-fbac9ddb920f?auto=format&fit=crop&w=800&q=80"
+                alt="Party dress"
+                loading="lazy"
+              />
+              <span class="badge">Party</span>
+              <h3 class="product-title">Sparkle party dress</h3>
+              <div class="product-meta">
+                <span>$58.00</span>
+                <span>★★★★☆</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-outline">Quick view</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+                alt="Cozy cardigan"
+                loading="lazy"
+              />
+              <span class="badge">Cozy</span>
+              <h3 class="product-title">Cloud knit cardigan</h3>
+              <div class="product-meta">
+                <span>$40.00</span>
+                <span>★★★★★</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-outline">Quick view</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <img
+                src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80"
+                alt="Floral skirt"
+                loading="lazy"
+              />
+              <span class="badge">Best seller</span>
+              <h3 class="product-title">Floral skirt set</h3>
+              <div class="product-meta">
+                <span>$34.00</span>
+                <span>★★★★★</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-outline">Quick view</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <img
+                src="https://images.unsplash.com/photo-1495121605193-b116b5b09a19?auto=format&fit=crop&w=800&q=80"
+                alt="Sneakers"
+                loading="lazy"
+              />
+              <span class="badge">Eco</span>
+              <h3 class="product-title">Rainbow sneakers</h3>
+              <div class="product-meta">
+                <span>$42.00</span>
+                <span>★★★★☆</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-outline">Quick view</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <img
+                src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
+                alt="Weekend tee"
+                loading="lazy"
+              />
+              <span class="badge">Everyday</span>
+              <h3 class="product-title">Weekend tee bundle</h3>
+              <div class="product-meta">
+                <span>$24.00</span>
+                <span>★★★★☆</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-outline">Quick view</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Blossom &amp; Bow</h3>
+        <p>Girls products with a playful, polished feel. Discover apparel, accessories, and gifts in one place.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html">New arrivals</a></li>
+          <li><a href="products.html">Best sellers</a></li>
+          <li><a href="products.html">Gift sets</a></li>
+          <li><a href="products.html">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contactme.php">Contact support</a></li>
+          <li><a href="checkout.html">Shipping &amp; returns</a></li>
+          <li><a href="login.html">Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+          <li><a href="https://www.tiktok.com/">TikTok</a></li>
+          <li><a href="https://www.facebook.com/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2024 Blossom &amp; Bow. All rights reserved.</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </footer>
+
+  <script src="./js/girls-store.js"></script>
+</body>
+</html>

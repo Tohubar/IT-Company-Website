@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Blossom &amp; Bow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/girls-store.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">BB</span>
+        Blossom &amp; Bow
+      </a>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="product-detail.html">Product</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <label class="search-bar" aria-label="Search">
+          <input type="search" placeholder="Search" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <a class="icon-btn" href="cart.html">
+          <i class="fa-solid fa-bag-shopping"></i>
+          Cart
+          <span class="icon-badge">3</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Checkout</h1>
+        <p>Complete your order in four quick steps.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="checkout-steps">
+          <div class="step-card">
+            <strong>Step 1</strong>
+            <p>Shipping address</p>
+          </div>
+          <div class="step-card">
+            <strong>Step 2</strong>
+            <p>Payment</p>
+          </div>
+          <div class="step-card">
+            <strong>Step 3</strong>
+            <p>Review order</p>
+          </div>
+          <div class="step-card">
+            <strong>Step 4</strong>
+            <p>Place order</p>
+          </div>
+        </div>
+
+        <div class="product-detail">
+          <form class="form-card">
+            <h2>Shipping address</h2>
+            <div class="form-grid">
+              <input type="text" placeholder="First name" required />
+              <input type="text" placeholder="Last name" required />
+              <input type="email" placeholder="Email" required />
+              <input type="tel" placeholder="Phone number" required />
+              <input type="text" placeholder="Street address" required />
+              <input type="text" placeholder="Apartment, suite" />
+              <input type="text" placeholder="City" required />
+              <select required>
+                <option value="">State</option>
+                <option>California</option>
+                <option>New York</option>
+                <option>Texas</option>
+              </select>
+              <input type="text" placeholder="ZIP code" required />
+            </div>
+          </form>
+
+          <div class="form-card">
+            <h2>Payment details</h2>
+            <div class="form-grid">
+              <input type="text" placeholder="Cardholder name" required />
+              <input type="text" placeholder="Card number" required />
+              <input type="text" placeholder="MM/YY" required />
+              <input type="text" placeholder="CVC" required />
+              <select>
+                <option>PayPal</option>
+                <option>Apple Pay</option>
+                <option>Google Pay</option>
+              </select>
+              <input type="text" placeholder="Billing ZIP" required />
+            </div>
+            <div class="notice">
+              <i class="fa-solid fa-lock"></i>
+              Secure checkout with SSL encryption.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card" style="margin-top: 2rem;">
+          <h2>Order review</h2>
+          <div class="cart-list">
+            <div class="product-meta">
+              <span>Floral skirt set</span>
+              <span>$34.00</span>
+            </div>
+            <div class="product-meta">
+              <span>Mini backpack</span>
+              <span>$52.00</span>
+            </div>
+            <div class="product-meta">
+              <span>Shipping</span>
+              <span>$6.00</span>
+            </div>
+            <div class="product-meta">
+              <strong>Total</strong>
+              <strong>$96.20</strong>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="order-confirmation.html">Place order</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Blossom &amp; Bow</h3>
+        <p>Girls products with a playful, polished feel. Discover apparel, accessories, and gifts in one place.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html">New arrivals</a></li>
+          <li><a href="products.html">Best sellers</a></li>
+          <li><a href="products.html">Gift sets</a></li>
+          <li><a href="products.html">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contactme.php">Contact support</a></li>
+          <li><a href="checkout.html">Shipping &amp; returns</a></li>
+          <li><a href="login.html">Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+          <li><a href="https://www.tiktok.com/">TikTok</a></li>
+          <li><a href="https://www.facebook.com/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2024 Blossom &amp; Bow. All rights reserved.</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </footer>
+
+  <script src="./js/girls-store.js"></script>
+</body>
+</html>
