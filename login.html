@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Blossom &amp; Bow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/girls-store.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">BB</span>
+        Blossom &amp; Bow
+      </a>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="product-detail.html">Product</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <label class="search-bar" aria-label="Search">
+          <input type="search" placeholder="Search" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <a class="icon-btn" href="cart.html">
+          <i class="fa-solid fa-bag-shopping"></i>
+          Cart
+          <span class="icon-badge">3</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Welcome back</h1>
+        <p>Log in to track orders, manage wishlists, and unlock member perks.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container login-grid">
+        <form class="form-card">
+          <h2>Login</h2>
+          <input type="email" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
+          <button class="btn btn-primary" type="submit">Login</button>
+          <button class="btn btn-outline" type="button">
+            <i class="fa-brands fa-google"></i>
+            Continue with Google
+          </button>
+          <button class="btn btn-outline" type="button">
+            <i class="fa-brands fa-facebook"></i>
+            Continue with Facebook
+          </button>
+        </form>
+
+        <form class="form-card">
+          <h2>Create account</h2>
+          <input type="text" placeholder="Full name" required />
+          <input type="email" placeholder="Email address" required />
+          <input type="password" placeholder="Create password" required />
+          <input type="password" placeholder="Confirm password" required />
+          <label>
+            <input type="checkbox" required />
+            I agree to the terms and privacy policy.
+          </label>
+          <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Blossom &amp; Bow</h3>
+        <p>Girls products with a playful, polished feel. Discover apparel, accessories, and gifts in one place.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html">New arrivals</a></li>
+          <li><a href="products.html">Best sellers</a></li>
+          <li><a href="products.html">Gift sets</a></li>
+          <li><a href="products.html">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contactme.php">Contact support</a></li>
+          <li><a href="checkout.html">Shipping &amp; returns</a></li>
+          <li><a href="login.html">Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+          <li><a href="https://www.tiktok.com/">TikTok</a></li>
+          <li><a href="https://www.facebook.com/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2024 Blossom &amp; Bow. All rights reserved.</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </footer>
+
+  <script src="./js/girls-store.js"></script>
+</body>
+</html>

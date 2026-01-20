@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | Blossom &amp; Bow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/girls-store.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">BB</span>
+        Blossom &amp; Bow
+      </a>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="product-detail.html">Product</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <label class="search-bar" aria-label="Search">
+          <input type="search" placeholder="Search" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <a class="icon-btn" href="cart.html">
+          <i class="fa-solid fa-bag-shopping"></i>
+          Cart
+          <span class="icon-badge">3</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Your cart</h1>
+        <p>Review your favorites, adjust quantities, and continue to secure checkout.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container product-detail">
+        <div class="cart-list">
+          <article class="cart-item">
+            <img
+              src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=600&q=80"
+              alt="Floral skirt set"
+              loading="lazy"
+            />
+            <div>
+              <h3>Floral skirt set</h3>
+              <p>Size 6-7 · Blush pink</p>
+              <div class="quantity-control">
+                <button class="qty-minus" type="button" aria-label="Decrease quantity">-</button>
+                <input type="number" value="1" min="1" aria-label="Quantity" />
+                <button class="qty-plus" type="button" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            <div>
+              <strong>$34.00</strong>
+              <button class="btn btn-outline">Remove</button>
+            </div>
+          </article>
+
+          <article class="cart-item">
+            <img
+              src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=600&q=80"
+              alt="Mini backpack"
+              loading="lazy"
+            />
+            <div>
+              <h3>Mini backpack</h3>
+              <p>Adjustable straps · Lavender</p>
+              <div class="quantity-control">
+                <button class="qty-minus" type="button" aria-label="Decrease quantity">-</button>
+                <input type="number" value="2" min="1" aria-label="Quantity" />
+                <button class="qty-plus" type="button" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            <div>
+              <strong>$52.00</strong>
+              <button class="btn btn-outline">Remove</button>
+            </div>
+          </article>
+        </div>
+
+        <aside class="cart-summary">
+          <h3>Order summary</h3>
+          <div class="product-meta">
+            <span>Subtotal</span>
+            <span>$86.00</span>
+          </div>
+          <div class="product-meta">
+            <span>Shipping</span>
+            <span>$6.00</span>
+          </div>
+          <div class="product-meta">
+            <span>Tax</span>
+            <span>$4.20</span>
+          </div>
+          <hr />
+          <div class="product-meta">
+            <strong>Total</strong>
+            <strong>$96.20</strong>
+          </div>
+          <a class="btn btn-primary" href="checkout.html">Proceed to checkout</a>
+          <a class="btn btn-outline" href="products.html">Continue shopping</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Blossom &amp; Bow</h3>
+        <p>Girls products with a playful, polished feel. Discover apparel, accessories, and gifts in one place.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html">New arrivals</a></li>
+          <li><a href="products.html">Best sellers</a></li>
+          <li><a href="products.html">Gift sets</a></li>
+          <li><a href="products.html">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contactme.php">Contact support</a></li>
+          <li><a href="checkout.html">Shipping &amp; returns</a></li>
+          <li><a href="login.html">Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+          <li><a href="https://www.tiktok.com/">TikTok</a></li>
+          <li><a href="https://www.facebook.com/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2024 Blossom &amp; Bow. All rights reserved.</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </footer>
+
+  <script src="./js/girls-store.js"></script>
+</body>
+</html>
