@@ -546,6 +546,214 @@ body{
     }
 }
 
+.course-highlight{
+    padding: 6rem 0 8rem;
+    background: #f7fbff;
+}
+
+.course-highlight .section-head-1 h4{
+    margin-top: 0;
+}
+
+.course-subtitle{
+    font-size: 1.6rem;
+    color: #4d4d4d;
+    margin-top: 1rem;
+}
+
+.course-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    align-items: start;
+    margin-top: 3rem;
+}
+
+.course-content h3{
+    font-size: 2.6rem;
+    color: #002e5f;
+    margin-bottom: 1.5rem;
+}
+
+.course-detail-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.course-detail-grid h5{
+    font-size: 1.5rem;
+    color: #002e5f;
+    margin-bottom: 0.5rem;
+}
+
+.course-detail-grid p{
+    font-size: 1.4rem;
+    color: #444;
+}
+
+.course-syllabus ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.course-syllabus li{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    color: #333;
+}
+
+.course-syllabus li::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #00bfff;
+}
+
+.instructor-card{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.08);
+}
+
+.instructor-card img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #e6f6ff;
+}
+
+.instructor-card h4{
+    font-size: 1.9rem;
+    color: #002e5f;
+    margin-bottom: 0.8rem;
+}
+
+.instructor-card p{
+    font-size: 1.4rem;
+    color: #4a4a4a;
+    margin-bottom: 1.2rem;
+}
+
+.instructor-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    font-size: 1.3rem;
+    color: #002e5f;
+}
+
+.instructor-meta i{
+    margin-right: 0.5rem;
+    color: #00bfff;
+}
+
+.course-testimonials .testimonial-cards{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.testimonial-card{
+    background: #fff;
+    padding: 1.8rem 2rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.07);
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.testimonial-card span{
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #002e5f;
+}
+
+.course-media{
+    position: relative;
+}
+
+.course-media-carousel .course-media-item{
+    background: #fff;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.12);
+}
+
+.course-media-carousel img{
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.course-video{
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.course-video iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.course-media-caption{
+    padding: 2rem;
+}
+
+.course-media-caption h4{
+    font-size: 1.8rem;
+    color: #002e5f;
+    margin-bottom: 0.8rem;
+}
+
+.course-media-caption p{
+    font-size: 1.4rem;
+    color: #444;
+}
+
+.course-media-carousel .owl-dots{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.course-media-carousel .owl-dot{
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 0.4rem;
+    background: #ccefff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.course-media-carousel .owl-dot.active{
+    background: #00bfff;
+}
+
+@media (max-width: 900px){
+    .instructor-card{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .course-media-carousel img{
+        height: 240px;
+    }
+}
+
 .clients {
     position: relative;
     padding: 90px 0;
