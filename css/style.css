@@ -195,6 +195,356 @@ body{
     opacity: .5;
 }
 
+.course-details{
+    background: #f7f8fb;
+    padding: 6rem 0;
+}
+
+.course-container{
+    width: min(110rem, 92%);
+    margin: 0 auto;
+}
+
+.course-offer-bar{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    background: #dff6f8;
+    border-radius: 1rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+    color: #0b5065;
+    margin-bottom: 2.5rem;
+}
+
+.course-offer-code{
+    background: #fef3c7;
+    color: #9a3412;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.course-offer-save{
+    color: #0b7f4f;
+    font-weight: 600;
+}
+
+.course-hero-grid{
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+    gap: 3rem;
+    align-items: start;
+}
+
+.course-hero-text{
+    background: #2e3747;
+    color: #fff;
+    border-radius: 1.5rem;
+    padding: 3rem;
+}
+
+.course-hero-text h2{
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-hero-subtitle{
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #d8e0ea;
+    margin-bottom: 2rem;
+}
+
+.course-hero-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1.3rem;
+    color: #b2becd;
+}
+
+.course-hero-card{
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 1.5rem 3rem rgba(15, 23, 42, 0.08);
+}
+
+.course-hero-image{
+    position: relative;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.course-hero-image img{
+    width: 100%;
+    display: block;
+}
+
+.course-hero-badges{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.course-hero-badges span{
+    background: #1f4dd9;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 999px;
+}
+
+.course-price{
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-price-current{
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.course-price-old{
+    font-size: 1.4rem;
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.course-cta{
+    width: 100%;
+    border: none;
+    background: #ef4444;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.course-cta i{
+    margin-right: 0.6rem;
+}
+
+.course-highlights h4{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.course-highlights ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.course-highlights li{
+    font-size: 1.3rem;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.course-highlights li i{
+    color: #1f4dd9;
+}
+
+.course-includes{
+    margin-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1.2rem;
+}
+
+.course-includes h5{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.course-tags{
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.course-tags span{
+    background: #f1f5f9;
+    color: #1f2937;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+}
+
+.course-share{
+    width: 100%;
+    margin-top: 1.5rem;
+    border: 1px solid #cbd5f5;
+    background: #eef2ff;
+    color: #1f4dd9;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+
+.course-body-grid{
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.course-description,
+.course-bundle-list{
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 1.5rem 3rem rgba(15, 23, 42, 0.05);
+}
+
+.course-description h3,
+.course-bundle-list h3{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.course-description p{
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.course-description ul{
+    padding-left: 1.8rem;
+    color: #4b5563;
+    font-size: 1.4rem;
+    line-height: 1.7;
+}
+
+.course-description li{
+    margin-bottom: 1rem;
+}
+
+.bundle-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.bundle-header span{
+    font-size: 1.3rem;
+    color: #6b7280;
+}
+
+.bundle-expand{
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #1f2937;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.6rem;
+    font-size: 1.2rem;
+}
+
+.bundle-items{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.bundle-items li{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.4rem;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.bundle-items li:last-child{
+    border-bottom: none;
+}
+
+.bundle-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fef2f2;
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.4rem;
+    color: #b91c1c;
+}
+
+.bundle-save{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+}
+
+.bundle-pricing{
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+}
+
+.bundle-old{
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.bundle-new{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #b91c1c;
+}
+
+@media (max-width: 992px){
+    .course-hero-grid,
+    .course-body-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .course-hero-text{
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 576px){
+    .course-offer-bar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .course-hero-text h2{
+        font-size: 2.2rem;
+    }
+
+    .course-hero-meta{
+        gap: 1rem;
+    }
+}
+
 @keyframes waves{
     0%{
         background-position-x: 0;
