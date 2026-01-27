@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playful Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sky-blue: #cfefff;
+      --cloud-white: #ffffff;
+      --sun-yellow: #ffe685;
+      --hill-green: #b8f2c2;
+      --hill-green-dark: #8dd7a8;
+      --pink: #ffd3e6;
+      --purple: #c6b6ff;
+      --text: #2d3a4b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Comic Neue", "Poppins", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--sky-blue) 0%, #f6fbff 60%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem 6rem;
+      overflow-x: hidden;
+    }
+
+    /* Cartoon scene wrapper */
+    .scene {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .sun {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #fff9c7 20%, var(--sun-yellow) 70%);
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(255, 230, 133, 0.7);
+    }
+
+    .cloud {
+      position: absolute;
+      top: 15%;
+      left: -20%;
+      width: 160px;
+      height: 60px;
+      background: var(--cloud-white);
+      border-radius: 40px;
+      box-shadow: 30px 10px 0 0 var(--cloud-white), 60px 0 0 0 var(--cloud-white);
+      opacity: 0.9;
+      animation: float-clouds 30s linear infinite;
+    }
+
+    .cloud.cloud-two {
+      top: 30%;
+      width: 220px;
+      height: 70px;
+      animation-duration: 40s;
+      animation-delay: -10s;
+      opacity: 0.8;
+    }
+
+    .cloud.cloud-three {
+      top: 45%;
+      width: 180px;
+      height: 60px;
+      animation-duration: 35s;
+      animation-delay: -20s;
+      opacity: 0.85;
+    }
+
+    @keyframes float-clouds {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(140vw);
+      }
+    }
+
+    .hills {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 35%;
+    }
+
+    .hill {
+      position: absolute;
+      bottom: -40px;
+      width: 60vw;
+      height: 35vw;
+      background: var(--hill-green);
+      border-radius: 50%;
+      left: -10vw;
+    }
+
+    .hill.hill-two {
+      width: 70vw;
+      height: 40vw;
+      left: 20vw;
+      background: var(--hill-green-dark);
+    }
+
+    .hill.hill-three {
+      width: 55vw;
+      height: 30vw;
+      left: 55vw;
+      background: #d8f8b1;
+    }
+
+    /* Form container */
+    .card {
+      width: min(500px, 100%);
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 18px 40px rgba(88, 117, 164, 0.25);
+      border: 3px solid #fff;
+      backdrop-filter: blur(6px);
+    }
+
+    .card h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.2rem;
+      text-align: center;
+    }
+
+    .card p {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    label {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      border: 2px solid #d7e7f7;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: #fefefe;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(198, 182, 255, 0.4);
+    }
+
+    button {
+      padding: 1rem;
+      border-radius: 20px;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      color: #2d2d2d;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(198, 182, 255, 0.4);
+    }
+
+    .message {
+      background: #f5f7ff;
+      border-radius: 18px;
+      padding: 0.9rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      color: #3d4a66;
+      border: 2px dashed #c6b6ff;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .message.error {
+      border-color: #ff8da5;
+      color: #b3263e;
+      background: #ffe9ef;
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      text-align: center;
+      color: #6b7c93;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-bottom: 8rem;
+      }
+
+      .card {
+        padding: 2rem 1.5rem;
+      }
+
+      .card h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="sun"></div>
+    <div class="cloud"></div>
+    <div class="cloud cloud-two"></div>
+    <div class="cloud cloud-three"></div>
+    <div class="hills">
+      <div class="hill"></div>
+      <div class="hill hill-two"></div>
+      <div class="hill hill-three"></div>
+    </div>
+  </div>
+
+  <main class="card">
+    <h1>Join the Adventure!</h1>
+    <p>Fill in your details to start your colorful journey.</p>
+
+    <form id="registrationForm" novalidate>
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required />
+      </div>
+
+      <div>
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" placeholder="Your age" min="1" required />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Create a fun password" required />
+      </div>
+
+      <div id="groupMessage" class="message">Enter your age to see a special greeting!</div>
+      <button type="submit">Register</button>
+      <p class="hint">We welcome kids (3+), teens, and adults. Ages below 3 cannot register.</p>
+    </form>
+  </main>
+
+  <script>
+    // Handle age-based greetings and validation
+    const form = document.getElementById("registrationForm");
+    const ageInput = document.getElementById("age");
+    const messageBox = document.getElementById("groupMessage");
+
+    const getAgeMessage = (age) => {
+      if (age < 3) {
+        return { text: "Oops! You must be at least 3 years old to register.", isError: true };
+      }
+      if (age >= 3 && age <= 8) {
+        return { text: "Welcome Little Star!", isError: false };
+      }
+      if (age >= 9 && age <= 17) {
+        return { text: "Hello Future Leader!", isError: false };
+      }
+      return { text: "Welcome Adult User!", isError: false };
+    };
+
+    const updateMessage = () => {
+      const ageValue = parseInt(ageInput.value, 10);
+
+      if (Number.isNaN(ageValue)) {
+        messageBox.textContent = "Enter your age to see a special greeting!";
+        messageBox.classList.remove("error");
+        return;
+      }
+
+      const { text, isError } = getAgeMessage(ageValue);
+      messageBox.textContent = text;
+      messageBox.classList.toggle("error", isError);
+    };
+
+    ageInput.addEventListener("input", updateMessage);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      updateMessage();
+
+      const ageValue = parseInt(ageInput.value, 10);
+      if (Number.isNaN(ageValue) || ageValue < 3) {
+        ageInput.focus();
+        return;
+      }
+
+      const { text } = getAgeMessage(ageValue);
+      alert(text);
+      form.reset();
+      updateMessage();
+    });
+  </script>
+</body>
+</html>
