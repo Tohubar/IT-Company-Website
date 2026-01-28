@@ -1,489 +1,843 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseCart — Modern E-commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --white: #ffffff;
+      --text: #15161a;
+      --muted: #5b5f6a;
+      --accent: #1f7aff;
+      --accent-soft: rgba(31, 122, 255, 0.16);
+      --shadow: 0 22px 45px rgba(15, 24, 44, 0.14);
+      --soft-shadow: 0 12px 30px rgba(15, 24, 44, 0.12);
+      --border: rgba(15, 24, 44, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .container {
+      width: min(1200px, 90vw);
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1.2rem 0;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .navbar.is-glassy {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .search {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      border-radius: 999px;
+      padding: 0.35rem;
+      box-shadow: 0 10px 20px rgba(31, 122, 255, 0.12);
+      overflow: hidden;
+      transition: width 0.3s ease;
+    }
+
+    .search input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 0.95rem;
+      width: 0;
+      transition: width 0.3s ease;
+    }
+
+    .search:focus-within input,
+    .search:hover input {
+      width: 160px;
+      padding: 0 0.6rem;
+    }
+
+    .search button {
+      border: none;
+      background: var(--accent);
+      color: var(--white);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .icon-btn {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: var(--white);
+      box-shadow: 8px 8px 18px rgba(15, 24, 44, 0.12), -8px -8px 18px rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+    }
+
+    .icon-btn i {
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .counter-badge {
+      position: absolute;
+      top: -4px;
+      right: -2px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.95rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 15px 30px rgba(31, 122, 255, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--text);
+      box-shadow: 0 14px 28px rgba(15, 24, 44, 0.12);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      filter: blur(0);
+    }
+
+    .hero-image {
+      width: min(400px, 85%);
+      margin: 0 auto;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-18px);
+      }
+    }
+
+    /* Features */
+    .features {
+      padding: 2.5rem 0 1rem;
+    }
+
+    .features-bar {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 1.5rem 2rem;
+      box-shadow: var(--soft-shadow);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    /* Categories */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .category-card {
+      background: var(--white);
+      border-radius: 999px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: var(--soft-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(31, 122, 255, 0.18);
+    }
+
+    .category-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 0.8rem;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(15, 24, 44, 0.15);
+    }
+
+    /* Products */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      position: relative;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 1.4rem;
+      box-shadow: 0 18px 40px rgba(15, 24, 44, 0.12);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(15, 24, 44, 0.18);
+    }
+
+    .product-img {
+      background: #f1f3f9;
+      border-radius: 18px;
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.1);
+    }
+
+    .product-info {
+      margin-top: 1.2rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .card-actions {
+      position: absolute;
+      top: 20px;
+      right: -50px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: right 0.4s ease;
+    }
+
+    .product-card:hover .card-actions {
+      right: 20px;
+    }
+
+    .action-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: none;
+      background: var(--white);
+      box-shadow: 0 12px 20px rgba(15, 24, 44, 0.14);
+      cursor: pointer;
+      color: var(--accent);
+    }
+
+    /* Banner */
+    .promo-banner {
+      background: linear-gradient(120deg, #ffffff, #eef3ff);
+      border-radius: 28px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      align-items: center;
+      gap: 2rem;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .promo-banner h3 {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 3rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .newsletter form {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter input {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      outline: none;
+      font-size: 1rem;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 24, 44, 0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 2000;
+    }
+
+    .modal.is-open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 2rem;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: none;
+      background: var(--white);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#">Pulse<span>Cart</span></a>
+      <nav class="nav-links">
+        <a href="#categories">Categories</a>
+        <a href="#bestsellers">Best Sellers</a>
+        <a href="#banner">Offers</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="search">
+          <input type="text" placeholder="Search products">
+          <button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
+        <button class="icon-btn" aria-label="User account"><i class="fa-regular fa-user"></i></button>
+        <button class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+        <button class="icon-btn" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="counter-badge" id="cart-count">2</span>
+        </button>
       </div>
     </div>
-</div>
+  </header>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
+  <main>
+    <section class="hero">
+      <div class="container hero-grid reveal">
         <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
+          <p class="price">New Drop — Aurora Collection</p>
+          <h1>Scroll-stopping style for your smartest tech moments.</h1>
+          <p>Explore premium essentials with a clean, futuristic interface. Designed to convert and captivate with every scroll.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary">Shop the Drop</button>
+            <button class="btn btn-secondary">Build Your Bundle</button>
+          </div>
         </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
+        <div class="hero-card">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Featured smartwatch">
         </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+    <section class="features">
+      <div class="container features-bar reveal">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div>
+            <h4>Free Shipping</h4>
+            <p>Worldwide delivery on orders over $120.</p>
           </div>
         </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <h4>24/7 Support</h4>
+            <p>Talk to a specialist anytime you need.</p>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+          <div>
+            <h4>Secure Payment</h4>
+            <p>Protected checkout for total peace.</p>
           </div>
         </div>
       </div>
-    </div>
-</div>
+    </section>
 
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
+    <section id="categories">
       <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
+        <div class="section-header reveal">
+          <div>
+            <h2>Curated Categories</h2>
+            <p>Tap into our most wanted collections.</p>
           </div>
+          <button class="btn btn-secondary">View All</button>
+        </div>
+        <div class="category-grid reveal">
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=300&q=80" alt="Audio">
+            <h4>Immersive Audio</h4>
+          </div>
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?auto=format&fit=crop&w=300&q=80" alt="Wearables">
+            <h4>Smart Wearables</h4>
+          </div>
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=300&q=80" alt="Home">
+            <h4>Home Studio</h4>
+          </div>
+          <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=300&q=80" alt="Accessories">
+            <h4>Accessory Lab</h4>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="bestsellers">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2>Best Sellers</h2>
+            <p>Minimal cards, maximum performance.</p>
+          </div>
+          <button class="btn btn-primary">See All Products</button>
+        </div>
+        <div class="product-grid">
+          <article class="product-card reveal" data-title="Pulse Pro Watch" data-description="Stainless steel casing with sapphire glass and 7-day battery life." data-price="$289" data-image="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=600&q=80">
+            <div class="product-img">
+              <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=600&q=80" alt="Pulse Pro Watch">
+            </div>
+            <div class="product-info">
+              <h4>Pulse Pro Watch</h4>
+              <p class="price">$289</p>
+            </div>
+            <div class="card-actions">
+              <button class="action-btn add-to-cart" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+              <button class="action-btn quick-view" aria-label="Quick view"><i class="fa-regular fa-eye"></i></button>
+            </div>
+          </article>
+          <article class="product-card reveal" data-title="Nebula Pods" data-description="Spatial audio earbuds with adaptive noise cancellation." data-price="$199" data-image="https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=600&q=80">
+            <div class="product-img">
+              <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=600&q=80" alt="Nebula Pods">
+            </div>
+            <div class="product-info">
+              <h4>Nebula Pods</h4>
+              <p class="price">$199</p>
+            </div>
+            <div class="card-actions">
+              <button class="action-btn add-to-cart" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+              <button class="action-btn quick-view" aria-label="Quick view"><i class="fa-regular fa-eye"></i></button>
+            </div>
+          </article>
+          <article class="product-card reveal" data-title="Lumen Desk Set" data-description="Wireless charger + ambient lamp built for focus." data-price="$169" data-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80">
+            <div class="product-img">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Lumen Desk Set">
+            </div>
+            <div class="product-info">
+              <h4>Lumen Desk Set</h4>
+              <p class="price">$169</p>
+            </div>
+            <div class="card-actions">
+              <button class="action-btn add-to-cart" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+              <button class="action-btn quick-view" aria-label="Quick view"><i class="fa-regular fa-eye"></i></button>
+            </div>
+          </article>
+          <article class="product-card reveal" data-title="Echo Studio Mic" data-description="Crisp vocals with AI-driven noise suppression." data-price="$229" data-image="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?auto=format&fit=crop&w=600&q=80">
+            <div class="product-img">
+              <img src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?auto=format&fit=crop&w=600&q=80" alt="Echo Studio Mic">
+            </div>
+            <div class="product-info">
+              <h4>Echo Studio Mic</h4>
+              <p class="price">$229</p>
+            </div>
+            <div class="card-actions">
+              <button class="action-btn add-to-cart" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+              <button class="action-btn quick-view" aria-label="Quick view"><i class="fa-regular fa-eye"></i></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="banner">
+      <div class="container">
+        <div class="promo-banner reveal">
+          <div>
+            <p class="price">Limited Release</p>
+            <h3>Crystal-clear sound meets airy design.</h3>
+            <p>Upgrade your studio experience with 30% off premium audio bundles.</p>
+          </div>
+          <div>
+            <button class="btn btn-primary">Claim the Deal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="container">
+        <div class="newsletter reveal">
+          <div>
+            <h2>Join the Inner Circle</h2>
+            <p>Get exclusive drops, early access, and curated tech inspiration.</p>
+          </div>
+          <form>
+            <input type="email" placeholder="Enter your email">
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="quickViewModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body">
+        <img id="modal-image" src="" alt="Product preview">
+        <div>
+          <h2 id="modal-title">Product Title</h2>
+          <p id="modal-description">Product description goes here.</p>
+          <p class="price" id="modal-price">$0</p>
+          <button class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  <footer class="container">
+    <p>© 2024 PulseCart. Crafted for scroll-stopping impact.</p>
+  </footer>
+
+  <script>
+    // Sticky glassy navbar on scroll
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add("is-glassy");
+      } else {
+        navbar.classList.remove("is-glassy");
+      }
+    });
+
+    // Cart counter
+    const cartCount = document.getElementById("cart-count");
+    let currentCount = parseInt(cartCount.textContent, 10);
+
+    // Quick view modal logic
+    const modal = document.getElementById("quickViewModal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-description");
+    const modalPrice = document.getElementById("modal-price");
+    const modalImage = document.getElementById("modal-image");
+
+    document.querySelectorAll(".product-card").forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest(".add-to-cart")) {
+          currentCount += 1;
+          cartCount.textContent = currentCount;
+          return;
+        }
+        const title = card.dataset.title;
+        const description = card.dataset.description;
+        const price = card.dataset.price;
+        const image = card.dataset.image;
+
+        modalTitle.textContent = title;
+        modalDesc.textContent = description;
+        modalPrice.textContent = price;
+        modalImage.src = image;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    document.querySelector(".modal-close").addEventListener("click", () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+    });
+
+    // Scroll reveal animation
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
 </body>
 </html>
