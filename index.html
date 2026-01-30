@@ -1,489 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VelvetDesire | Premium Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style>
+    .glass-panel {
+      background: rgba(17, 24, 39, 0.6);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
+<body class="bg-gray-900 text-white font-sans" x-data="{ page: 'home', cartOpen: false, ageVerified: false }">
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/90 backdrop-blur-lg"
+    x-show="!ageVerified"
+    x-transition
+  >
+    <div class="glass-panel border border-white/10 rounded-2xl p-8 mx-4 max-w-md text-center shadow-2xl">
+      <p class="text-sm uppercase tracking-[0.3em] text-gray-400">Welcome to VelvetDesire</p>
+      <h2 class="mt-3 text-3xl font-semibold" style="font-family: 'Playfair Display', serif;">Are you 18+?</h2>
+      <p class="mt-3 text-gray-300">This marketplace offers mature content. Please verify your age to continue.</p>
+      <div class="mt-6 flex items-center justify-center gap-4">
+        <button
+          class="rounded-full border border-[#D4AF37] px-6 py-2 text-sm uppercase tracking-wider text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-gray-900"
+          @click="ageVerified = true"
+        >
+          Yes
+        </button>
+        <button class="rounded-full border border-white/20 px-6 py-2 text-sm uppercase tracking-wider text-gray-400 hover:text-white">
+          No
+        </button>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
+  <header class="sticky top-0 z-40 glass-panel border-b border-white/10">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div class="text-2xl font-semibold" style="font-family: 'Playfair Display', serif;">
+        <span class="text-[#D4AF37]">Velvet</span>Desire
+      </div>
+      <nav class="hidden items-center gap-6 text-sm uppercase tracking-widest text-gray-300 md:flex">
+        <button class="transition hover:text-white" @click="page = 'home'">Home</button>
+        <button class="transition hover:text-white" @click="page = 'product'">Shop</button>
+      </nav>
+      <div class="flex items-center gap-4 text-gray-300">
+        <button
+          class="relative rounded-full border border-white/10 p-2 transition hover:border-[#D4AF37] hover:text-[#D4AF37]"
+          @click="cartOpen = !cartOpen"
+        >
+          <span class="sr-only">Cart</span>
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9h14l-2-9M10 21a1 1 0 102 0 1 1 0 00-2 0zM17 21a1 1 0 102 0 1 1 0 00-2 0z"/>
+          </svg>
+        </button>
+        <button class="rounded-full border border-white/10 p-2 transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+          <span class="sr-only">User</span>
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 21a8 8 0 10-16 0"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="border-t border-white/10 px-6 py-2 text-xs uppercase tracking-[0.3em] text-gray-500 md:hidden">
+      <div class="flex gap-4">
+        <button class="transition hover:text-white" @click="page = 'home'">Home</button>
+        <button class="transition hover:text-white" @click="page = 'product'">Shop</button>
+      </div>
+    </div>
+  </header>
+
+  <aside
+    class="fixed right-0 top-0 z-40 h-full w-80 translate-x-full border-l border-white/10 bg-gray-900/90 p-6 shadow-2xl transition duration-300"
+    :class="cartOpen ? 'translate-x-0' : 'translate-x-full'"
+  >
+    <div class="flex items-center justify-between">
+      <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif;">Your Cart</h3>
+      <button class="text-gray-400 hover:text-white" @click="cartOpen = false">Close</button>
+    </div>
+    <div class="mt-6 space-y-4 text-sm text-gray-300">
+      <div class="flex items-center justify-between">
+        <span>Midnight Lace Set</span>
+        <span class="text-[#D4AF37]">$129</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span>Velvet Whisper Robe</span>
+        <span class="text-[#D4AF37]">$89</span>
+      </div>
+      <div class="border-t border-white/10 pt-4">
+        <div class="flex items-center justify-between text-base">
+          <span>Total</span>
+          <span class="text-[#D4AF37]">$218</span>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
+        <button class="mt-4 w-full rounded-full bg-[#D4AF37] py-2 text-sm font-semibold uppercase tracking-wider text-gray-900">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="mx-auto max-w-6xl px-6 py-10">
+    <section x-show="page === 'home'" x-transition>
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-10 md:p-16">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at top, rgba(212,175,55,0.35), transparent 60%);"></div>
+        <div class="relative z-10">
+          <p class="text-xs uppercase tracking-[0.4em] text-gray-400">Premium multi-vendor marketplace</p>
+          <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-6xl" style="font-family: 'Playfair Display', serif;">Unleash Your Fantasy</h1>
+          <p class="mt-4 max-w-xl text-gray-300">Curated collections from elite lingerie designers, delivered with elegance and absolute discretion.</p>
+          <button
+            class="mt-8 rounded-full border border-[#D4AF37] px-8 py-3 text-sm uppercase tracking-wider text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-gray-900"
+            @click="page = 'product'"
+          >
+            Explore the Collection
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-xl font-semibold" style="font-family: 'Playfair Display', serif;">Shop by Mood</h2>
+        <div class="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
+          <div class="group flex flex-col items-center">
+            <div class="h-24 w-24 overflow-hidden rounded-full border border-white/10">
+              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" alt="Noir" class="h-full w-full object-cover transition duration-300 group-hover:scale-110">
+            </div>
+            <span class="mt-3 text-sm text-gray-300">Noir Lace</span>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
+          <div class="group flex flex-col items-center">
+            <div class="h-24 w-24 overflow-hidden rounded-full border border-white/10">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Velvet" class="h-full w-full object-cover transition duration-300 group-hover:scale-110">
+            </div>
+            <span class="mt-3 text-sm text-gray-300">Velvet Glow</span>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
+          <div class="group flex flex-col items-center">
+            <div class="h-24 w-24 overflow-hidden rounded-full border border-white/10">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=401&q=80" alt="Satin" class="h-full w-full object-cover transition duration-300 group-hover:scale-110">
+            </div>
+            <span class="mt-3 text-sm text-gray-300">Satin Nights</span>
+          </div>
+          <div class="group flex flex-col items-center">
+            <div class="h-24 w-24 overflow-hidden rounded-full border border-white/10">
+              <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=400&q=80" alt="Dusk" class="h-full w-full object-cover transition duration-300 group-hover:scale-110">
+            </div>
+            <span class="mt-3 text-sm text-gray-300">Gilded Dusk</span>
           </div>
         </div>
       </div>
-    </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <div class="mt-12">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-semibold" style="font-family: 'Playfair Display', serif;">Featured Collections</h2>
+          <button class="text-sm uppercase tracking-wider text-gray-400 hover:text-[#D4AF37]" @click="page = 'product'">View All</button>
+        </div>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="glass-panel rounded-2xl border border-white/10 p-4">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Midnight Lace Set" class="h-48 w-full rounded-xl object-cover">
+            <div class="mt-4">
+              <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif;">Midnight Lace Set</h3>
+              <p class="text-xs uppercase tracking-widest text-gray-400">By Atelier Noire</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="text-[#D4AF37]">$129</span>
+                <button class="rounded-full border border-white/10 px-4 py-1 text-xs uppercase tracking-wider text-gray-300 hover:border-[#D4AF37] hover:text-[#D4AF37]">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel rounded-2xl border border-white/10 p-4">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="Velvet Whisper Robe" class="h-48 w-full rounded-xl object-cover">
+            <div class="mt-4">
+              <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif;">Velvet Whisper Robe</h3>
+              <p class="text-xs uppercase tracking-widest text-gray-400">By Seraphine</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="text-[#D4AF37]">$89</span>
+                <button class="rounded-full border border-white/10 px-4 py-1 text-xs uppercase tracking-wider text-gray-300 hover:border-[#D4AF37] hover:text-[#D4AF37]">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel rounded-2xl border border-white/10 p-4">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Golden Desire Bodysuit" class="h-48 w-full rounded-xl object-cover">
+            <div class="mt-4">
+              <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif;">Golden Desire Bodysuit</h3>
+              <p class="text-xs uppercase tracking-widest text-gray-400">By Luxe Atelier</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="text-[#D4AF37]">$156</span>
+                <button class="rounded-full border border-white/10 px-4 py-1 text-xs uppercase tracking-wider text-gray-300 hover:border-[#D4AF37] hover:text-[#D4AF37]">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel rounded-2xl border border-white/10 p-4">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=601&q=80" alt="Noir Satin Corset" class="h-48 w-full rounded-xl object-cover">
+            <div class="mt-4">
+              <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif;">Noir Satin Corset</h3>
+              <p class="text-xs uppercase tracking-widest text-gray-400">By Maison Lumiere</p>
+              <div class="mt-3 flex items-center justify-between">
+                <span class="text-[#D4AF37]">$142</span>
+                <button class="rounded-full border border-white/10 px-4 py-1 text-xs uppercase tracking-wider text-gray-300 hover:border-[#D4AF37] hover:text-[#D4AF37]">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="counters">
-    <div class="container">
+    <section x-show="page === 'product'" x-transition>
+      <div class="grid gap-10 lg:grid-cols-2">
         <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Product" class="h-96 w-full rounded-3xl object-cover">
+          <div class="mt-4 grid grid-cols-3 gap-4">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Thumbnail 1" class="h-24 w-full rounded-2xl object-cover">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=401&q=80" alt="Thumbnail 2" class="h-24 w-full rounded-2xl object-cover">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=401&q=80" alt="Thumbnail 3" class="h-24 w-full rounded-2xl object-cover">
           </div>
         </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+        <div class="space-y-6">
+          <div>
+            <p class="text-xs uppercase tracking-[0.4em] text-gray-400">Signature Collection</p>
+            <h2 class="mt-3 text-3xl font-semibold" style="font-family: 'Playfair Display', serif;">Noir Satin Corset</h2>
+            <p class="mt-2 text-sm uppercase tracking-widest text-gray-400">Vendor: Maison Lumiere</p>
+            <p class="mt-4 text-3xl text-[#D4AF37]">$142</p>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+          <div class="flex items-center gap-4">
+            <label class="text-sm uppercase tracking-widest text-gray-400" for="quantity">Quantity</label>
+            <input id="quantity" type="number" min="1" value="1" class="w-20 rounded-lg border border-white/10 bg-gray-900 px-3 py-2 text-center text-white">
           </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+          <button class="w-full rounded-full bg-[#D4AF37] py-3 text-sm font-semibold uppercase tracking-wider text-gray-900">Add to Cart</button>
+          <div class="glass-panel rounded-2xl border border-white/10 p-4" x-data="{ open: false }">
+            <button class="flex w-full items-center justify-between text-left" @click="open = !open">
+              <span class="text-sm uppercase tracking-widest text-gray-300">Discreet Shipping Info</span>
+              <span class="text-[#D4AF37]" x-text="open ? '-' : '+'"></span>
+            </button>
+            <div class="mt-3 text-sm text-gray-300" x-show="open" x-collapse>
+              Orders are shipped in unbranded, premium packaging with no identifying labels. Tracking details remain private in your account.
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
+          </div>
+          <button class="text-sm uppercase tracking-widest text-gray-400 hover:text-[#D4AF37]" @click="page = 'home'">Back to Home</button>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-gray-950">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 text-sm text-gray-400 md:flex-row">
+      <p>&copy; 2024 VelvetDesire. All rights reserved.</p>
+      <span class="rounded-full border border-[#D4AF37] px-4 py-1 text-xs uppercase tracking-widest text-[#D4AF37]">100% Discreet</span>
     </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  </footer>
 </body>
 </html>
