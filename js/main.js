@@ -1,77 +1,123 @@
-$(document).ready(function(){
+$(document).ready(function () {
+    const $nav = $('.primary-nav');
+    const $toggle = $('.menu-toggle');
+    const $chatToggle = $('.chat-toggle');
+    const $chatWindow = $('.chat-window');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+    $toggle.on('click', function () {
+        $nav.toggleClass('active');
+        $(this).find('i').toggleClass('fa-bars fa-times');
     });
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 200) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
         }
     });
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
+    $('.back-to-top').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 800);
     });
 
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
+    $chatToggle.on('click', function () {
+        $chatWindow.toggleClass('active');
     });
-    
-})(jQuery);
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
+    if ($('.recommended-carousel').length) {
+        $('.recommended-carousel').owlCarousel({
+            autoplay: true,
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            navText: ['<span class="carousel-nav">‹</span>', '<span class="carousel-nav">›</span>'],
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+            }
+        });
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+    if ($('.testimonials-carousel').length) {
+        $('.testimonials-carousel').owlCarousel({
+            autoplay: true,
+            loop: true,
+            margin: 12,
+            dots: true,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+            }
+        });
+    }
 
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    const updateCountdown = (targetDate, elements) => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        if (distance < 0) {
+            elements.forEach((el) => {
+                if (el) {
+                    el.textContent = '00';
+                }
+            });
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        if (elements[0]) {
+            elements[0].textContent = String(days).padStart(2, '0');
+        }
+        if (elements[1]) {
+            elements[1].textContent = String(hours).padStart(2, '0');
+        }
+        if (elements[2]) {
+            elements[2].textContent = String(minutes).padStart(2, '0');
+        }
+        if (elements[3]) {
+            elements[3].textContent = String(seconds).padStart(2, '0');
+        }
+    };
+
+    const heroDate = new Date();
+    heroDate.setDate(heroDate.getDate() + 2);
+    const flashDate = new Date();
+    flashDate.setHours(flashDate.getHours() + 8);
+
+    setInterval(() => {
+        updateCountdown(heroDate.getTime(), [
+            document.getElementById('countdown-days'),
+            document.getElementById('countdown-hours'),
+            document.getElementById('countdown-minutes'),
+            document.getElementById('countdown-seconds')
+        ]);
+        updateCountdown(flashDate.getTime(), [
+            null,
+            document.getElementById('flash-hours'),
+            document.getElementById('flash-minutes'),
+            document.getElementById('flash-seconds')
+        ]);
+    }, 1000);
 });
