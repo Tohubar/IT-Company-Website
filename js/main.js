@@ -1,77 +1,114 @@
-$(document).ready(function(){
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const header = document.querySelector('.site-header');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('open');
     });
+}
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
-
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+        header.classList.add('scrolled');
     } else {
-        $('.back-to-top').fadeOut('slow');
+        header.classList.remove('scrolled');
     }
 });
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+const countdownTimer = document.querySelector('.countdown-timer');
+const timerFields = {
+    days: document.getElementById('days'),
+    hours: document.getElementById('hours'),
+    minutes: document.getElementById('minutes'),
+    seconds: document.getElementById('seconds')
+};
 
-});
+if (countdownTimer) {
+    const endTime = new Date(countdownTimer.dataset.endtime).getTime();
+    const updateTimer = () => {
+        const now = new Date().getTime();
+        const distance = Math.max(endTime - now, 0);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+        timerFields.days.textContent = String(days).padStart(2, '0');
+        timerFields.hours.textContent = String(hours).padStart(2, '0');
+        timerFields.minutes.textContent = String(minutes).padStart(2, '0');
+        timerFields.seconds.textContent = String(seconds).padStart(2, '0');
+    };
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+
+const flashTimer = document.getElementById('flash-timer');
+if (flashTimer) {
+    let totalSeconds = 6 * 60 * 60 + 12 * 60 + 45;
+    setInterval(() => {
+        totalSeconds = totalSeconds > 0 ? totalSeconds - 1 : 0;
+        const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+        const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+        const seconds = String(totalSeconds % 60).padStart(2, '0');
+        flashTimer.textContent = `${hours}:${minutes}:${seconds}`;
+    }, 1000);
+}
+
+const revealElements = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+revealElements.forEach((el) => observer.observe(el));
+
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+const nextButton = document.querySelector('.carousel-control.next');
+const prevButton = document.querySelector('.carousel-control.prev');
+let currentIndex = 0;
+
+const getMaxIndex = (itemWidth) => {
+    if (!track) return 0;
+    const visibleCount = Math.max(Math.floor(track.parentElement.offsetWidth / itemWidth), 1);
+    return Math.max(items.length - visibleCount, 0);
+};
+
+const updateCarousel = () => {
+    if (!track || items.length === 0) return;
+    const itemWidth = items[0].getBoundingClientRect().width + 20;
+    const maxIndex = getMaxIndex(itemWidth);
+    if (currentIndex > maxIndex) {
+        currentIndex = 0;
+    }
+    if (currentIndex < 0) {
+        currentIndex = maxIndex;
+    }
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+};
+
+if (nextButton && prevButton) {
+    nextButton.addEventListener('click', () => {
+        currentIndex += 1;
+        updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex -= 1;
+        updateCarousel();
+    });
+}
+
+window.addEventListener('resize', updateCarousel);
+
+if (track) {
+    updateCarousel();
+    setInterval(() => {
+        currentIndex += 1;
+        updateCarousel();
+    }, 4000);
+}
