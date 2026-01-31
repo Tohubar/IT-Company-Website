@@ -1,489 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noiré Bliss | Premium Intimate Wellness</title>
+  <meta name="description" content="Noiré Bliss offers elegant, premium intimate wellness products with discreet delivery, curated collections, and 18+ verified shopping.">
+  <meta name="keywords" content="intimate wellness, premium toys, adult products, discreet delivery, vibrators, dildos, lingerie">
+  <meta name="theme-color" content="#0d0b12">
+  <link rel="icon" href="./images/image.png">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
+<body class="theme-dark">
+  <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-card">
+      <p class="badge">18+ Required</p>
+      <h2 id="ageTitle">Please confirm your age</h2>
+      <p>By entering this site, you confirm that you are 18 years or older. We prioritize privacy, safety, and discretion.</p>
+      <div class="age-actions">
+        <button class="btn btn-primary" id="ageConfirm">I am 18+</button>
+        <button class="btn btn-ghost" id="ageDecline">Leave Site</button>
       </div>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
   </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
 
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <header class="site-header">
+    <div class="logo">Noiré <span>Bliss</span></div>
+    <nav class="site-nav" id="siteNav">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Shop</a>
+      <a href="#details">Details</a>
+      <a href="#account">Account</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#contact">Support</a>
+    </nav>
+    <div class="header-actions">
+      <button class="toggle" id="themeToggle" aria-label="Toggle dark and light mode">
+        <span class="toggle-dot"></span>
+        <span class="toggle-label">Dark</span>
+      </button>
+      <button class="cart-btn" type="button">
+        <span class="cart-icon">🛍️</span>
+        Cart
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
     </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-slider" aria-live="polite">
+        <article class="hero-slide is-active" style="background-image: linear-gradient(120deg, rgba(13,11,18,0.9), rgba(13,11,18,0.4)), url('https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1400&q=80');">
+          <div class="hero-content">
+            <p class="pill">Premium Collection</p>
+            <h1>Indulge in Elegant Intimate Wellness</h1>
+            <p class="hero-subtitle">Curated designs, discreet delivery, and luxurious essentials crafted for confidence.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary">Shop New Arrivals</button>
+              <button class="btn btn-outline">Explore Best Sellers</button>
+            </div>
+          </div>
+          <div class="hero-offer">
+            <p>Blush Pink Deals</p>
+            <h3>Save 25% on Vibrators</h3>
+          </div>
+        </article>
+        <article class="hero-slide" style="background-image: linear-gradient(120deg, rgba(13,11,18,0.9), rgba(13,11,18,0.5)), url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=80');">
+          <div class="hero-content">
+            <p class="pill">Luxury &amp; Comfort</p>
+            <h1>Explore Sensual Lingerie</h1>
+            <p class="hero-subtitle">Silky textures, flawless fit, and premium packaging designed for confidence.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary">Shop Lingerie</button>
+              <button class="btn btn-outline">Gift Sets</button>
+            </div>
+          </div>
+          <div class="hero-offer">
+            <p>Gold Weekend</p>
+            <h3>Buy 2, Get 1 Free</h3>
+          </div>
+        </article>
+        <article class="hero-slide" style="background-image: linear-gradient(120deg, rgba(13,11,18,0.9), rgba(13,11,18,0.5)), url('https://images.unsplash.com/photo-1496309732348-3627f3f040ee?auto=format&fit=crop&w=1400&q=80');">
+          <div class="hero-content">
+            <p class="pill">Discreet Delivery</p>
+            <h1>Intimate Wellness for Every Mood</h1>
+            <p class="hero-subtitle">Discover safe, body-friendly materials with premium performance and quiet power.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary">Shop Essentials</button>
+              <button class="btn btn-outline">Learn More</button>
+            </div>
+          </div>
+          <div class="hero-offer">
+            <p>Members Only</p>
+            <h3>Free Express Shipping</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="categories" class="section">
+      <div class="section-header">
+        <h2>Shop by Category</h2>
+        <p>Elegant collections crafted for every desire, organized for effortless browsing.</p>
+      </div>
+      <div class="category-grid">
+        <a class="category-card" href="#products">
+          <h3>Vibrators</h3>
+          <p>Quiet luxury with premium materials.</p>
+        </a>
+        <a class="category-card" href="#products">
+          <h3>Dildos</h3>
+          <p>Realistic textures and refined designs.</p>
+        </a>
+        <a class="category-card" href="#products">
+          <h3>Lingerie</h3>
+          <p>Silky sets and confidence boosters.</p>
+        </a>
+        <a class="category-card" href="#products">
+          <h3>Couples</h3>
+          <p>Bonding essentials for shared moments.</p>
+        </a>
+        <a class="category-card" href="#products">
+          <h3>Wellness</h3>
+          <p>Lubricants, oils, and care kits.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="products" class="section product-listing">
+      <div class="section-header">
+        <h2>Luxury Product Showcase</h2>
+        <p>Discover premium pieces curated for comfort, safety, and discreet delivery.</p>
+      </div>
+      <div class="product-layout">
+        <aside class="filters">
+          <h3>Filter Products</h3>
+          <div class="filter-group">
+            <h4>Price Range</h4>
+            <input type="range" min="25" max="250" value="120" aria-label="Price range">
+            <div class="range-values">
+              <span>$25</span>
+              <span>$250</span>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Product Type</h4>
+            <label><input type="checkbox" checked> Premium Vibrators</label>
+            <label><input type="checkbox"> Silky Lingerie</label>
+            <label><input type="checkbox"> Couples Toys</label>
+            <label><input type="checkbox"> Wellness Accessories</label>
+          </div>
+          <div class="filter-group">
+            <h4>Color</h4>
+            <div class="swatches">
+              <span class="swatch blush"></span>
+              <span class="swatch gold"></span>
+              <span class="swatch plum"></span>
+              <span class="swatch charcoal"></span>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Size</h4>
+            <label><input type="radio" name="size" checked> Petite</label>
+            <label><input type="radio" name="size"> Classic</label>
+            <label><input type="radio" name="size"> Luxe</label>
+          </div>
+        </aside>
+        <div class="products">
+          <div class="product-grid">
+            <article class="product-card premium">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Rose quartz massage wand">
+              </div>
+              <div class="product-info">
+                <h3>Rose Quartz Wand</h3>
+                <p class="rating">★★★★★ <span>4.9</span></p>
+                <p class="price">$129</p>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Silk blush lingerie set">
+              </div>
+              <div class="product-info">
+                <h3>Silk Blush Set</h3>
+                <p class="rating">★★★★☆ <span>4.6</span></p>
+                <p class="price">$79</p>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Premium couples kit">
+              </div>
+              <div class="product-info">
+                <h3>Couples Luxe Kit</h3>
+                <p class="rating">★★★★★ <span>5.0</span></p>
+                <p class="price">$159</p>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Velvet wellness oils">
+              </div>
+              <div class="product-info">
+                <h3>Velvet Wellness Oils</h3>
+                <p class="rating">★★★★☆ <span>4.7</span></p>
+                <p class="price">$48</p>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card premium">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Opal pearl vibrator">
+              </div>
+              <div class="product-info">
+                <h3>Opal Pearl Vibrator</h3>
+                <p class="rating">★★★★★ <span>4.9</span></p>
+                <p class="price">$189</p>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1450297414941-8f43a4ed27f2?auto=format&fit=crop&w=600&q=80" alt="Midnight lace lingerie">
+              </div>
+              <div class="product-info">
+                <h3>Midnight Lace Set</h3>
+                <p class="rating">★★★★☆ <span>4.5</span></p>
+                <p class="price">$92</p>
+                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+              </div>
+            </article>
+          </div>
+          <div class="pagination">
+            <button class="page active">1</button>
+            <button class="page">2</button>
+            <button class="page">3</button>
+            <button class="page">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="section product-details">
+      <div class="section-header">
+        <h2>Product Details</h2>
+        <p>Experience premium craftsmanship with a focus on comfort, safety, and timeless design.</p>
+      </div>
+      <div class="details-layout">
+        <div class="details-media">
+          <div class="zoom-frame">
+            <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09a32?auto=format&fit=crop&w=800&q=80" alt="Aurora Luxe Vibrator">
+          </div>
+          <div class="thumbnail-row">
+            <img src="https://images.unsplash.com/photo-1450297350677-623de575f31c?auto=format&fit=crop&w=300&q=80" alt="Aurora Luxe side view">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=300&q=80" alt="Aurora Luxe packaging">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=300&q=80" alt="Aurora Luxe texture">
+          </div>
+        </div>
+        <div class="details-info">
+          <p class="detail-pill">Premium Product</p>
+          <h3>Aurora Luxe Vibrator</h3>
+          <p class="price">$210 <span class="strike">$260</span></p>
+          <p class="details-text">Crafted with medical-grade silicone and whisper-quiet motor technology. Includes five intensity modes, waterproof design, and a velvet storage pouch.</p>
+          <ul class="details-list">
+            <li><strong>Material:</strong> Medical-grade silicone</li>
+            <li><strong>Size:</strong> 6.5" length, 1.4" diameter</li>
+            <li><strong>Charging:</strong> Magnetic USB</li>
+            <li><strong>Warranty:</strong> 2-year coverage</li>
+          </ul>
+          <button class="btn btn-primary add-to-cart">Add to Cart</button>
+          <div class="security-note">
+            <span>🔒 SSL-secured checkout and discreet packaging included.</span>
+          </div>
+        </div>
+      </div>
+      <div class="reviews">
+        <h4>Customer Reviews</h4>
+        <div class="review-card">
+          <p class="rating">★★★★★</p>
+          <p>"Silky texture, beautiful packaging, and truly premium feel. Highly recommend."</p>
+          <span>- Mia R.</span>
+        </div>
+        <div class="review-card">
+          <p class="rating">★★★★☆</p>
+          <p>"Quiet and powerful with lovely accessories. Shipping was discreet and quick."</p>
+          <span>- Lana K.</span>
+        </div>
+      </div>
+      <div class="related">
+        <h4>Related Products</h4>
+        <div class="related-scroll">
+          <article class="related-card">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=300&q=80" alt="Glow massage oil">
+            <h5>Glow Massage Oil</h5>
+            <p>$38</p>
+          </article>
+          <article class="related-card">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=300&q=80" alt="Noiré satin blindfold">
+            <h5>Noiré Satin Set</h5>
+            <p>$64</p>
+          </article>
+          <article class="related-card">
+            <img src="https://images.unsplash.com/photo-1450297414941-8f43a4ed27f2?auto=format&fit=crop&w=300&q=80" alt="Luxe lace collection">
+            <h5>Luxe Lace Collection</h5>
+            <p>$95</p>
+          </article>
+          <article class="related-card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=300&q=80" alt="Couples harmony kit">
+            <h5>Harmony Couples Kit</h5>
+            <p>$140</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="account" class="section account">
+      <div class="section-header">
+        <h2>Login &amp; Registration</h2>
+        <p>Manage your confidential profile, orders, and rewards with ease.</p>
+      </div>
+      <div class="account-grid">
+        <div class="account-card">
+          <h3>Welcome Back</h3>
+          <form>
+            <label>Email Address</label>
+            <input type="email" placeholder="you@email.com" required>
+            <label>Password</label>
+            <input type="password" placeholder="••••••••" required>
+            <div class="account-actions">
+              <button class="btn btn-deep">Sign In</button>
+              <button class="link-btn" type="button">Forgot Password</button>
+            </div>
+          </form>
+        </div>
+        <div class="account-card">
+          <h3>Create Account</h3>
+          <form>
+            <label>Full Name</label>
+            <input type="text" placeholder="Your Name" required>
+            <label>Email Address</label>
+            <input type="email" placeholder="you@email.com" required>
+            <label>Create Password</label>
+            <input type="password" placeholder="Create a password" required>
+            <button class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard">
+      <div class="section-header">
+        <h2>User Dashboard</h2>
+        <p>Track orders, manage favorites, and stay informed with discreet updates.</p>
+      </div>
+      <div class="dashboard-grid">
+        <article class="dashboard-card">
+          <h3>Order History</h3>
+          <ul>
+            <li>Order #NB-2341 <span>Delivered</span></li>
+            <li>Order #NB-2378 <span>In Transit</span></li>
+            <li>Order #NB-2403 <span>Processing</span></li>
+          </ul>
+          <button class="btn btn-primary">View Orders</button>
+        </article>
+        <article class="dashboard-card">
+          <h3>Shipment Tracking</h3>
+          <p>Real-time updates with discreet carrier notifications and delivery windows.</p>
+          <button class="btn btn-primary">Track Shipment</button>
+        </article>
+        <article class="dashboard-card">
+          <h3>Saved Favorites</h3>
+          <p>Keep a private list of items you love, ready for your next visit.</p>
+          <button class="btn btn-primary">View Favorites</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Customer Care</h4>
+        <a href="#">Shipping Info</a>
+        <a href="#">Returns &amp; Exchanges</a>
+        <a href="#">Discreet Packaging</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div>
+        <h4>About Noiré Bliss</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Security &amp; SSL</a>
+        <a href="#">Sustainability</a>
+      </div>
+      <div>
+        <h4>Join the List</h4>
+        <p>Receive exclusive offers and curated wellness tips.</p>
+        <form class="newsletter">
+          <input type="email" placeholder="Email address" required>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
         </form>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">✦</a>
+          <a href="#" aria-label="Twitter">✦</a>
+          <a href="#" aria-label="Pinterest">✦</a>
+          <a href="#" aria-label="TikTok">✦</a>
+        </div>
+        <p>Support: support@noirebliss.com</p>
+      </div>
     </div>
-    </div>
+    <p class="footer-bottom">© 2024 Noiré Bliss. All rights reserved.</p>
+  </footer>
 
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+  <div class="toast" id="cartToast">Item Added to Cart</div>
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  <script src="./js/main.js"></script>
 </body>
 </html>
