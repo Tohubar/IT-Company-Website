@@ -1,77 +1,72 @@
-$(document).ready(function(){
+const navToggle = document.querySelector('.nav-toggle');
+const siteNav = document.querySelector('.site-nav');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+if (navToggle && siteNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+const filterCards = ({ searchInput, levelFilter, departmentFilter, cards }) => {
+  const searchTerm = searchInput?.value.toLowerCase() || '';
+  const level = levelFilter?.value || 'all';
+  const department = departmentFilter?.value || 'all';
+
+  cards.forEach((card) => {
+    const matchesSearch = card.textContent.toLowerCase().includes(searchTerm);
+    const matchesLevel = level === 'all' || card.dataset.level === level;
+    const matchesDepartment = department === 'all' || card.dataset.department === department;
+    card.style.display = matchesSearch && matchesLevel && matchesDepartment ? 'grid' : 'none';
+  });
+};
+
+const courseSearch = document.getElementById('course-search');
+const levelFilter = document.getElementById('level-filter');
+const departmentFilter = document.getElementById('department-filter');
+const courseCards = document.querySelectorAll('#course-grid .card');
+
+if (courseSearch && levelFilter && departmentFilter) {
+  const handleCourseFilter = () =>
+    filterCards({
+      searchInput: courseSearch,
+      levelFilter,
+      departmentFilter,
+      cards: courseCards,
     });
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+  ['input', 'change'].forEach((event) => {
+    courseSearch.addEventListener(event, handleCourseFilter);
+    levelFilter.addEventListener(event, handleCourseFilter);
+    departmentFilter.addEventListener(event, handleCourseFilter);
+  });
+}
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
+const researchSearch = document.getElementById('research-search');
+const researchFilter = document.getElementById('research-filter');
+const researchCards = document.querySelectorAll('#research-grid .card');
+
+if (researchSearch && researchFilter) {
+  const handleResearchFilter = () => {
+    const searchTerm = researchSearch.value.toLowerCase();
+    const area = researchFilter.value;
+
+    researchCards.forEach((card) => {
+      const matchesSearch = card.textContent.toLowerCase().includes(searchTerm);
+      const matchesArea = area === 'all' || card.dataset.area === area;
+      card.style.display = matchesSearch && matchesArea ? 'grid' : 'none';
     });
+  };
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
-
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
-
-});
+  ['input', 'change'].forEach((event) => {
+    researchSearch.addEventListener(event, handleResearchFilter);
+    researchFilter.addEventListener(event, handleResearchFilter);
+  });
+}
