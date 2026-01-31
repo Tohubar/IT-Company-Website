@@ -1,77 +1,84 @@
-$(document).ready(function(){
+const navToggle = document.getElementById('navToggle');
+const primaryNav = document.getElementById('primaryNav');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = primaryNav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+}
+
+const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+const dotsContainer = document.getElementById('carouselDots');
+let activeIndex = 0;
+
+if (slides.length && dotsContainer) {
+    slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('type', 'button');
+        dot.addEventListener('click', () => {
+            setSlide(index);
+        });
+        dotsContainer.appendChild(dot);
     });
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+    const dots = Array.from(dotsContainer.children);
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
+    const setSlide = (index) => {
+        slides[activeIndex].classList.remove('active');
+        dots[activeIndex].classList.remove('active');
+        activeIndex = index;
+        slides[activeIndex].classList.add('active');
+        dots[activeIndex].classList.add('active');
+    };
+
+    setSlide(0);
+
+    setInterval(() => {
+        const nextIndex = (activeIndex + 1) % slides.length;
+        setSlide(nextIndex);
+    }, 5000);
+}
+
+const toast = document.getElementById('cartToast');
+const cartButtons = document.querySelectorAll('.add-to-cart');
+
+if (toast) {
+    cartButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            toast.classList.add('show');
+            clearTimeout(window.toastTimer);
+            window.toastTimer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        });
     });
+}
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
+const ageGate = document.getElementById('ageGate');
+const confirmAge = document.getElementById('confirmAge');
+const denyAge = document.getElementById('denyAge');
 
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
+if (ageGate) {
+    const isConfirmed = localStorage.getItem('ageConfirmed');
+    if (isConfirmed) {
+        ageGate.classList.add('hidden');
+        ageGate.setAttribute('aria-hidden', 'true');
     } else {
-        $('.back-to-top').fadeOut('slow');
+        ageGate.setAttribute('aria-hidden', 'false');
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+    if (confirmAge) {
+        confirmAge.addEventListener('click', () => {
+            localStorage.setItem('ageConfirmed', 'true');
+            ageGate.classList.add('hidden');
+            ageGate.setAttribute('aria-hidden', 'true');
+        });
+    }
 
-});
+    if (denyAge) {
+        denyAge.addEventListener('click', () => {
+            window.location.href = 'https://www.google.com';
+        });
+    }
+}
