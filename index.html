@@ -1,489 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Noir Boutique | Adult Wellness & Intimacy</title>
+  <meta name="description" content="Luxury adult wellness boutique offering discreet shipping, secure checkout, and curated intimacy products." />
+  <meta name="keywords" content="adult wellness, intimacy products, vibrators, dildos, lingerie, accessories, discreet delivery" />
+  <meta name="theme-color" content="#0b0a0f" />
+  <meta property="og:title" content="Velvet Noir Boutique" />
+  <meta property="og:description" content="Discover premium adult wellness products with private checkout and age verification." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="images/product-vibrator-aurora.svg" />
+  <link rel="icon" href="./images/image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
+  <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle">
+    <div class="age-gate__card">
+      <p class="eyebrow">Age Verification</p>
+      <h2 id="ageGateTitle">Are you 18+ years old?</h2>
+      <p>By entering, you confirm you are of legal age in your jurisdiction to view adult wellness products.</p>
+      <div class="age-gate__actions">
+        <button class="btn btn-primary" id="ageAccept">Yes, enter</button>
+        <a class="btn btn-ghost" href="https://www.google.com">No, exit</a>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
+  <header class="site-header" id="top">
+    <div class="logo">Velvet<span>Noir</span></div>
+    <nav class="site-nav" id="siteNav">
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#promotions">Promotions</a>
+      <a href="#account">Account</a>
+      <a href="#support">Support</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="openSearch" aria-label="Open search"><i class="fas fa-search"></i></button>
+      <button class="icon-button" aria-label="View favorites"><i class="far fa-heart"></i></button>
+      <button class="icon-button" aria-label="Open cart"><i class="fas fa-shopping-bag"></i></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Adult wellness boutique</p>
+        <h1>Elevate intimacy with curated, body-safe essentials.</h1>
+        <p class="hero__lead">Discover luxury toys, lingerie, and accessories with discreet delivery, 2FA-protected accounts, and secure checkout.</p>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="#shop">Shop Best Sellers</a>
+          <a class="btn btn-ghost" href="#categories">Browse Categories</a>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
+        <div class="hero__badges">
+          <span><i class="fas fa-shield-alt"></i> SSL secured checkout</span>
+          <span><i class="fas fa-truck"></i> Discreet packaging</span>
+          <span><i class="fas fa-user-lock"></i> 2FA accounts</span>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
+      </div>
+      <div class="hero__visual">
+        <div class="hero-card">
+          <div class="hero-card__image"></div>
+          <div>
+            <p class="eyebrow">Flash Sale</p>
+            <h3>Midnight Rose Collection</h3>
+            <p>Up to 30% off limited-time bundles.</p>
+            <div class="hero-card__timer">
+              <div><strong>04</strong><span>Hrs</span></div>
+              <div><strong>18</strong><span>Min</span></div>
+              <div><strong>32</strong><span>Sec</span></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-</div>
+    </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <section class="trust-bar">
+      <div>
+        <h3>Certified secure</h3>
+        <p>SSL encryption with PCI-compliant checkout partners.</p>
+      </div>
+      <div>
+        <h3>Inclusive & body-safe</h3>
+        <p>Phthalate-free, medical-grade materials across collections.</p>
+      </div>
+      <div>
+        <h3>24/7 confidential support</h3>
+        <p>Live chat with product specialists.</p>
+      </div>
+    </section>
 
-  <section class="counters">
-    <div class="container">
+    <section class="shop" id="shop">
+      <div class="section-heading">
         <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
+          <p class="eyebrow">Shop the collection</p>
+          <h2>Find the perfect fit</h2>
+        </div>
+        <div class="search-field" id="searchField">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search by product name, material, or feature" aria-label="Search products" />
+        </div>
+      </div>
+
+      <div class="filter-grid">
+        <div class="filter-card">
+          <h4>Filter by size</h4>
+          <select id="filterSize">
+            <option value="all">All sizes</option>
+            <option value="petite">Petite</option>
+            <option value="standard">Standard</option>
+            <option value="plus">Plus</option>
+          </select>
+        </div>
+        <div class="filter-card">
+          <h4>Filter by price</h4>
+          <select id="filterPrice">
+            <option value="all">All prices</option>
+            <option value="under50">Under $50</option>
+            <option value="50to100">$50 - $100</option>
+            <option value="over100">Over $100</option>
+          </select>
+        </div>
+        <div class="filter-card">
+          <h4>Filter by material</h4>
+          <select id="filterMaterial">
+            <option value="all">All materials</option>
+            <option value="silicone">Silicone</option>
+            <option value="glass">Glass</option>
+            <option value="latex">Latex-free</option>
+            <option value="lace">Lace</option>
+          </select>
+        </div>
+        <div class="filter-card">
+          <h4>Filter by type</h4>
+          <select id="filterType">
+            <option value="all">All types</option>
+            <option value="vibrator">Vibrators</option>
+            <option value="dildo">Dildos</option>
+            <option value="lingerie">Lingerie</option>
+            <option value="accessory">Accessories</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-name="Aurora Pulse Vibrator" data-type="vibrator" data-material="silicone" data-size="standard" data-price="over100">
+          <img src="images/product-vibrator-aurora.svg" alt="Aurora Pulse Vibrator" />
+          <div class="product-card__body">
+            <h3>Aurora Pulse Vibrator</h3>
+            <p>Rechargeable, whisper-quiet motor with 12 intensity modes.</p>
+            <div class="product-card__meta">
+              <span>Silicone · Standard</span>
+              <strong>$129</strong>
+            </div>
+            <button class="btn btn-primary">Add to bag</button>
+          </div>
+        </article>
+        <article class="product-card" data-name="Blush Curve Wand" data-type="vibrator" data-material="silicone" data-size="petite" data-price="50to100">
+          <img src="images/product-vibrator-blush.svg" alt="Blush Curve Wand" />
+          <div class="product-card__body">
+            <h3>Blush Curve Wand</h3>
+            <p>Compact travel-ready wand with magnetic charging.</p>
+            <div class="product-card__meta">
+              <span>Silicone · Petite</span>
+              <strong>$89</strong>
+            </div>
+            <button class="btn btn-primary">Add to bag</button>
+          </div>
+        </article>
+        <article class="product-card" data-name="Noir Luxe Glass Dildo" data-type="dildo" data-material="glass" data-size="standard" data-price="50to100">
+          <img src="images/product-dildo-noir.svg" alt="Noir Luxe Glass Dildo" />
+          <div class="product-card__body">
+            <h3>Noir Luxe Glass Dildo</h3>
+            <p>Temperature-friendly borosilicate glass with velvet pouch.</p>
+            <div class="product-card__meta">
+              <span>Glass · Standard</span>
+              <strong>$72</strong>
+            </div>
+            <button class="btn btn-primary">Add to bag</button>
+          </div>
+        </article>
+        <article class="product-card" data-name="Velvet Lace Teddy" data-type="lingerie" data-material="lace" data-size="plus" data-price="under50">
+          <img src="images/product-lingerie-velvet.svg" alt="Velvet Lace Teddy" />
+          <div class="product-card__body">
+            <h3>Velvet Lace Teddy</h3>
+            <p>Adjustable straps, breathable lace, inclusive sizing.</p>
+            <div class="product-card__meta">
+              <span>Lace · Plus</span>
+              <strong>$48</strong>
+            </div>
+            <button class="btn btn-primary">Add to bag</button>
+          </div>
+        </article>
+        <article class="product-card" data-name="Midnight Bloom Set" data-type="lingerie" data-material="lace" data-size="standard" data-price="50to100">
+          <img src="images/product-lingerie-midnight.svg" alt="Midnight Bloom Set" />
+          <div class="product-card__body">
+            <h3>Midnight Bloom Set</h3>
+            <p>Three-piece set with satin accents and blush mesh.</p>
+            <div class="product-card__meta">
+              <span>Lace · Standard</span>
+              <strong>$95</strong>
+            </div>
+            <button class="btn btn-primary">Add to bag</button>
+          </div>
+        </article>
+        <article class="product-card" data-name="Discreet Travel Kit" data-type="accessory" data-material="latex" data-size="petite" data-price="under50">
+          <img src="images/product-accessory-travel.svg" alt="Discreet Travel Kit" />
+          <div class="product-card__body">
+            <h3>Discreet Travel Kit</h3>
+            <p>Cleaner, wipes, and satin pouch for on-the-go care.</p>
+            <div class="product-card__meta">
+              <span>Latex-free · Petite</span>
+              <strong>$38</strong>
+            </div>
+            <button class="btn btn-primary">Add to bag</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Product categories</p>
+          <h2>Curated for every mood</h2>
+        </div>
+      </div>
+      <div class="category-grid">
+        <div class="category-card">
+          <h3>Vibrators</h3>
+          <p>Rechargeable, body-safe designs with multiple modes.</p>
+        </div>
+        <div class="category-card">
+          <h3>Dildos</h3>
+          <p>Premium glass and silicone options with luxe finishes.</p>
+        </div>
+        <div class="category-card">
+          <h3>Lingerie</h3>
+          <p>Blush, plum, and gold details with inclusive sizing.</p>
+        </div>
+        <div class="category-card">
+          <h3>Accessories</h3>
+          <p>Cleansers, oils, and travel essentials.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="promotions" id="promotions">
+      <div class="promo-card">
+        <div>
+          <p class="eyebrow">Limited-time offer</p>
+          <h2>Flash Sale: 25% off premium bundles</h2>
+          <p>Use code <strong>VELVET25</strong> at checkout to unlock bundle savings.</p>
+          <button class="btn btn-primary">Reveal bundles</button>
+        </div>
+        <div class="promo-stats">
+          <div>
+            <h3>120+</h3>
+            <p>Best-selling products</p>
+          </div>
+          <div>
+            <h3>4.9/5</h3>
+            <p>Average customer rating</p>
+          </div>
+          <div>
+            <h3>48h</h3>
+            <p>Limited-time offer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="account" id="account">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Account & security</p>
+          <h2>Personalized experience with secure access</h2>
+        </div>
+      </div>
+      <div class="account-grid">
+        <div class="account-card">
+          <h3>Sign in or register</h3>
+          <form class="account-form">
+            <input type="email" placeholder="Email address" required>
+            <input type="password" placeholder="Password" required>
+            <div class="account-form__row">
+              <label class="switch">
+                <input type="checkbox" id="twoFactorToggle" checked>
+                <span class="slider"></span>
+              </label>
+              <span>Enable 2FA for this account</span>
+            </div>
+            <button class="btn btn-primary" type="button">Create account</button>
+            <button class="btn btn-ghost" type="button">Login</button>
+          </form>
+        </div>
+        <div class="account-card">
+          <h3>Account benefits</h3>
+          <ul>
+            <li>Track orders, delivery status, and returns.</li>
+            <li>Save favorites and private wishlists.</li>
+            <li>View order history with discreet invoices.</li>
+            <li>Manage addresses and communication preferences.</li>
+          </ul>
+          <div class="account-steps">
+            <div>
+              <span>Step 1</span>
+              <p>Verify your email and phone number.</p>
+            </div>
+            <div>
+              <span>Step 2</span>
+              <p>Enable 2FA for secure login codes.</p>
+            </div>
+            <div>
+              <span>Step 3</span>
+              <p>Start your personalized recommendations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="payments" id="payments">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Payments & privacy</p>
+          <h2>Secure checkout with multiple options</h2>
+        </div>
+      </div>
+      <div class="payment-grid">
+        <div class="payment-card">
+          <h3>Accepted payments</h3>
+          <p>PayPal, Bkash, Nagad, Visa, Mastercard, and AMEX.</p>
+          <div class="payment-icons">
+            <span>PayPal</span>
+            <span>Bkash</span>
+            <span>Nagad</span>
+            <span>Visa</span>
+            <span>Mastercard</span>
+          </div>
+        </div>
+        <div class="payment-card">
+          <h3>Security checklist</h3>
+          <ul>
+            <li>SSL encryption across all pages.</li>
+            <li>PCI-compliant payment partners.</li>
+            <li>Fraud monitoring and secure tokenization.</li>
+            <li>Two-factor authentication for accounts.</li>
+          </ul>
+        </div>
+        <div class="payment-card">
+          <h3>Order protection</h3>
+          <p>Discreet billing descriptors and signature-on-delivery options.</p>
+          <button class="btn btn-ghost">Learn about privacy</button>
+        </div>
+      </div>
+      <p class="backend-note">Backend payment logic is scaffolded in <code>backend/payment-gateway.php</code> with placeholders for PayPal, Bkash, Nagad, and card processors.</p>
+    </section>
+
+    <section class="support" id="support">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Customer support</p>
+          <h2>We’re here whenever you need us</h2>
+        </div>
+      </div>
+      <div class="support-grid">
+        <div class="support-card">
+          <h3>Live chat</h3>
+          <p>Get instant answers about product features, sizing, and shipping.</p>
+          <button class="btn btn-primary" id="openChat">Start chat</button>
+        </div>
+        <div class="support-card">
+          <h3>FAQ</h3>
+          <div class="faq-item">
+            <button class="faq-question">Is my order discreet?</button>
+            <div class="faq-answer">All orders ship in unbranded packaging with private billing descriptors.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How long is delivery?</button>
+            <div class="faq-answer">Domestic delivery takes 2-4 business days with tracking.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I return an item?</button>
+            <div class="faq-answer">Unopened accessories can be returned within 30 days. Intimate items are final sale for hygiene.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog" id="blog">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Intimacy journal</p>
+          <h2>Education & inspiration</h2>
+        </div>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <p class="blog-card__tag">Wellness</p>
+          <h3>How to build an intimacy ritual at home</h3>
+          <p>Create a calming space with light, scent, and mindful breathing.</p>
+          <a href="#" class="text-link">Read article</a>
+        </article>
+        <article class="blog-card">
+          <p class="blog-card__tag">Guides</p>
+          <h3>Choosing the right material for your body</h3>
+          <p>Learn the difference between silicone, glass, and body-safe blends.</p>
+          <a href="#" class="text-link">Read article</a>
+        </article>
+        <article class="blog-card">
+          <p class="blog-card__tag">Couples</p>
+          <h3>Conversation starters for deeper connection</h3>
+          <p>Gentle prompts to explore boundaries and preferences together.</p>
+          <a href="#" class="text-link">Read article</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="social" id="social">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Stay connected</p>
+          <h2>Share your favorites</h2>
+        </div>
+      </div>
+      <div class="social-grid">
+        <div>
+          <h3>Instagram</h3>
+          <p>Follow @velvetnoir for product drops.</p>
         </div>
         <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
+          <h3>TikTok</h3>
+          <p>Wellness tips and how-to guides.</p>
         </div>
         <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
+          <h3>Pinterest</h3>
+          <p>Curated mood boards and gift guides.</p>
         </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
+  </main>
 
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
+  <footer class="site-footer">
+    <div>
+      <h3>Velvet Noir Boutique</h3>
+      <p>Luxury adult wellness with discreet delivery and secure checkout.</p>
+      <p class="footer-small">SSL secured • 2FA protected • 18+ only</p>
+    </div>
+    <div>
+      <h4>Customer care</h4>
+      <ul>
+        <li><a href="#support">Live chat</a></li>
+        <li><a href="#support">FAQs</a></li>
+        <li><a href="#payments">Payments</a></li>
+        <li><a href="#account">Order tracking</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>support@velvetnoir.com</p>
+      <p>+1 (555) 018-9090</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h4>Newsletter</h4>
+      <p>Get exclusive drops and wellness tips.</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Email address" required>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
     </div>
-</div>
+  </footer>
 
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      <strong>Velvet Noir Support</strong>
+      <button id="closeChat" aria-label="Close chat"><i class="fas fa-times"></i></button>
     </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-message bot">Hi! Need help choosing the right product? Ask me anything.</div>
     </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
+    <form class="chat-input" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Type your message" required>
+      <button class="btn btn-primary" type="submit">Send</button>
+    </form>
   </div>
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  <script src="./js/main.js"></script>
 </body>
 </html>
