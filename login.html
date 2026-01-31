@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login | NexaIT Solutions</title>
+    <meta name="description" content="Client login and registration portal for NexaIT Solutions customers.">
+    <link rel="icon" href="./images/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo" aria-label="NexaIT Solutions">
+            <img src="./images/image.png" alt="NexaIT Solutions logo">
+            <span>NexaIT</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#about">About Us</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a class="btn btn-primary" href="contact.html">Get a Quote</a>
+    </header>
+
+    <main class="page">
+        <section class="page-hero">
+            <div>
+                <p class="eyebrow">Client Portal</p>
+                <h1>Access your NexaIT projects anytime</h1>
+                <p>Log in to manage deliverables, track milestones, and communicate with your account team.</p>
+            </div>
+            <img src="./images/img2.jpg" alt="Client portal login" loading="lazy">
+        </section>
+
+        <section class="section login-section">
+            <div class="login-grid">
+                <form class="auth-card" aria-label="Client login form">
+                    <h2>Login</h2>
+                    <label>
+                        Email
+                        <input type="email" placeholder="you@email.com" required>
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" placeholder="Enter password" required>
+                    </label>
+                    <div class="auth-actions">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                        <a class="link" href="#">Forgot password?</a>
+                    </div>
+                </form>
+                <form class="auth-card" aria-label="Client registration form">
+                    <h2>Create Account</h2>
+                    <label>
+                        Full Name
+                        <input type="text" placeholder="Full name" required>
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" placeholder="you@email.com" required>
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" placeholder="Create password" required>
+                    </label>
+                    <button class="btn btn-highlight" type="submit">Create Account</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div>
+                <h4>Services</h4>
+                <a href="services.html">Software Development</a>
+                <a href="services.html">Web Development</a>
+                <a href="services.html">Cloud Solutions</a>
+                <a href="services.html">IT Consulting</a>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="index.html#about">About Us</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="blog.html">Blog</a>
+                <a href="login.html">Client Login</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>1300 Center Avenue, Fresno, CA</p>
+                <p>+1 (555) 123-4567</p>
+                <p>hello@nexait.com</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://twitter.com/" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <p>Join our monthly newsletter for tech insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" name="email" placeholder="Email address" aria-label="Email address">
+                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NexaIT Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
