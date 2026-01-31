@@ -4,486 +4,307 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
+    <title>AI Nexus | Intelligent Technologies & Services</title>
+    <meta name="description" content="AI Nexus showcases cutting-edge AI technologies, services, and real-world applications for technical and non-technical audiences.">
+    <meta name="keywords" content="artificial intelligence, machine learning, NLP, computer vision, AI services, AI consulting">
+    <meta property="og:title" content="AI Nexus | Intelligent Technologies & Services">
+    <meta property="og:description" content="Explore AI technologies, services, and applications built for modern businesses.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "AI Nexus",
+          "url": "https://example.com",
+          "logo": "https://example.com/images/image.png",
+          "sameAs": [
+            "https://www.linkedin.com/",
+            "https://twitter.com/",
+            "https://github.com/"
+          ]
+        }
+    </script>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
+    <header class="header" id="top">
+        <a href="#home" class="logo" aria-label="AI Nexus home">
+            <img src="./images/image.png" alt="AI Nexus logo">
+            <span>AI Nexus</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
         <nav class="navbar">
             <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#technologies">AI Technologies</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <form class="search-bar" role="search">
+                <input type="search" name="q" placeholder="Search AI topics..." aria-label="Search AI topics">
+                <button type="submit" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
         </nav>
     </header>
 
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+    <section id="home" class="hero" role="banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">AI Technologies • Intelligent Services • Real-World Impact</p>
+            <h1>Innovating the Future with Artificial Intelligence</h1>
+            <p class="hero-subtitle">We help organizations unlock actionable insights, automate workflows, and create next-generation products powered by AI.</p>
+            <div class="hero-actions">
+                <a class="btn primary" href="#services">Learn More</a>
+                <a class="btn ghost" href="#contact">Request a Consultation</a>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
+    <section id="technologies" class="section section-dark">
+        <div class="section-heading">
+            <h2>AI Technologies</h2>
+            <p>Explore the core capabilities that power modern intelligent systems.</p>
         </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
+        <div class="tech-grid">
+            <button class="tech-accordion" aria-expanded="false">
+                <span class="tech-icon"><i class="fas fa-robot"></i></span>
+                <span class="tech-title">Machine Learning</span>
+                <span class="tech-toggle"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="tech-panel">
+                <p>Predict trends, optimize operations, and uncover hidden patterns in your data with scalable machine learning models.</p>
+            </div>
+            <button class="tech-accordion" aria-expanded="false">
+                <span class="tech-icon"><i class="fas fa-language"></i></span>
+                <span class="tech-title">Natural Language Processing</span>
+                <span class="tech-toggle"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="tech-panel">
+                <p>Build conversational assistants, summarize documents, and gain sentiment insights across multiple languages.</p>
+            </div>
+            <button class="tech-accordion" aria-expanded="false">
+                <span class="tech-icon"><i class="fas fa-eye"></i></span>
+                <span class="tech-title">Computer Vision</span>
+                <span class="tech-toggle"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="tech-panel">
+                <p>Detect anomalies, automate inspections, and enable real-time visual intelligence with advanced vision models.</p>
+            </div>
+            <button class="tech-accordion" aria-expanded="false">
+                <span class="tech-icon"><i class="fas fa-microchip"></i></span>
+                <span class="tech-title">Robotics & Automation</span>
+                <span class="tech-toggle"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="tech-panel">
+                <p>Enhance productivity with robotic automation, digital agents, and AI-driven control systems.</p>
+            </div>
+            <button class="tech-accordion" aria-expanded="false">
+                <span class="tech-icon"><i class="fas fa-brain"></i></span>
+                <span class="tech-title">Deep Learning</span>
+                <span class="tech-toggle"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="tech-panel">
+                <p>Leverage deep neural networks for complex tasks like speech recognition, forecasting, and intelligent personalization.</p>
+            </div>
         </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
+    </section>
 
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
+    <section id="services" class="section section-light">
+        <div class="section-heading">
+            <h2>AI Services</h2>
+            <p>End-to-end support from strategy to deployment, tailored to your industry needs.</p>
+        </div>
+        <div class="card-grid">
+            <article class="card">
+                <div class="card-icon"><i class="fas fa-compass"></i></div>
+                <h3>AI Consulting</h3>
+                <p>Define AI roadmaps, assess data readiness, and identify high-impact automation opportunities.</p>
+                <a class="btn secondary" href="#contact">Request a Consultation</a>
+            </article>
+            <article class="card">
+                <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>AI Model Development</h3>
+                <p>Build custom models for forecasting, personalization, document intelligence, and predictive analytics.</p>
+                <a class="btn secondary" href="#contact">Get Started</a>
+            </article>
+            <article class="card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Data Analysis & Insights</h3>
+                <p>Transform complex datasets into intuitive dashboards, KPIs, and actionable insights.</p>
+                <a class="btn secondary" href="#contact">Explore Insights</a>
+            </article>
+        </div>
+    </section>
 
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
+    <section id="applications" class="section section-dark">
+        <div class="section-heading">
+            <h2>AI Applications</h2>
+            <p>Real-world implementations across industries with measurable outcomes.</p>
+        </div>
+        <div class="application-grid">
+            <article class="application-card">
+                <h3>Healthcare</h3>
+                <p>AI-assisted diagnostics, patient risk scoring, and automated clinical documentation.</p>
+                <ul>
+                    <li>Reduced imaging review time by 40%.</li>
+                    <li>Early detection models improving patient outcomes.</li>
+                </ul>
+                <a class="btn ghost" href="#contact">Request Demo</a>
+            </article>
+            <article class="application-card">
+                <h3>Finance</h3>
+                <p>Fraud detection, credit scoring, and personalized financial insights at scale.</p>
+                <ul>
+                    <li>Automated fraud alerts with 98% precision.</li>
+                    <li>Real-time portfolio intelligence.</li>
+                </ul>
+                <a class="btn ghost" href="#contact">Learn More</a>
+            </article>
+            <article class="application-card">
+                <h3>Education</h3>
+                <p>Adaptive learning platforms, automated assessments, and student success analytics.</p>
+                <ul>
+                    <li>Personalized learning pathways for every learner.</li>
+                    <li>Engagement analytics for educators.</li>
+                </ul>
+                <a class="btn ghost" href="#contact">Request Demo</a>
+            </article>
+            <article class="application-card">
+                <h3>Retail & Commerce</h3>
+                <p>Demand forecasting, inventory optimization, and hyper-personalized experiences.</p>
+                <ul>
+                    <li>Forecast accuracy improvements of 25%.</li>
+                    <li>AI-driven recommendations boosting revenue.</li>
+                </ul>
+                <a class="btn ghost" href="#contact">Learn More</a>
+            </article>
+        </div>
+        <div class="application-media">
+            <div class="media-card">
+                <h4>Interactive Insights</h4>
+                <p>Embed your dashboards, KPI trackers, and AI performance metrics in a secure portal.</p>
+            </div>
+            <div class="media-card">
+                <h4>AI in Action</h4>
+                <p>Short demo reels and explainers to showcase automation in real workflows.</p>
+            </div>
+        </div>
+    </section>
 
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+    <section id="about" class="section section-light">
+        <div class="section-heading">
+            <h2>About Us</h2>
+            <p>Our mission is to make AI accessible, responsible, and impactful for every organization.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Mission</h3>
+                <p>Accelerate innovation through trustworthy AI that empowers people, products, and processes.</p>
+            </div>
+            <div class="about-card">
+                <h3>Values</h3>
+                <p>Transparency, human-centered design, and measurable business outcomes drive every engagement.</p>
+            </div>
+            <div class="about-card">
+                <h3>Vision</h3>
+                <p>Create a future where AI is a collaborative partner that elevates human potential.</p>
+            </div>
+        </div>
+        <div class="team-grid">
+            <article class="team-card">
+                <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Elena Rivera, Head of AI Strategy" loading="lazy">
+                <h4>Elena Rivera</h4>
+                <p>Head of AI Strategy</p>
+            </article>
+            <article class="team-card">
+                <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Marcus Lee, ML Engineering Lead" loading="lazy">
+                <h4>Marcus Lee</h4>
+                <p>ML Engineering Lead</p>
+            </article>
+            <article class="team-card">
+                <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Priya Desai, Applied Research" loading="lazy">
+                <h4>Priya Desai</h4>
+                <p>Applied Research</p>
+            </article>
+        </div>
+    </section>
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
+    <section id="contact" class="section section-dark">
+        <div class="section-heading">
+            <h2>Contact Us</h2>
+            <p>Tell us about your AI goals and we’ll respond within one business day.</p>
+        </div>
+        <div class="contact-grid">
+            <form class="contact-form" action="./contactme.php" method="POST">
+                <label>
+                    Name
+                    <input type="text" name="name" placeholder="Your name" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                </label>
+                <label>
+                    Message
+                    <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+                </label>
+                <button type="submit" class="btn primary">Submit</button>
+            </form>
+            <div class="contact-details">
+                <h3>Reach us directly</h3>
+                <p><strong>Email:</strong> hello@ainexus.com</p>
+                <p><strong>Phone:</strong> +1 (415) 555-2030</p>
+                <p><strong>Address:</strong> 1350 Mission Street, San Francisco, CA</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe title="AI Nexus office map" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.210586158531!2d-122.41941548468424!3d37.774929979759776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c3a5d62f3%3A0xa1c0f26f1b9ad26b!2sMission%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>AI Nexus</h4>
+                <p>Delivering AI solutions that are secure, scalable, and human-centered.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 AI Nexus. All rights reserved.</p>
+        </div>
+    </footer>
 
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+    <a href="#top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 </body>
 </html>
