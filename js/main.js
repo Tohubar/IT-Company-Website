@@ -1,77 +1,113 @@
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.navbar a');
+    const deitySearch = document.getElementById('deity-search');
+    const deityCards = document.querySelectorAll('.deity-card');
+    const siteSearch = document.getElementById('site-search');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+    navToggle.addEventListener('click', () => {
+        navbar.classList.toggle('open');
+        navToggle.querySelector('i').classList.toggle('fa-times');
     });
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('open');
+            navToggle.querySelector('i').classList.remove('fa-times');
+        });
     });
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
+    const updateActiveLink = () => {
+        let currentSection = '';
+        document.querySelectorAll('main section[id]').forEach((section) => {
+            const sectionTop = section.offsetTop - 120;
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute('id');
+            }
+        });
 
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
+        navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
+        });
+    };
 
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
+    window.addEventListener('scroll', updateActiveLink);
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
+    if (deitySearch) {
+        deitySearch.addEventListener('input', (event) => {
+            const query = event.target.value.toLowerCase();
+            deityCards.forEach((card) => {
+                const name = card.dataset.name || '';
+                const match = name.includes(query);
+                card.style.display = match ? 'block' : 'none';
+            });
+        });
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+    const siteMap = {
+        deities: '#deities',
+        texts: '#texts',
+        festivals: '#festivals',
+        philosophy: '#philosophy',
+        rituals: '#rituals',
+        culture: '#culture',
+        contact: '#contact',
+        about: '#about'
+    };
 
+    siteSearch.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            const query = event.target.value.toLowerCase();
+            const matchKey = Object.keys(siteMap).find((key) => query.includes(key));
+            if (matchKey) {
+                document.querySelector(siteMap[matchKey]).scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+
+    const quotes = [
+        {
+            text: '“When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place.”',
+            source: '— Bhagavad Gita 6.19'
+        },
+        {
+            text: '“The Self is the friend of the self and the enemy of the self.”',
+            source: '— Bhagavad Gita 6.5'
+        },
+        {
+            text: '“Lead me from the unreal to the real, from darkness to light, from death to immortality.”',
+            source: '— Brihadaranyaka Upanishad 1.3.28'
+        }
+    ];
+
+    let quoteIndex = 0;
+    const quoteText = document.getElementById('quote-text');
+    const quoteSource = document.getElementById('quote-source');
+
+    const rotateQuote = () => {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        quoteText.textContent = quotes[quoteIndex].text;
+        quoteSource.textContent = quotes[quoteIndex].source;
+    };
+
+    setInterval(rotateQuote, 6000);
+
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    updateActiveLink();
 });
