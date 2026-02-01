@@ -1,77 +1,74 @@
-$(document).ready(function(){
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+const backToTop = document.querySelector('.back-to-top');
+const navSearchForm = document.querySelector('.nav-search');
+const verseSearch = document.querySelector('#verse-search');
+const verseResults = document.querySelectorAll('#verse-results li');
+const accordionButtons = document.querySelectorAll('.accordion-btn');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('open');
+});
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+document.addEventListener('click', (event) => {
+  if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+    navbar.classList.remove('open');
+  }
+});
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
+navSearchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const input = navSearchForm.querySelector('input');
+  const query = input.value.trim().toLowerCase();
+  if (!query) {
+    return;
+  }
 
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
+  const searchable = document.querySelectorAll('[data-search]');
+  let matched = null;
+  searchable.forEach((item) => {
+    if (item.dataset.search.toLowerCase().includes(query)) {
+      matched = item;
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
+  });
+
+  if (matched) {
+    matched.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    matched.classList.add('highlight');
+    setTimeout(() => matched.classList.remove('highlight'), 1500);
+  }
 });
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+if (verseSearch) {
+  verseSearch.addEventListener('input', (event) => {
+    const query = event.target.value.trim().toLowerCase();
+    verseResults.forEach((item) => {
+      const keywords = item.dataset.keywords;
+      const text = item.textContent.toLowerCase();
+      const show = keywords.includes(query) || text.includes(query) || query.length === 0;
+      item.style.display = show ? 'list-item' : 'none';
+    });
+  });
+}
 
+accordionButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    accordionButtons.forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
+    if (!isExpanded) {
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
 });
