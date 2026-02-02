@@ -1,489 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Nexus | Futuristic 3D Game Experience</title>
+  <meta name="description" content="Neon Nexus is a futuristic 3D game experience with immersive visuals, interactive models, and high-energy gameplay.">
+  <meta name="keywords" content="Neon Nexus, 3D game, futuristic, interactive, WebGL, gameplay">
+  <meta name="author" content="IT Company">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#05060f',
+            neon: '#35f0ff',
+            pulse: '#8a5cff',
+            glow: '#f8ff3a'
+          },
+          boxShadow: {
+            neon: '0 0 20px rgba(53, 240, 255, 0.5)',
+            pulse: '0 0 25px rgba(138, 92, 255, 0.6)'
+          },
+          fontFamily: {
+            orbitron: ['"Orbitron"', 'sans-serif']
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' }
+            },
+            glowPulse: {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(53, 240, 255, 0.4)' },
+              '50%': { boxShadow: '0 0 35px rgba(248, 255, 58, 0.7)' }
+            },
+            scan: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(100%)' }
+            }
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            glowPulse: 'glowPulse 3s ease-in-out infinite',
+            scan: 'scan 8s linear infinite'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Neon Nexus",
+      "genre": "Sci-Fi Action",
+      "gamePlatform": ["PC", "PlayStation", "Xbox", "Mobile"],
+      "description": "A futuristic 3D game with immersive visuals and interactive gameplay.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IT Company"
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .glass-panel {
+      background: rgba(6, 10, 24, 0.7);
+      border: 1px solid rgba(53, 240, 255, 0.2);
+      backdrop-filter: blur(16px);
+    }
+
+    .grid-lines {
+      background-image: linear-gradient(transparent 95%, rgba(53, 240, 255, 0.08) 96%),
+        linear-gradient(90deg, transparent 95%, rgba(53, 240, 255, 0.08) 96%);
+      background-size: 60px 60px;
+    }
+
+    .hero-scan::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(53, 240, 255, 0.4), transparent);
+      opacity: 0.4;
+      animation: scan 8s linear infinite;
+      pointer-events: none;
+    }
+
+    .neon-border {
+      border: 1px solid rgba(53, 240, 255, 0.5);
+      box-shadow: 0 0 18px rgba(53, 240, 255, 0.3);
+    }
+
+    .model-card:hover .model-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
+<body class="bg-night text-slate-100">
+  <header class="fixed top-0 w-full z-50 bg-transparent">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#home" class="flex items-center gap-3 text-neon font-orbitron text-xl">
+        <span class="w-10 h-10 rounded-full neon-border flex items-center justify-center animate-glowPulse">⚡</span>
+        Neon Nexus
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold tracking-wide">
+        <a href="#home" class="text-neon hover:text-glow transition">Home</a>
+        <a href="#about" class="text-neon hover:text-glow transition">About</a>
+        <a href="#features" class="text-neon hover:text-glow transition">Game Features</a>
+        <a href="#gameplay" class="text-neon hover:text-glow transition">Gameplay</a>
+        <a href="#models" class="text-neon hover:text-glow transition">3D Models</a>
+        <a href="#download" class="text-neon hover:text-glow transition">Download</a>
+        <a href="#contact" class="text-neon hover:text-glow transition">Contact Us</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-4">
+        <div class="relative">
+          <input type="text" placeholder="Search" class="bg-transparent border border-neon/40 rounded-full px-4 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-neon">
+          <span class="absolute right-3 top-2.5 text-neon">⌕</span>
+        </div>
+      </div>
+      <button id="menuBtn" class="lg:hidden text-neon text-2xl">☰</button>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden px-6 pb-6">
+      <div class="glass-panel rounded-2xl p-4 space-y-3 text-neon font-semibold">
+        <a href="#home" class="block hover:text-glow">Home</a>
+        <a href="#about" class="block hover:text-glow">About</a>
+        <a href="#features" class="block hover:text-glow">Game Features</a>
+        <a href="#gameplay" class="block hover:text-glow">Gameplay</a>
+        <a href="#models" class="block hover:text-glow">3D Models</a>
+        <a href="#download" class="block hover:text-glow">Download</a>
+        <a href="#contact" class="block hover:text-glow">Contact Us</a>
+        <input type="text" placeholder="Search" class="w-full bg-transparent border border-neon/40 rounded-full px-4 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-neon">
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <section id="home" class="relative min-h-screen grid-lines overflow-hidden">
+      <div class="absolute inset-0">
+        <canvas id="heroCanvas" class="w-full h-full"></canvas>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-night/50 via-night/80 to-night"></div>
+      <div class="relative max-w-6xl mx-auto px-6 py-20 lg:py-28 hero-scan">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-neon uppercase tracking-[0.3em] text-xs">A NEW ERA OF GAMING</p>
+            <h1 class="text-4xl lg:text-6xl font-orbitron font-bold">Embark on Your Adventure in <span class="text-glow">Neon Nexus</span></h1>
+            <p class="text-lg text-slate-300">Dive into a futuristic 3D world with dynamic gameplay, interactive environments, and cinematic visuals powered by real-time animation.</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#download" class="px-6 py-3 rounded-full bg-neon text-night font-semibold shadow-neon hover:bg-glow transition">Play Now</a>
+              <a href="#models" class="px-6 py-3 rounded-full border border-pulse text-pulse font-semibold hover:text-glow hover:border-glow transition">Explore 3D World</a>
+            </div>
+            <div class="flex items-center gap-6 text-sm text-slate-300">
+              <div>
+                <p class="text-neon font-semibold">3D Interactive Preview</p>
+                <p>Hover the orb to power up the world.</p>
+              </div>
+              <div id="interactiveOrb" class="w-16 h-16 rounded-full bg-gradient-to-br from-neon to-pulse shadow-neon animate-float"></div>
+            </div>
+          </div>
+          <div class="glass-panel rounded-3xl p-6 neon-border">
+            <h2 class="text-2xl font-orbitron text-neon">Live Mission Briefing</h2>
+            <p class="text-slate-300 mt-3">Real-time battles, co-op raids, and open-world exploration with adaptive AI enemies.</p>
+            <div class="mt-6 space-y-4">
+              <div class="flex items-center justify-between text-sm text-slate-200">
+                <span>Immersion</span>
+                <span>98%</span>
+              </div>
+              <div class="h-2 bg-slate-700 rounded-full">
+                <div class="h-2 bg-neon rounded-full w-[98%] shadow-neon"></div>
+              </div>
+              <div class="flex items-center justify-between text-sm text-slate-200">
+                <span>Co-op Sync</span>
+                <span>92%</span>
+              </div>
+              <div class="h-2 bg-slate-700 rounded-full">
+                <div class="h-2 bg-pulse rounded-full w-[92%] shadow-pulse"></div>
+              </div>
+            </div>
+            <button class="mt-6 w-full px-6 py-3 rounded-xl bg-glow text-night font-semibold hover:shadow-neon transition">Download Demo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-night">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-orbitron text-neon">Futuristic, Immersive, Game-Like</h2>
+          <p class="text-slate-300">Neon Nexus blends cinematic storytelling with real-time 3D graphics. Every interaction is designed to feel like a high-end game interface with smooth transitions and responsive motion.</p>
+          <div class="flex items-center gap-4 text-sm text-slate-200">
+            <div class="glass-panel rounded-xl p-4 flex-1">
+              <p class="text-glow font-semibold">WebGL Optimized</p>
+              <p class="text-slate-400">Compressed assets and lazy loading ensure peak performance.</p>
+            </div>
+            <div class="glass-panel rounded-xl p-4 flex-1">
+              <p class="text-glow font-semibold">Mobile Ready</p>
+              <p class="text-slate-400">Touch controls and adaptive layouts for every device.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="glass-panel rounded-3xl p-6 animate-float">
+            <h3 class="text-xl font-orbitron text-neon">3D Command Core</h3>
+            <p class="text-slate-300 mt-2">Rotate, zoom, and explore holographic systems in real time.</p>
+            <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+              <div class="p-4 rounded-xl bg-night/60 border border-neon/20">
+                <p class="text-neon font-semibold">Level Depth</p>
+                <p class="text-slate-400">128 zones</p>
+              </div>
+              <div class="p-4 rounded-xl bg-night/60 border border-neon/20">
+                <p class="text-neon font-semibold">FPS Target</p>
+                <p class="text-slate-400">120 FPS</p>
+              </div>
+              <div class="p-4 rounded-xl bg-night/60 border border-neon/20">
+                <p class="text-neon font-semibold">Avatars</p>
+                <p class="text-slate-400">24 characters</p>
+              </div>
+              <div class="p-4 rounded-xl bg-night/60 border border-neon/20">
+                <p class="text-neon font-semibold">Vehicles</p>
+                <p class="text-slate-400">18 crafts</p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-pulse/40 blur-2xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-20 bg-[#070a1a]">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="text-neon uppercase tracking-[0.3em] text-xs">Game Features</p>
+          <h2 class="text-3xl font-orbitron">3D Powered Experiences</h2>
+          <p class="text-slate-300 mt-3">Hover over each module to reveal holographic descriptions.</p>
+        </div>
+        <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="group glass-panel rounded-2xl p-6 transition hover:shadow-neon">
+            <div class="w-14 h-14 rounded-2xl bg-neon/20 flex items-center justify-center text-neon text-2xl group-hover:animate-float">⚔️</div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Adaptive Combat</h3>
+            <p class="text-slate-300 mt-2">AI enemies learn your playstyle, shifting tactics in real time.</p>
+          </div>
+          <div class="group glass-panel rounded-2xl p-6 transition hover:shadow-neon">
+            <div class="w-14 h-14 rounded-2xl bg-neon/20 flex items-center justify-center text-neon text-2xl group-hover:animate-float">🛰️</div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Open-World Exploration</h3>
+            <p class="text-slate-300 mt-2">Discover floating cities, deep space ruins, and hidden storylines.</p>
+          </div>
+          <div class="group glass-panel rounded-2xl p-6 transition hover:shadow-neon">
+            <div class="w-14 h-14 rounded-2xl bg-neon/20 flex items-center justify-center text-neon text-2xl group-hover:animate-float">🤝</div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Multiplayer Raids</h3>
+            <p class="text-slate-300 mt-2">Coordinate with squads for cinematic boss encounters.</p>
+          </div>
+          <div class="group glass-panel rounded-2xl p-6 transition hover:shadow-neon">
+            <div class="w-14 h-14 rounded-2xl bg-neon/20 flex items-center justify-center text-neon text-2xl group-hover:animate-float">🧬</div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Character Mods</h3>
+            <p class="text-slate-300 mt-2">Upgrade biosuits with neon augmentations and power cores.</p>
+          </div>
+          <div class="group glass-panel rounded-2xl p-6 transition hover:shadow-neon">
+            <div class="w-14 h-14 rounded-2xl bg-neon/20 flex items-center justify-center text-neon text-2xl group-hover:animate-float">🌀</div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Quantum Travel</h3>
+            <p class="text-slate-300 mt-2">Shift through wormholes and unlock alternate dimensions.</p>
+          </div>
+          <div class="group glass-panel rounded-2xl p-6 transition hover:shadow-neon">
+            <div class="w-14 h-14 rounded-2xl bg-neon/20 flex items-center justify-center text-neon text-2xl group-hover:animate-float">🎮</div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Haptic Gameplay</h3>
+            <p class="text-slate-300 mt-2">Feel every boost, impact, and pulse with adaptive feedback.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gameplay" class="py-20 bg-night">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+        <div class="space-y-6">
+          <p class="text-neon uppercase tracking-[0.3em] text-xs">Gameplay</p>
+          <h2 class="text-3xl font-orbitron">Choose Your Mode</h2>
+          <p class="text-slate-300">Seamless transitions between solo missions, co-op raids, and competitive arena battles.</p>
+          <div class="space-y-4">
+            <div class="glass-panel rounded-2xl p-4">
+              <h3 class="text-lg font-orbitron text-neon">Single-Player Story</h3>
+              <p class="text-slate-300">Narrative-driven missions with cinematic cutscenes and branching endings.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-4">
+              <h3 class="text-lg font-orbitron text-neon">Multiplayer & Co-op</h3>
+              <p class="text-slate-300">Squad-based raids with synchronized abilities and shared loot drops.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-4">
+              <h3 class="text-lg font-orbitron text-neon">Exploration & Crafting</h3>
+              <p class="text-slate-300">Craft vehicles, upgrade weapons, and unlock hidden biomes.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <button class="px-5 py-3 rounded-full bg-neon text-night font-semibold hover:bg-glow transition">Watch Gameplay</button>
+            <button class="px-5 py-3 rounded-full border border-neon text-neon font-semibold hover:text-glow hover:border-glow transition">Learn More</button>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="glass-panel rounded-3xl p-6">
+            <h3 class="text-xl font-orbitron text-neon">Interactive Loadout</h3>
+            <p class="text-slate-300 mt-2">Hover to rotate weapons and unlock holographic stats.</p>
+            <div class="mt-6 grid grid-cols-2 gap-4">
+              <div class="group p-4 rounded-2xl border border-neon/30 hover:shadow-neon transition">
+                <p class="text-neon font-semibold">Pulse Rifle</p>
+                <p class="text-slate-400 text-sm">Damage +24%</p>
+              </div>
+              <div class="group p-4 rounded-2xl border border-neon/30 hover:shadow-neon transition">
+                <p class="text-neon font-semibold">Arc Blade</p>
+                <p class="text-slate-400 text-sm">Speed +18%</p>
+              </div>
+              <div class="group p-4 rounded-2xl border border-neon/30 hover:shadow-neon transition">
+                <p class="text-neon font-semibold">Nova Bike</p>
+                <p class="text-slate-400 text-sm">Boost +32%</p>
+              </div>
+              <div class="group p-4 rounded-2xl border border-neon/30 hover:shadow-neon transition">
+                <p class="text-neon font-semibold">Sky Sentinel</p>
+                <p class="text-slate-400 text-sm">Shield +20%</p>
+              </div>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="relative rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80" alt="Gameplay arena" class="w-full h-40 object-cover" loading="lazy">
+              <button class="absolute inset-0 flex items-center justify-center text-glow text-3xl">▶</button>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80" alt="Gameplay character" class="w-full h-40 object-cover" loading="lazy">
+              <button class="absolute inset-0 flex items-center justify-center text-glow text-3xl">▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="models" class="py-20 bg-[#070a1a]">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="text-neon uppercase tracking-[0.3em] text-xs">Interactive 3D Models</p>
+          <h2 class="text-3xl font-orbitron">Rotate, Zoom, Explore</h2>
+          <p class="text-slate-300 mt-3">Powered by WebGL. Tap or drag to inspect each hologram.</p>
+        </div>
+        <div class="mt-12 grid lg:grid-cols-3 gap-6">
+          <div class="model-card glass-panel rounded-2xl p-6 relative overflow-hidden">
+            <div class="h-40 rounded-xl bg-night/60 flex items-center justify-center">
+              <canvas class="modelCanvas w-full h-full" data-color="#35f0ff"></canvas>
+            </div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Astra Vanguard</h3>
+            <p class="text-slate-300">Elite guardian with adaptive shielding and stealth boosters.</p>
+            <div class="model-overlay absolute inset-0 bg-night/80 opacity-0 transition transform translateY(10%) flex items-center justify-center text-glow font-semibold">Click to animate</div>
+          </div>
+          <div class="model-card glass-panel rounded-2xl p-6 relative overflow-hidden">
+            <div class="h-40 rounded-xl bg-night/60 flex items-center justify-center">
+              <canvas class="modelCanvas w-full h-full" data-color="#8a5cff"></canvas>
+            </div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Photon Speeder</h3>
+            <p class="text-slate-300">High-speed vehicle built for quantum slipstream racing.</p>
+            <div class="model-overlay absolute inset-0 bg-night/80 opacity-0 transition transform translateY(10%) flex items-center justify-center text-glow font-semibold">Click to animate</div>
+          </div>
+          <div class="model-card glass-panel rounded-2xl p-6 relative overflow-hidden">
+            <div class="h-40 rounded-xl bg-night/60 flex items-center justify-center">
+              <canvas class="modelCanvas w-full h-full" data-color="#f8ff3a"></canvas>
+            </div>
+            <h3 class="mt-4 text-xl font-orbitron text-neon">Arc Core</h3>
+            <p class="text-slate-300">Energy reactor powering the floating cities above Nexus.</p>
+            <div class="model-overlay absolute inset-0 bg-night/80 opacity-0 transition transform translateY(10%) flex items-center justify-center text-glow font-semibold">Click to animate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="py-20 bg-night">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <p class="text-neon uppercase tracking-[0.3em] text-xs">Download</p>
+          <h2 class="text-3xl font-orbitron">Launch Across All Platforms</h2>
+          <p class="text-slate-300">Select your platform and deploy the Neon Nexus experience instantly.</p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <button class="glass-panel rounded-2xl p-4 text-left hover:shadow-neon transition">
+              <p class="text-neon font-semibold">PC</p>
+              <p class="text-slate-400 text-sm">Windows & Mac</p>
+            </button>
+            <button class="glass-panel rounded-2xl p-4 text-left hover:shadow-neon transition">
+              <p class="text-neon font-semibold">PlayStation</p>
+              <p class="text-slate-400 text-sm">PS5 & PS4</p>
+            </button>
+            <button class="glass-panel rounded-2xl p-4 text-left hover:shadow-neon transition">
+              <p class="text-neon font-semibold">Xbox</p>
+              <p class="text-slate-400 text-sm">Series X|S</p>
+            </button>
+            <button class="glass-panel rounded-2xl p-4 text-left hover:shadow-neon transition">
+              <p class="text-neon font-semibold">Mobile</p>
+              <p class="text-slate-400 text-sm">iOS & Android</p>
+            </button>
+          </div>
+          <div class="glass-panel rounded-2xl p-5">
+            <h3 class="text-lg font-orbitron text-neon">System Requirements</h3>
+            <ul class="text-slate-300 text-sm mt-2 space-y-1">
+              <li>CPU: Intel i7 / Ryzen 7</li>
+              <li>GPU: RTX 3060 / RX 6700</li>
+              <li>RAM: 16GB</li>
+              <li>Storage: 80GB SSD</li>
             </ul>
-        </nav>
-    </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
+        <div class="glass-panel rounded-3xl p-8 space-y-6">
+          <h3 class="text-2xl font-orbitron text-neon">Pre-Order Limited Edition</h3>
+          <p class="text-slate-300">Unlock exclusive skins, neon weapon packs, and a digital art book.</p>
+          <div class="space-y-3">
+            <button class="w-full px-6 py-3 rounded-xl bg-glow text-night font-semibold hover:shadow-neon transition">Pre-Order Now</button>
+            <button class="w-full px-6 py-3 rounded-xl border border-neon text-neon font-semibold hover:text-glow hover:border-glow transition">Add to Wishlist</button>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
+          <div class="flex items-center justify-between text-sm text-slate-300">
+            <span>Release Date</span>
+            <span class="text-neon font-semibold">11.11.2025</span>
           </div>
         </div>
       </div>
-    </div>
-</div>
+    </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
+    <section id="contact" class="py-20 bg-[#070a1a]">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10">
         <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+          <h2 class="text-3xl font-orbitron text-neon">Connect with the Command Center</h2>
+          <p class="text-slate-300 mt-3">Send us a transmission and our squad will respond.</p>
+          <div class="mt-6 space-y-4 text-slate-300">
+            <p>Email: contact@neonnexus.game</p>
+            <p>Location: Neo District 7, Arcadia City</p>
           </div>
         </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
+        <form class="glass-panel rounded-3xl p-6 space-y-4">
+          <input type="text" placeholder="Name" class="w-full bg-transparent border border-neon/30 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-neon">
+          <input type="email" placeholder="Email" class="w-full bg-transparent border border-neon/30 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-neon">
+          <textarea rows="4" placeholder="Message" class="w-full bg-transparent border border-neon/30 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-neon"></textarea>
+          <button type="submit" class="w-full px-6 py-3 rounded-xl bg-neon text-night font-semibold hover:bg-glow transition">Send Message</button>
         </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-night border-t border-neon/20">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-6 text-sm text-slate-300">
+      <div>
+        <h3 class="text-neon font-orbitron text-lg">Neon Nexus</h3>
+        <p class="mt-3">A futuristic game experience with immersive 3D visuals and dynamic interactions.</p>
+      </div>
+      <div>
+        <h4 class="text-neon font-semibold">Quick Links</h4>
+        <ul class="mt-3 space-y-2">
+          <li><a href="#about" class="hover:text-glow">About Us</a></li>
+          <li><a href="#contact" class="hover:text-glow">Contact</a></li>
+          <li><a href="#" class="hover:text-glow">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-glow">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-glow">Sitemap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-neon font-semibold">Social</h4>
+        <div class="mt-3 flex gap-3 text-xl">
+          <a href="https://facebook.com" class="text-neon hover:text-glow"></a>
+          <a href="https://instagram.com" class="text-neon hover:text-glow"></a>
+          <a href="https://twitter.com" class="text-neon hover:text-glow"></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-neon font-semibold">Newsletter</h4>
+        <p class="mt-3">Get mission updates and beta access drops.</p>
+        <div class="mt-3 flex">
+          <input type="email" placeholder="Email" class="w-full bg-transparent border border-neon/30 rounded-l-xl px-3 py-2 text-slate-100 focus:outline-none">
+          <button class="px-4 py-2 bg-glow text-night rounded-r-xl">Join</button>
+        </div>
+      </div>
     </div>
-    </div>
+    <div class="text-center text-slate-500 text-xs pb-6">© 2025 Neon Nexus. All rights reserved.</div>
+  </footer>
 
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
+    const heroCanvas = document.getElementById('heroCanvas');
+    const heroScene = new THREE.Scene();
+    const heroCamera = new THREE.PerspectiveCamera(65, heroCanvas.clientWidth / heroCanvas.clientHeight, 0.1, 1000);
+    const heroRenderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true, antialias: true });
+    heroRenderer.setPixelRatio(window.devicePixelRatio);
+    heroRenderer.setSize(heroCanvas.clientWidth, heroCanvas.clientHeight);
 
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
+    heroCamera.position.z = 5;
 
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
+    const heroGeometry = new THREE.TorusKnotGeometry(1.2, 0.35, 120, 16);
+    const heroMaterial = new THREE.MeshStandardMaterial({ color: 0x35f0ff, emissive: 0x1a7cff, metalness: 0.6, roughness: 0.2 });
+    const heroMesh = new THREE.Mesh(heroGeometry, heroMaterial);
+    heroScene.add(heroMesh);
 
-                  </div>
+    const heroLight = new THREE.PointLight(0x8a5cff, 1.2, 100);
+    heroLight.position.set(5, 5, 5);
+    heroScene.add(heroLight);
 
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
+    const heroAmbient = new THREE.AmbientLight(0x1b1f3a, 1.2);
+    heroScene.add(heroAmbient);
 
-              </div>
-          </div>
-      </div>
+    const resizeHero = () => {
+      heroRenderer.setSize(heroCanvas.clientWidth, heroCanvas.clientHeight);
+      heroCamera.aspect = heroCanvas.clientWidth / heroCanvas.clientHeight;
+      heroCamera.updateProjectionMatrix();
+    };
+    window.addEventListener('resize', resizeHero);
 
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
+    const animateHero = () => {
+      heroMesh.rotation.x += 0.003;
+      heroMesh.rotation.y += 0.004;
+      heroRenderer.render(heroScene, heroCamera);
+      requestAnimationFrame(animateHero);
+    };
+    animateHero();
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+    const modelCanvases = document.querySelectorAll('.modelCanvas');
+    modelCanvases.forEach((canvas) => {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      camera.position.z = 3;
+
+      const color = canvas.dataset.color || '#35f0ff';
+      const geometry = new THREE.IcosahedronGeometry(1.1, 1);
+      const material = new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.4, metalness: 0.5, roughness: 0.3 });
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      const light = new THREE.PointLight(0xffffff, 0.9, 100);
+      light.position.set(4, 4, 4);
+      scene.add(light);
+      scene.add(new THREE.AmbientLight(0x1a1a2e, 1));
+
+      const animate = () => {
+        mesh.rotation.x += 0.004;
+        mesh.rotation.y += 0.005;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      };
+      animate();
+
+      const resize = () => {
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+      };
+      window.addEventListener('resize', resize);
+
+      canvas.addEventListener('pointermove', (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        mesh.rotation.y = x * 0.8;
+        mesh.rotation.x = y * 0.8;
+      });
+    });
+
+    const orb = document.getElementById('interactiveOrb');
+    orb.addEventListener('mouseenter', () => {
+      heroMesh.material.emissive.setHex(0xf8ff3a);
+    });
+    orb.addEventListener('mouseleave', () => {
+      heroMesh.material.emissive.setHex(0x1a7cff);
+    });
+  </script>
 </body>
 </html>
