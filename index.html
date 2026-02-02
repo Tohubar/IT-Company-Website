@@ -1,489 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeoTorque Cars | 3D Car Shop Experience</title>
+  <meta name="description" content="Explore a futuristic 3D car shop with interactive models, dynamic filters, and immersive automotive experiences." />
+  <meta name="keywords" content="car shop, 3D car models, interactive car showroom, electric cars, car accessories" />
+  <meta property="og:title" content="NeoTorque Cars" />
+  <meta property="og:description" content="Drive your dream car with a 3D immersive automotive experience." />
+  <meta property="og:type" content="website" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: "#05070e",
+            deepblue: "#0b1020",
+            electric: "#33c3ff",
+            neon: "#ff6a00",
+            chrome: "#c7c9d3",
+            steel: "#f2f4f8",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .glow-border {
+      box-shadow: 0 0 25px rgba(51, 195, 255, 0.35);
+    }
+    .glass {
+      background: rgba(7, 12, 24, 0.68);
+      backdrop-filter: blur(18px);
+    }
+    .car-silhouette {
+      background: linear-gradient(135deg, rgba(199, 201, 211, 0.9), rgba(50, 60, 80, 0.2));
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 256'%3E%3Cpath fill='white' d='M64 176h24l32-64h208l32 64h88v32h-40a40 40 0 0 1-80 0H200a40 40 0 0 1-80 0H64zM160 192a24 24 0 1 0 0 48 24 24 0 0 0 0-48zm208 0a24 24 0 1 0 0 48 24 24 0 0 0 0-48z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    .hero-grid {
+      background-image: radial-gradient(circle at top, rgba(51, 195, 255, 0.2), transparent 45%),
+        linear-gradient(135deg, rgba(255, 106, 0, 0.15), transparent 40%);
+    }
+    .spin-slow {
+      animation: spin 18s linear infinite;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
+<body class="bg-midnight text-white font-sans">
+  <header class="fixed top-0 inset-x-0 z-50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-electric/10 border border-electric/40 flex items-center justify-center">
+          <span class="text-electric text-xl">⚙️</span>
         </div>
         <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
+          <p class="text-lg font-semibold tracking-wide">NeoTorque</p>
+          <p class="text-xs text-chrome/70 uppercase">3D Car Shop</p>
         </div>
+      </div>
+      <nav class="hidden lg:flex items-center gap-6 text-sm uppercase tracking-widest">
+        <a class="hover:text-electric transition" href="#home">Home</a>
+        <a class="hover:text-electric transition" href="#cars">Cars for Sale</a>
+        <a class="hover:text-electric transition" href="#models">Car Models</a>
+        <a class="hover:text-electric transition" href="#parts">Car Parts</a>
+        <a class="hover:text-electric transition" href="#contact">Contact</a>
+        <a class="hover:text-electric transition" href="#about">About</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-3">
+        <div class="relative">
+          <input
+            class="bg-deepblue/70 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-electric"
+            placeholder="Search cars, brands, features"
+            type="text"
+            aria-label="Search"
+          />
+          <span class="absolute left-3 top-2.5 text-electric">🔍</span>
+        </div>
+        <button class="bg-neon text-black font-semibold px-4 py-2 rounded-full hover:brightness-110 transition">Book Test Drive</button>
+      </div>
+      <button id="menuButton" class="lg:hidden text-2xl">☰</button>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden px-6 pb-4 text-sm uppercase tracking-widest">
+      <div class="flex flex-col gap-3">
+        <a class="hover:text-electric transition" href="#home">Home</a>
+        <a class="hover:text-electric transition" href="#cars">Cars for Sale</a>
+        <a class="hover:text-electric transition" href="#models">Car Models</a>
+        <a class="hover:text-electric transition" href="#parts">Car Parts</a>
+        <a class="hover:text-electric transition" href="#contact">Contact</a>
+        <a class="hover:text-electric transition" href="#about">About</a>
+        <input
+          class="bg-deepblue/70 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-electric"
+          placeholder="Search cars, brands, features"
+          type="text"
+          aria-label="Search"
+        />
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24" id="home">
+    <section class="hero-grid min-h-screen flex items-center">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <p class="text-electric uppercase tracking-[0.4em] text-xs">Immersive 3D showroom</p>
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight">Drive Your Dream Car in a Futuristic 3D Space.</h1>
+          <p class="text-lg text-chrome/80">Explore interactive 3D models, customize trims, and book a test drive with a single click. Experience the next generation of car shopping.</p>
+          <div class="flex flex-wrap gap-4">
+            <button class="bg-neon text-black font-semibold px-6 py-3 rounded-full hover:brightness-110 transition">Shop Now</button>
+            <button class="border border-electric text-electric px-6 py-3 rounded-full hover:bg-electric/10 transition">Browse Cars</button>
+          </div>
+          <div class="flex items-center gap-6 text-sm text-chrome/70">
+            <div>
+              <p class="text-2xl font-semibold text-white">48</p>
+              <p>3D Models</p>
+            </div>
+            <div>
+              <p class="text-2xl font-semibold text-white">120+</p>
+              <p>Live Inventory</p>
+            </div>
+            <div>
+              <p class="text-2xl font-semibold text-white">24/7</p>
+              <p>Virtual Support</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-8 -right-6 w-32 h-32 rounded-full border border-electric/40 opacity-60 spin-slow"></div>
+          <div class="absolute bottom-6 left-4 w-20 h-20 rounded-full border border-neon/60 opacity-80 spin-slow"></div>
+          <div class="glow-border rounded-3xl border border-white/10 overflow-hidden bg-deepblue/70">
+            <canvas id="heroCanvas" class="w-full h-[420px]"></canvas>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-4">
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-3 text-center">
+              <p class="text-xs uppercase text-chrome/70">Velocity</p>
+              <p class="text-lg font-semibold">3.2s</p>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-3 text-center">
+              <p class="text-xs uppercase text-chrome/70">Range</p>
+              <p class="text-lg font-semibold">420 mi</p>
+            </div>
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-3 text-center">
+              <p class="text-xs uppercase text-chrome/70">Power</p>
+              <p class="text-lg font-semibold">780 hp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-steel text-deepblue">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <h2 class="text-2xl font-semibold">Featured 3D Lineup</h2>
+          <div class="flex items-center gap-3">
+            <button id="prevSlide" class="px-4 py-2 border border-deepblue/30 rounded-full hover:bg-deepblue hover:text-white transition">Prev</button>
+            <button id="nextSlide" class="px-4 py-2 border border-deepblue/30 rounded-full hover:bg-deepblue hover:text-white transition">Next</button>
+          </div>
+        </div>
+        <div id="carSlider" class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="h-32 car-silhouette"></div>
+            <h3 class="mt-4 text-xl font-semibold">Apex ZR Concept</h3>
+            <p class="text-sm text-slate-600">Adaptive aero kit · 3D cockpit</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="h-32 car-silhouette"></div>
+            <h3 class="mt-4 text-xl font-semibold">Pulse EV Sprint</h3>
+            <p class="text-sm text-slate-600">Dual-motor AWD · 500 mi range</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="h-32 car-silhouette"></div>
+            <h3 class="mt-4 text-xl font-semibold">Spectra GT-X</h3>
+            <p class="text-sm text-slate-600">Carbon body · 840 hp</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="models" class="py-20 bg-midnight">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <p class="text-electric uppercase tracking-[0.4em] text-xs">Car Models</p>
+            <h2 class="text-3xl md:text-4xl font-semibold">Interactive 3D Car Models</h2>
+            <p class="text-chrome/70 mt-3 max-w-2xl">Rotate and customize every model. Drag the rotation slider to preview materials and trims in real-time.</p>
+          </div>
+          <button class="border border-electric text-electric px-6 py-3 rounded-full hover:bg-electric/10 transition">View All Models</button>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-deepblue/80 border border-white/10 rounded-3xl p-6 space-y-4">
+            <div class="h-40 bg-gradient-to-br from-chrome/70 to-white/5 rounded-2xl flex items-center justify-center" data-model>
+              <div class="w-24 h-10 rounded-full bg-black/60 border border-white/20"></div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Nova XR-1</h3>
+              <p class="text-sm text-chrome/70">Torque vectoring · Auto pilot</p>
+            </div>
+            <div>
+              <label class="text-xs uppercase text-chrome/70">Rotate Model</label>
+              <input class="w-full accent-electric" type="range" min="0" max="360" value="180" data-rotate />
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-electric font-semibold">$142,000</span>
+              <button class="bg-neon text-black px-4 py-2 rounded-full">Book Test Drive</button>
+            </div>
+          </div>
+          <div class="bg-deepblue/80 border border-white/10 rounded-3xl p-6 space-y-4">
+            <div class="h-40 bg-gradient-to-br from-chrome/70 to-white/5 rounded-2xl flex items-center justify-center" data-model>
+              <div class="w-24 h-10 rounded-full bg-black/60 border border-white/20"></div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Velocity R9</h3>
+              <p class="text-sm text-chrome/70">Active suspension · Track mode</p>
+            </div>
+            <div>
+              <label class="text-xs uppercase text-chrome/70">Rotate Model</label>
+              <input class="w-full accent-electric" type="range" min="0" max="360" value="90" data-rotate />
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-electric font-semibold">$128,400</span>
+              <button class="bg-neon text-black px-4 py-2 rounded-full">Book Test Drive</button>
+            </div>
+          </div>
+          <div class="bg-deepblue/80 border border-white/10 rounded-3xl p-6 space-y-4">
+            <div class="h-40 bg-gradient-to-br from-chrome/70 to-white/5 rounded-2xl flex items-center justify-center" data-model>
+              <div class="w-24 h-10 rounded-full bg-black/60 border border-white/20"></div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Ion Drift S</h3>
+              <p class="text-sm text-chrome/70">Holographic HUD · Eco boost</p>
+            </div>
+            <div>
+              <label class="text-xs uppercase text-chrome/70">Rotate Model</label>
+              <input class="w-full accent-electric" type="range" min="0" max="360" value="270" data-rotate />
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-electric font-semibold">$119,900</span>
+              <button class="bg-neon text-black px-4 py-2 rounded-full">Book Test Drive</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cars" class="py-20 bg-steel text-deepblue">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <p class="text-neon uppercase tracking-[0.4em] text-xs">Cars for Sale</p>
+            <h2 class="text-3xl md:text-4xl font-semibold">Live Inventory with Dynamic Filters</h2>
+            <p class="text-slate-600 mt-3 max-w-2xl">Filter by brand, price, and year. Hover to reveal performance specs instantly.</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <select id="filterBrand" class="bg-white border border-deepblue/20 rounded-full px-4 py-2">
+              <option value="all">All Brands</option>
+              <option value="aether">Aether</option>
+              <option value="nova">Nova</option>
+              <option value="spectra">Spectra</option>
+            </select>
+            <select id="filterPrice" class="bg-white border border-deepblue/20 rounded-full px-4 py-2">
+              <option value="all">Any Price</option>
+              <option value="premium">$100k+</option>
+              <option value="elite">$150k+</option>
+            </select>
+            <select id="filterYear" class="bg-white border border-deepblue/20 rounded-full px-4 py-2">
+              <option value="all">Any Year</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="carGrid" class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="car-card bg-white rounded-3xl p-6 shadow-xl" data-brand="aether" data-price="elite" data-year="2025">
+            <div class="relative">
+              <div class="h-32 car-silhouette"></div>
+              <div class="absolute top-4 right-4 bg-deepblue text-white text-xs px-3 py-1 rounded-full">2025</div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Aether LX Hyper</h3>
+            <p class="text-sm text-slate-600">$168,000 · 1,200 mi</p>
+            <div class="car-specs hidden mt-4 text-sm text-slate-600">
+              <p>Engine: Tri-motor EV</p>
+              <p>0-60: 2.6s</p>
+              <p>Range: 480 mi</p>
+            </div>
+            <button class="mt-4 bg-neon text-black px-4 py-2 rounded-full">Buy Now</button>
+          </div>
+          <div class="car-card bg-white rounded-3xl p-6 shadow-xl" data-brand="nova" data-price="premium" data-year="2024">
+            <div class="relative">
+              <div class="h-32 car-silhouette"></div>
+              <div class="absolute top-4 right-4 bg-deepblue text-white text-xs px-3 py-1 rounded-full">2024</div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Nova Driftline</h3>
+            <p class="text-sm text-slate-600">$110,500 · 3,200 mi</p>
+            <div class="car-specs hidden mt-4 text-sm text-slate-600">
+              <p>Engine: Twin turbo hybrid</p>
+              <p>0-60: 3.8s</p>
+              <p>Range: 390 mi</p>
+            </div>
+            <button class="mt-4 bg-neon text-black px-4 py-2 rounded-full">Buy Now</button>
+          </div>
+          <div class="car-card bg-white rounded-3xl p-6 shadow-xl" data-brand="spectra" data-price="premium" data-year="2025">
+            <div class="relative">
+              <div class="h-32 car-silhouette"></div>
+              <div class="absolute top-4 right-4 bg-deepblue text-white text-xs px-3 py-1 rounded-full">2025</div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Spectra GT-X</h3>
+            <p class="text-sm text-slate-600">$135,900 · 2,100 mi</p>
+            <div class="car-specs hidden mt-4 text-sm text-slate-600">
+              <p>Engine: Performance EV</p>
+              <p>0-60: 3.1s</p>
+              <p>Range: 420 mi</p>
+            </div>
+            <button class="mt-4 bg-neon text-black px-4 py-2 rounded-full">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="parts" class="py-20 bg-midnight">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <p class="text-electric uppercase tracking-[0.4em] text-xs">Car Parts & Accessories</p>
+            <h2 class="text-3xl md:text-4xl font-semibold">Upgrade with 3D Accessories</h2>
+            <p class="text-chrome/70 mt-3 max-w-2xl">Rotate neon wheels, audio systems, and carbon fiber kits in a smooth 3D environment.</p>
+          </div>
+          <button class="border border-electric text-electric px-6 py-3 rounded-full hover:bg-electric/10 transition">View All Accessories</button>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-deepblue/80 border border-white/10 rounded-3xl p-6">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-electric/30 to-white/5 flex items-center justify-center">
+              <div class="w-24 h-24 border-4 border-chrome/60 rounded-full"></div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Vortex Alloy Wheels</h3>
+            <p class="text-sm text-chrome/70">19-inch chrome finish</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-electric font-semibold">$2,400</span>
+              <button class="bg-neon text-black px-4 py-2 rounded-full">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-deepblue/80 border border-white/10 rounded-3xl p-6">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-neon/40 to-white/5 flex items-center justify-center">
+              <div class="w-24 h-16 bg-black/70 rounded-xl border border-white/20"></div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">HoloSound 360</h3>
+            <p class="text-sm text-chrome/70">Immersive audio system</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-electric font-semibold">$1,200</span>
+              <button class="bg-neon text-black px-4 py-2 rounded-full">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-deepblue/80 border border-white/10 rounded-3xl p-6">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-chrome/60 to-white/5 flex items-center justify-center">
+              <div class="w-24 h-16 bg-black/70 rounded-full border border-white/20"></div>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Carbon Aero Kit</h3>
+            <p class="text-sm text-chrome/70">Full body aerodynamic kit</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-electric font-semibold">$3,800</span>
+              <button class="bg-neon text-black px-4 py-2 rounded-full">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-steel text-deepblue">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
         <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
+          <p class="text-neon uppercase tracking-[0.4em] text-xs">About NeoTorque</p>
+          <h2 class="text-3xl md:text-4xl font-semibold">A cinematic 3D showroom built for enthusiasts.</h2>
+          <p class="text-slate-600 mt-4">We blend real-time 3D visualization, performance data, and futuristic UX to deliver a fully immersive car buying journey. Our team crafts interactive models optimized for speed, mobile performance, and SEO.</p>
+          <ul class="mt-6 space-y-2 text-slate-600">
+            <li>• Ultra-light 3D assets with lazy loading</li>
+            <li>• Responsive dashboards for desktop, tablet, and mobile</li>
+            <li>• Personalized recommendations and virtual concierge</li>
+          </ul>
         </div>
+        <div class="bg-white rounded-3xl shadow-xl p-8">
+          <h3 class="text-xl font-semibold">Why drivers choose us</h3>
+          <div class="mt-6 space-y-4 text-sm text-slate-600">
+            <div class="flex items-center gap-3">
+              <span class="text-electric">✔</span>
+              <p>360° interactive car models with touch support.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-electric">✔</span>
+              <p>AI-assisted filters for instant matching.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-electric">✔</span>
+              <p>Secure checkout with transparent pricing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-midnight">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10">
         <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+          <p class="text-electric uppercase tracking-[0.4em] text-xs">Contact Us</p>
+          <h2 class="text-3xl md:text-4xl font-semibold">Let’s find your next ride.</h2>
+          <p class="text-chrome/70 mt-4">Reach our team 24/7 for booking, customization, and delivery updates.</p>
+          <div class="mt-6 space-y-4 text-chrome/70">
+            <p>📍 502 Hyperlane Blvd, Neo City</p>
+            <p>📞 +1 (555) 012-4882</p>
+            <p>✉️ hello@neotorque.com</p>
+            <p>🕒 Mon - Sat: 9AM - 8PM</p>
+          </div>
+          <div class="mt-6 flex gap-4 text-2xl">
+            <a class="hover:text-electric" href="https://instagram.com" aria-label="Instagram">📸</a>
+            <a class="hover:text-electric" href="https://facebook.com" aria-label="Facebook">📘</a>
+            <a class="hover:text-electric" href="https://twitter.com" aria-label="Twitter">🐦</a>
           </div>
         </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+        <div class="bg-deepblue/80 border border-white/10 rounded-3xl p-8">
+          <form class="space-y-4">
+            <div>
+              <label class="block text-sm mb-2">Name</label>
+              <input class="w-full rounded-xl bg-midnight border border-white/10 px-4 py-3" type="text" placeholder="Your name" required />
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+            <div>
+              <label class="block text-sm mb-2">Email</label>
+              <input class="w-full rounded-xl bg-midnight border border-white/10 px-4 py-3" type="email" placeholder="you@email.com" required />
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+            <div>
+              <label class="block text-sm mb-2">Subject</label>
+              <input class="w-full rounded-xl bg-midnight border border-white/10 px-4 py-3" type="text" placeholder="Booking request" required />
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+            <div>
+              <label class="block text-sm mb-2">Message</label>
+              <textarea class="w-full rounded-xl bg-midnight border border-white/10 px-4 py-3" rows="4" placeholder="Tell us about your dream car" required></textarea>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
+            <button class="w-full bg-neon text-black font-semibold py-3 rounded-full">Send Message</button>
+          </form>
+          <div class="mt-6 h-40 rounded-2xl overflow-hidden">
+            <iframe
+              title="NeoTorque Location"
+              class="w-full h-full"
+              loading="lazy"
+              src="https://maps.google.com/maps?q=Los%20Angeles%20CA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            ></iframe>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
+  </main>
 
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
+  <footer class="bg-deepblue text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold">NeoTorque</h3>
+        <p class="text-sm text-chrome/70 mt-3">A futuristic car shopping experience powered by real-time 3D visuals and immersive UX.</p>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase text-chrome/70">Company</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-electric" href="#about">About Us</a></li>
+          <li><a class="hover:text-electric" href="#contact">Contact</a></li>
+          <li><a class="hover:text-electric" href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase text-chrome/70">Support</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-electric" href="#">Privacy Policy</a></li>
+          <li><a class="hover:text-electric" href="#">Terms of Service</a></li>
+          <li><a class="hover:text-electric" href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm uppercase text-chrome/70">Social</h4>
+        <div class="mt-3 flex gap-3 text-xl">
+          <a class="hover:text-electric" href="https://instagram.com" aria-label="Instagram">📸</a>
+          <a class="hover:text-electric" href="https://facebook.com" aria-label="Facebook">📘</a>
+          <a class="hover:text-electric" href="https://twitter.com" aria-label="Twitter">🐦</a>
         </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
+      </div>
     </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
+  </footer>
 
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDealer",
+      "name": "NeoTorque Cars",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "502 Hyperlane Blvd",
+        "addressLocality": "Neo City",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-555-012-4882",
+      "url": "https://neotorque.example.com"
+    }
+  </script>
 
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js"></script>
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
+    const heroCanvas = document.getElementById("heroCanvas");
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, heroCanvas.clientWidth / 420, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true, antialias: true });
 
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
+    renderer.setPixelRatio(window.devicePixelRatio || 1);
+    renderer.setSize(heroCanvas.clientWidth, 420);
 
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
+    const ambient = new THREE.AmbientLight(0xffffff, 0.7);
+    scene.add(ambient);
 
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
+    const pointLight = new THREE.PointLight(0x33c3ff, 1.2, 100);
+    pointLight.position.set(5, 8, 6);
+    scene.add(pointLight);
 
-                  </div>
+    const carBody = new THREE.Mesh(
+      new THREE.BoxGeometry(4, 1.2, 2),
+      new THREE.MeshStandardMaterial({ color: 0x222738, metalness: 0.6, roughness: 0.2 })
+    );
+    const roof = new THREE.Mesh(
+      new THREE.BoxGeometry(2.4, 0.7, 1.6),
+      new THREE.MeshStandardMaterial({ color: 0x3b4154, metalness: 0.7, roughness: 0.25 })
+    );
+    roof.position.y = 0.9;
 
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
+    const wheelGeometry = new THREE.TorusGeometry(0.45, 0.18, 16, 60);
+    const wheelMaterial = new THREE.MeshStandardMaterial({ color: 0x0b0f16, metalness: 0.3, roughness: 0.6 });
 
-              </div>
-          </div>
-      </div>
+    const wheelPositions = [
+      [-1.4, -0.6, 1.1],
+      [1.4, -0.6, 1.1],
+      [-1.4, -0.6, -1.1],
+      [1.4, -0.6, -1.1],
+    ];
 
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
+    const wheels = wheelPositions.map(([x, y, z]) => {
+      const wheel = new THREE.Mesh(wheelGeometry, wheelMaterial);
+      wheel.position.set(x, y, z);
+      wheel.rotation.y = Math.PI / 2;
+      scene.add(wheel);
+      return wheel;
+    });
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+    scene.add(carBody, roof);
+    camera.position.set(0, 2.2, 7);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      carBody.rotation.y += 0.004;
+      roof.rotation.y += 0.004;
+      wheels.forEach((wheel) => {
+        wheel.rotation.x += 0.03;
+      });
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+      renderer.setSize(heroCanvas.clientWidth, 420);
+      camera.aspect = heroCanvas.clientWidth / 420;
+      camera.updateProjectionMatrix();
+    });
+
+    const sliders = document.querySelectorAll("[data-rotate]");
+    sliders.forEach((slider) => {
+      slider.addEventListener("input", (event) => {
+        const container = event.target.closest(".bg-deepblue/80").querySelector("[data-model]");
+        container.style.transform = `rotateY(${event.target.value}deg)`;
+      });
+    });
+
+    const carCards = document.querySelectorAll(".car-card");
+    carCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        card.querySelector(".car-specs").classList.remove("hidden");
+      });
+      card.addEventListener("mouseleave", () => {
+        card.querySelector(".car-specs").classList.add("hidden");
+      });
+    });
+
+    const filters = {
+      brand: document.getElementById("filterBrand"),
+      price: document.getElementById("filterPrice"),
+      year: document.getElementById("filterYear"),
+    };
+
+    Object.values(filters).forEach((filter) => {
+      filter.addEventListener("change", () => {
+        carCards.forEach((card) => {
+          const matchesBrand = filters.brand.value === "all" || card.dataset.brand === filters.brand.value;
+          const matchesPrice = filters.price.value === "all" || card.dataset.price === filters.price.value;
+          const matchesYear = filters.year.value === "all" || card.dataset.year === filters.year.value;
+          card.classList.toggle("hidden", !(matchesBrand && matchesPrice && matchesYear));
+        });
+      });
+    });
+
+    const sliderItems = [
+      {
+        title: "Apex ZR Concept",
+        description: "Adaptive aero kit · 3D cockpit",
+      },
+      {
+        title: "Pulse EV Sprint",
+        description: "Dual-motor AWD · 500 mi range",
+      },
+      {
+        title: "Spectra GT-X",
+        description: "Carbon body · 840 hp",
+      },
+      {
+        title: "Orbit M1",
+        description: "Ultra-light chassis · 3D HUD",
+      },
+      {
+        title: "Vanta XR",
+        description: "Neon underglow · Drift mode",
+      },
+    ];
+
+    let currentSlide = 0;
+    const sliderContainer = document.getElementById("carSlider");
+
+    function renderSlider() {
+      const visible = sliderItems.slice(currentSlide, currentSlide + 3);
+      sliderContainer.innerHTML = "";
+      visible.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "bg-white rounded-2xl shadow-lg p-6";
+        card.innerHTML = `
+          <div class="h-32 car-silhouette"></div>
+          <h3 class="mt-4 text-xl font-semibold">${item.title}</h3>
+          <p class="text-sm text-slate-600">${item.description}</p>
+        `;
+        sliderContainer.appendChild(card);
+      });
+    }
+
+    document.getElementById("prevSlide").addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + sliderItems.length) % sliderItems.length;
+      renderSlider();
+    });
+
+    document.getElementById("nextSlide").addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % sliderItems.length;
+      renderSlider();
+    });
+
+    renderSlider();
+  </script>
 </body>
 </html>
