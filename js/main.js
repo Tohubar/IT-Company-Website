@@ -1,77 +1,125 @@
-$(document).ready(function(){
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
+const header = document.querySelector('.site-header');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+}
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
+  },
+  { threshold: 0.2 }
+);
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
+const steps = document.querySelectorAll('.rituals-steps .step');
+const stepDetail = document.querySelector('.step-detail');
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
+steps.forEach((step) => {
+  step.addEventListener('click', () => {
+    steps.forEach((item) => item.classList.remove('active'));
+    step.classList.add('active');
+    if (stepDetail) {
+      stepDetail.innerHTML = `<h4>${step.dataset.title}</h4><p>${step.dataset.detail}</p>`;
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
+  });
 });
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
+const deityCards = document.querySelectorAll('.deity-card');
+
+deityCards.forEach((card) => {
+  card.addEventListener('mousemove', (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * 6;
+    const rotateY = ((x - centerX) / centerX) * -6;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  });
 });
 
+const searchInput = document.getElementById('site-search');
+const searchableItems = document.querySelectorAll('[data-search]');
+
+if (searchInput) {
+  searchInput.addEventListener('input', (event) => {
+    const query = event.target.value.toLowerCase().trim();
+    searchableItems.forEach((item) => {
+      const terms = item.dataset.search || '';
+      const match = terms.toLowerCase().includes(query) || query === '';
+      item.style.display = match ? '' : 'none';
+    });
+  });
+}
+
+const upcomingList = document.getElementById('upcoming-list');
+const festivalCards = document.querySelectorAll('.festival-card');
+
+if (upcomingList && festivalCards.length) {
+  const festivalData = Array.from(festivalCards).map((card) => {
+    const dateValue = card.dataset.date;
+    return {
+      name: card.querySelector('h3')?.textContent || 'Festival',
+      date: dateValue ? new Date(dateValue) : null
+    };
+  });
+
+  const today = new Date();
+  const upcoming = festivalData
+    .filter((festival) => festival.date && festival.date >= today)
+    .sort((a, b) => a.date - b.date)
+    .slice(0, 3);
+
+  upcomingList.innerHTML = upcoming.length
+    ? upcoming
+        .map(
+          (festival) =>
+            `<li>${festival.name} • ${festival.date.toLocaleDateString(undefined, {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric'
+            })}</li>`
+        )
+        .join('')
+    : '<li>Stay tuned for upcoming festival dates.</li>';
+
+  const calendarCells = document.querySelectorAll('.calendar-grid .calendar-cell');
+  calendarCells.forEach((cell) => {
+    if (cell.textContent === today.getDate().toString()) {
+      cell.classList.add('highlight');
+    }
+  });
+}
+
+const navLinks = document.querySelectorAll('.site-nav a');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
 });
