@@ -1,489 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanatan Dharma | Spiritual Journey</title>
+  <meta name="description" content="Explore Sanatan Dharma with immersive 3D spiritual experiences, guided rituals, festivals, and sacred teachings.">
+  <meta name="keywords" content="Sanatan Dharma, Hinduism, Vedas, Upanishads, temples, rituals, festivals, deities">
+  <meta name="author" content="Sanatan Dharma Collective">
+  <meta property="og:title" content="Sanatan Dharma | Spiritual Journey">
+  <meta property="og:description" content="Begin your spiritual journey with sacred wisdom, interactive 3D visuals, and dynamic rituals.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/image.png">
+  <meta property="og:url" content="https://example.com">
+  <link rel="icon" href="./images/image.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saffron: '#F97316',
+            deepRed: '#7F1D1D',
+            sacredGold: '#FACC15',
+            beige: '#FFF7ED',
+            temple: '#0F172A'
+          },
+          boxShadow: {
+            glow: '0 0 25px rgba(250, 204, 21, 0.35)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .glass {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(12px);
+    }
+    .hero-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .gradient-border {
+      border: 1px solid rgba(250, 204, 21, 0.35);
+    }
+    .scroll-snap {
+      scroll-snap-type: y mandatory;
+    }
+    .scroll-section {
+      scroll-snap-align: start;
+    }
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .transform-style-preserve-3d {
+      transform-style: preserve-3d;
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
+<body class="bg-beige text-slate-900 scroll-smooth">
+  <div class="fixed top-0 inset-x-0 z-50">
+    <header class="glass border-b border-white/10">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 rounded-full bg-saffron/90 flex items-center justify-center text-white text-xl font-bold">ॐ</div>
+          <div>
+            <p class="text-lg font-semibold text-white">Sanatan Dharma</p>
+            <p class="text-xs text-slate-200">Timeless spiritual wisdom</p>
+          </div>
+        </div>
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-100">
+          <a href="#home" class="hover:text-sacredGold">Home</a>
+          <a href="#about" class="hover:text-sacredGold">About</a>
+          <a href="#deities" class="hover:text-sacredGold">Deities</a>
+          <a href="#rituals" class="hover:text-sacredGold">Rituals &amp; Pooja</a>
+          <a href="#festivals" class="hover:text-sacredGold">Festivals</a>
+          <a href="#temples" class="hover:text-sacredGold">Temples</a>
+          <a href="#scriptures" class="hover:text-sacredGold">Scriptures</a>
+          <a href="#contact" class="hover:text-sacredGold">Contact</a>
         </nav>
+        <div class="hidden lg:flex items-center gap-3">
+          <div class="relative">
+            <input id="site-search" type="text" placeholder="Search rituals, mantras..." class="w-56 rounded-full bg-white/10 text-sm px-4 py-2 text-white placeholder:text-slate-300 border border-white/20 focus:outline-none focus:ring-2 focus:ring-sacredGold/70">
+            <span class="absolute right-3 top-2.5 text-sacredGold">🔍</span>
+          </div>
+          <button class="rounded-full bg-sacredGold text-slate-900 px-4 py-2 text-sm font-semibold shadow-glow">Start Exploring</button>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white text-2xl">☰</button>
+      </div>
+      <div id="mobile-menu" class="hidden lg:hidden bg-temple/95 border-t border-white/10">
+        <div class="px-6 py-4 grid gap-3 text-sm text-slate-100">
+          <a href="#home" class="hover:text-sacredGold">Home</a>
+          <a href="#about" class="hover:text-sacredGold">About Sanatan Dharma</a>
+          <a href="#deities" class="hover:text-sacredGold">Deities</a>
+          <a href="#rituals" class="hover:text-sacredGold">Rituals &amp; Pooja</a>
+          <a href="#festivals" class="hover:text-sacredGold">Festivals</a>
+          <a href="#temples" class="hover:text-sacredGold">Temples &amp; Pilgrimages</a>
+          <a href="#scriptures" class="hover:text-sacredGold">Scriptures</a>
+          <a href="#contact" class="hover:text-sacredGold">Contact Us</a>
+          <input type="text" placeholder="Search" class="mt-2 rounded-full bg-white/10 text-sm px-4 py-2 text-white placeholder:text-slate-300 border border-white/20">
+        </div>
+      </div>
     </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
   </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
 
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
+  <main class="scroll-snap">
+    <section id="home" class="scroll-section relative min-h-screen flex items-center bg-temple text-white overflow-hidden pt-24">
+      <canvas id="hero-canvas" class="hero-canvas"></canvas>
+      <div class="absolute inset-0 bg-gradient-to-br from-temple/90 via-temple/80 to-deepRed/80"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="uppercase tracking-[0.3em] text-sacredGold text-xs">Spiritual &amp; Modern Experience</p>
+          <h1 class="text-4xl md:text-6xl font-bold mt-4">Explore the Timeless Wisdom of Sanatan Dharma</h1>
+          <p class="mt-6 text-lg text-slate-200">Immerse yourself in sacred teachings, 3D visualizations of divine realms, and guided rituals designed for seekers of all paths.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <button class="bg-saffron text-white px-6 py-3 rounded-full font-semibold shadow-glow">Start Exploring</button>
+            <button class="border border-sacredGold text-sacredGold px-6 py-3 rounded-full font-semibold">Book a Pooja</button>
+          </div>
+          <div class="mt-10 grid sm:grid-cols-3 gap-4">
+            <div class="glass rounded-2xl p-4 gradient-border">
+              <p class="text-sacredGold text-xl font-semibold">108</p>
+              <p class="text-sm text-slate-200">Daily Mantras</p>
+            </div>
+            <div class="glass rounded-2xl p-4 gradient-border">
+              <p class="text-sacredGold text-xl font-semibold">56</p>
+              <p class="text-sm text-slate-200">Interactive Rituals</p>
+            </div>
+            <div class="glass rounded-2xl p-4 gradient-border">
+              <p class="text-sacredGold text-xl font-semibold">12</p>
+              <p class="text-sm text-slate-200">Sacred Journeys</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-6 -right-6 h-24 w-24 bg-sacredGold/30 blur-2xl"></div>
+          <div id="floating-temple" class="relative glass rounded-3xl p-6 border border-white/10 shadow-2xl">
+            <p class="text-sacredGold text-sm uppercase tracking-[0.25em]">3D Sacred Vision</p>
+            <h2 class="text-2xl font-semibold mt-2">Temple of Light</h2>
+            <p class="text-slate-200 text-sm mt-3">Move your cursor to rotate the temple and feel the aura of spiritual energy.</p>
+            <div class="mt-6 h-56 rounded-2xl bg-gradient-to-br from-saffron/40 via-sacredGold/20 to-deepRed/40 flex items-center justify-center relative perspective-1000">
+              <div id="temple-3d" class="w-32 h-32 bg-white/10 border border-white/20 rounded-2xl transform-style-preserve-3d transition-transform duration-300">
+                <div class="absolute inset-4 border border-sacredGold/50 rounded-xl"></div>
+                <div class="absolute inset-10 bg-sacredGold/30 rounded-lg"></div>
+              </div>
+              <span class="absolute bottom-4 text-xs text-slate-200">Interactive 3D Preview</span>
+            </div>
+            <div class="mt-4 flex items-center gap-3">
+              <label class="text-xs text-slate-200" for="zoom-range">Zoom</label>
+              <input id="zoom-range" type="range" min="1" max="1.5" step="0.05" value="1" class="w-full accent-sacredGold">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="scroll-section py-20 bg-beige">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-deepRed">About Sanatan Dharma</h2>
+            <p class="mt-4 text-slate-700">Sanatan Dharma is the eternal path of harmony, balance, and devotion. Our platform blends tradition with innovation, offering immersive 3D visuals, guided meditations, and ritual guidance to keep your spiritual journey vibrant.</p>
+            <div class="mt-6 grid sm:grid-cols-2 gap-4">
+              <div class="bg-white rounded-2xl p-4 shadow">
+                <p class="text-sm font-semibold text-saffron">Sacred Philosophy</p>
+                <p class="text-xs text-slate-600 mt-2">Vedanta insights, yoga practices, and timeless teachings curated for modern seekers.</p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 shadow">
+                <p class="text-sm font-semibold text-saffron">Dynamic Community</p>
+                <p class="text-xs text-slate-600 mt-2">Join live aartis, global celebrations, and connect with spiritual mentors.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-3xl p-6 shadow-lg border border-saffron/20">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-deepRed">Daily Spiritual Flow</h3>
+              <span class="text-xs text-sacredGold">Live</span>
+            </div>
+            <div class="mt-6 space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="h-10 w-10 rounded-full bg-saffron/20 flex items-center justify-center">🔥</div>
+                <div>
+                  <p class="font-semibold">Morning Aarti</p>
+                  <p class="text-xs text-slate-500">05:30 AM - Live streamed from Kashi.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="h-10 w-10 rounded-full bg-sacredGold/20 flex items-center justify-center">🕉️</div>
+                <div>
+                  <p class="font-semibold">Mantra Meditation</p>
+                  <p class="text-xs text-slate-500">108 chants with binaural temple bells.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="h-10 w-10 rounded-full bg-deepRed/10 flex items-center justify-center">🌿</div>
+                <div>
+                  <p class="font-semibold">Evening Satsang</p>
+                  <p class="text-xs text-slate-500">Stories from the Ramayana and Mahabharata.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deities" class="scroll-section py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-deepRed">Divine Deities in 3D</h2>
+            <p class="mt-3 text-slate-600">Rotate, zoom, and immerse yourself in sacred forms. Every deity includes teachings, mantras, and guided audio.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="px-4 py-2 rounded-full bg-saffron text-white text-sm font-semibold">Book Pooja</button>
+            <button class="px-4 py-2 rounded-full border border-saffron text-saffron text-sm font-semibold">View All</button>
+          </div>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="deity-card bg-beige rounded-3xl p-6 shadow hover:shadow-lg transition" data-deity="Shiva">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-700 to-deepRed flex items-center justify-center text-white text-4xl" aria-hidden="true">🕉️</div>
+            <h3 class="mt-4 text-xl font-semibold">Lord Shiva</h3>
+            <p class="text-sm text-slate-600 mt-2">The cosmic transformer guiding inner stillness and transcendence.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <button class="text-xs text-sacredGold font-semibold">Rotate 3D</button>
+              <button class="text-xs text-saffron font-semibold">Book Pooja</button>
+            </div>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f78f0f02d5.mp3?filename=meditation-ambient-112191.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="deity-card bg-beige rounded-3xl p-6 shadow hover:shadow-lg transition" data-deity="Vishnu">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-blue-900 via-blue-700 to-sacredGold flex items-center justify-center text-white text-4xl" aria-hidden="true">🌊</div>
+            <h3 class="mt-4 text-xl font-semibold">Lord Vishnu</h3>
+            <p class="text-sm text-slate-600 mt-2">Protector of the universe, sustaining balance and dharma.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <button class="text-xs text-sacredGold font-semibold">Rotate 3D</button>
+              <button class="text-xs text-saffron font-semibold">Book Pooja</button>
+            </div>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2021/11/12/audio_95e2c0a0ff.mp3?filename=om-chant-95336.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="deity-card bg-beige rounded-3xl p-6 shadow hover:shadow-lg transition" data-deity="Lakshmi">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-pink-600 via-rose-500 to-sacredGold flex items-center justify-center text-white text-4xl" aria-hidden="true">🌸</div>
+            <h3 class="mt-4 text-xl font-semibold">Maa Lakshmi</h3>
+            <p class="text-sm text-slate-600 mt-2">Goddess of prosperity, abundance, and radiant compassion.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <button class="text-xs text-sacredGold font-semibold">Rotate 3D</button>
+              <button class="text-xs text-saffron font-semibold">Book Pooja</button>
+            </div>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_0de1e2f950.mp3?filename=drone-ambient-113515.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="deity-card bg-beige rounded-3xl p-6 shadow hover:shadow-lg transition" data-deity="Durga">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-deepRed via-orange-600 to-sacredGold flex items-center justify-center text-white text-4xl" aria-hidden="true">🦁</div>
+            <h3 class="mt-4 text-xl font-semibold">Maa Durga</h3>
+            <p class="text-sm text-slate-600 mt-2">Embodiment of courage and divine protection.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <button class="text-xs text-sacredGold font-semibold">Rotate 3D</button>
+              <button class="text-xs text-saffron font-semibold">Book Pooja</button>
+            </div>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2022/08/08/audio_7a0e1ed5ed.mp3?filename=deep-mantra-123459.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="deity-card bg-beige rounded-3xl p-6 shadow hover:shadow-lg transition" data-deity="Ganesha">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-orange-500 via-saffron to-sacredGold flex items-center justify-center text-white text-4xl" aria-hidden="true">🐘</div>
+            <h3 class="mt-4 text-xl font-semibold">Lord Ganesha</h3>
+            <p class="text-sm text-slate-600 mt-2">Remover of obstacles, blessing every sacred beginning.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <button class="text-xs text-sacredGold font-semibold">Rotate 3D</button>
+              <button class="text-xs text-saffron font-semibold">Book Pooja</button>
+            </div>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2021/11/14/audio_ba317e0f6b.mp3?filename=indian-flute-95721.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="deity-card bg-beige rounded-3xl p-6 shadow hover:shadow-lg transition" data-deity="Saraswati">
+            <div class="h-40 rounded-2xl bg-gradient-to-br from-slate-700 via-purple-700 to-sacredGold flex items-center justify-center text-white text-4xl" aria-hidden="true">📜</div>
+            <h3 class="mt-4 text-xl font-semibold">Maa Saraswati</h3>
+            <p class="text-sm text-slate-600 mt-2">Goddess of wisdom, learning, and sacred music.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <button class="text-xs text-sacredGold font-semibold">Rotate 3D</button>
+              <button class="text-xs text-saffron font-semibold">Book Pooja</button>
+            </div>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_e1c5c4ff2e.mp3?filename=calm-ambient-111076.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rituals" class="scroll-section py-20 bg-beige">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-deepRed">Rituals &amp; Pooja Guides</h2>
+            <p class="mt-3 text-slate-600">Step-by-step guides enhanced with 3D animations and audio recitations.</p>
+          </div>
+          <button class="px-5 py-2 rounded-full bg-sacredGold text-slate-900 font-semibold">Schedule a Ritual</button>
+        </div>
+        <div class="mt-10 grid lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-3xl p-5 shadow">
+            <h3 class="text-lg font-semibold text-saffron">Aarti Ceremony</h3>
+            <ol class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>1. Light the diya and center your breath.</li>
+              <li>2. Offer flowers with gratitude.</li>
+              <li>3. Rotate the flame clockwise 7 times.</li>
+              <li>4. Chant the aarti mantra together.</li>
+            </ol>
+            <div class="mt-4 h-28 rounded-2xl bg-gradient-to-br from-saffron/40 to-sacredGold/40 flex items-center justify-center text-xs text-slate-700">3D Diya Animation</div>
+          </div>
+          <div class="bg-white rounded-3xl p-5 shadow">
+            <h3 class="text-lg font-semibold text-saffron">Ganesh Chaturthi</h3>
+            <ol class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>1. Prepare the altar with modaks.</li>
+              <li>2. Offer sacred water and sandalwood.</li>
+              <li>3. Recite Ganapati Atharvashirsha.</li>
+              <li>4. Conclude with prasad sharing.</li>
+            </ol>
+            <div class="mt-4 h-28 rounded-2xl bg-gradient-to-br from-orange-200 to-saffron/40 flex items-center justify-center text-xs text-slate-700">3D Modak Display</div>
+          </div>
+          <div class="bg-white rounded-3xl p-5 shadow">
+            <h3 class="text-lg font-semibold text-saffron">Navratri Pooja</h3>
+            <ol class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>1. Decorate with kalash and mango leaves.</li>
+              <li>2. Invoke the nine forms of Devi.</li>
+              <li>3. Sing devotional garba songs.</li>
+              <li>4. Light 108 lamps together.</li>
+            </ol>
+            <div class="mt-4 h-28 rounded-2xl bg-gradient-to-br from-rose-200 to-deepRed/30 flex items-center justify-center text-xs text-slate-700">3D Kalash Animation</div>
+          </div>
+          <div class="bg-white rounded-3xl p-5 shadow">
+            <h3 class="text-lg font-semibold text-saffron">Diwali Pooja</h3>
+            <ol class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>1. Cleanse space with incense.</li>
+              <li>2. Offer lotus flowers to Lakshmi.</li>
+              <li>3. Recite Lakshmi stotram.</li>
+              <li>4. Distribute sweets with family.</li>
+            </ol>
+            <div class="mt-4 h-28 rounded-2xl bg-gradient-to-br from-yellow-100 to-sacredGold/40 flex items-center justify-center text-xs text-slate-700">3D Rangoli Animation</div>
+          </div>
+        </div>
+        <div class="mt-8 bg-white rounded-3xl p-6 shadow flex flex-col lg:flex-row gap-6 items-center">
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold">Voice-guided Mantra Flow</h3>
+            <p class="text-sm text-slate-600 mt-2">Synchronize breathing with guided chants narrated by temple priests.</p>
+          </div>
+          <audio class="w-full lg:w-1/2" controls preload="none">
+            <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_2d7c24c1a4.mp3?filename=serene-ambient-7582.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <section id="festivals" class="scroll-section py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-deepRed">Sacred Festivals</h2>
+            <p class="mt-3 text-slate-600">Celebrate vibrant traditions with countdowns, rituals, and immersive visuals.</p>
+          </div>
+          <div class="bg-beige rounded-2xl p-4 shadow text-center">
+            <p class="text-xs uppercase text-slate-500">Next Festival Countdown</p>
+            <p id="festival-countdown" class="text-lg font-semibold text-saffron">Loading...</p>
+          </div>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <div class="bg-beige rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold text-saffron">Diwali</h3>
+            <p class="text-sm text-slate-600 mt-2">Festival of lights celebrating the triumph of dharma. Includes Lakshmi puja, rangoli artistry, and sacred diyas.</p>
+            <div class="mt-4 flex gap-3 text-xs">
+              <span class="px-3 py-1 rounded-full bg-sacredGold/20 text-sacredGold">Fireworks</span>
+              <span class="px-3 py-1 rounded-full bg-saffron/20 text-saffron">Rituals</span>
+              <span class="px-3 py-1 rounded-full bg-deepRed/10 text-deepRed">Community</span>
+            </div>
+            <div class="mt-4 h-32 rounded-2xl bg-gradient-to-br from-sacredGold/40 to-saffron/30 flex items-center justify-center text-xs text-slate-700">Interactive Diya Animation</div>
+          </div>
+          <div class="bg-beige rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold text-saffron">Holi</h3>
+            <p class="text-sm text-slate-600 mt-2">Festival of colors celebrating unity, joy, and the arrival of spring.</p>
+            <div class="mt-4 flex gap-3 text-xs">
+              <span class="px-3 py-1 rounded-full bg-pink-200 text-pink-700">Colors</span>
+              <span class="px-3 py-1 rounded-full bg-green-200 text-green-700">Harmony</span>
+              <span class="px-3 py-1 rounded-full bg-blue-200 text-blue-700">Dance</span>
+            </div>
+            <div class="mt-4 h-32 rounded-2xl bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center text-xs text-slate-700">3D Color Splash</div>
+          </div>
+          <div class="bg-beige rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold text-saffron">Navratri</h3>
+            <p class="text-sm text-slate-600 mt-2">Nine nights of devotion to the Divine Mother with garba, fasting, and sacred chants.</p>
+            <div class="mt-4 flex gap-3 text-xs">
+              <span class="px-3 py-1 rounded-full bg-rose-200 text-rose-700">Garba</span>
+              <span class="px-3 py-1 rounded-full bg-orange-200 text-orange-700">Fasting</span>
+              <span class="px-3 py-1 rounded-full bg-yellow-200 text-yellow-700">Devotion</span>
+            </div>
+            <div class="mt-4 h-32 rounded-2xl bg-gradient-to-br from-rose-200 to-saffron/30 flex items-center justify-center text-xs text-slate-700">3D Dandiya Motion</div>
+          </div>
+          <div class="bg-beige rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold text-saffron">Ganesh Chaturthi</h3>
+            <p class="text-sm text-slate-600 mt-2">Celebration of Ganapati with immersive visarjan processions and devotional music.</p>
+            <div class="mt-4 flex gap-3 text-xs">
+              <span class="px-3 py-1 rounded-full bg-orange-200 text-orange-700">Visarjan</span>
+              <span class="px-3 py-1 rounded-full bg-yellow-200 text-yellow-700">Modaks</span>
+              <span class="px-3 py-1 rounded-full bg-blue-200 text-blue-700">Procession</span>
+            </div>
+            <div class="mt-4 h-32 rounded-2xl bg-gradient-to-br from-yellow-200 to-orange-200 flex items-center justify-center text-xs text-slate-700">3D Ganapati Idol</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="temples" class="scroll-section py-20 bg-beige">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-deepRed">Temples &amp; Pilgrimages</h2>
+            <p class="mt-3 text-slate-600">Discover sacred temples, pilgrimage packages, and virtual tours with interactive maps.</p>
+          </div>
+          <button class="px-5 py-2 rounded-full bg-saffron text-white font-semibold">Plan a Pilgrimage</button>
+        </div>
+        <div class="mt-10 grid lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold">Kashi Vishwanath</h3>
+            <p class="text-sm text-slate-600 mt-2">An eternal Jyotirlinga on the banks of the Ganga, known for spiritual liberation.</p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-1">
+              <li>Timings: 4:00 AM - 11:00 PM</li>
+              <li>Rituals: Mangala Aarti, Rudrabhishek</li>
+              <li>Festival: Mahashivratri</li>
+            </ul>
+            <div class="mt-4 h-32 rounded-2xl bg-gradient-to-br from-slate-800 to-deepRed/70 text-white flex items-center justify-center text-xs">Virtual Tour</div>
+          </div>
+          <div class="bg-white rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold">Kedarnath</h3>
+            <p class="text-sm text-slate-600 mt-2">Sacred Himalayan shrine dedicated to Lord Shiva.</p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-1">
+              <li>Timings: 5:00 AM - 9:00 PM</li>
+              <li>Rituals: Abhishek, Bhog Aarti</li>
+              <li>Festival: Badri-Kedar Utsav</li>
+            </ul>
+            <div class="mt-4 h-32 rounded-2xl bg-gradient-to-br from-blue-800 to-slate-600 text-white flex items-center justify-center text-xs">Interactive Map</div>
+          </div>
+          <div class="bg-white rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold">Tirupati Balaji</h3>
+            <p class="text-sm text-slate-600 mt-2">A divine pilgrimage with grand rituals and offerings.</p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-1">
+              <li>Timings: 3:00 AM - 12:00 AM</li>
+              <li>Rituals: Suprabhatam, Seva Darshan</li>
+              <li>Festival: Brahmotsavam</li>
+            </ul>
+            <div class="mt-4 h-32 rounded-2xl bg-gradient-to-br from-amber-700 to-saffron text-white flex items-center justify-center text-xs">Package Booking</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scriptures" class="scroll-section py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-deepRed">Sacred Scriptures</h2>
+            <p class="mt-3 text-slate-600">Dive into the Vedas, Upanishads, and epics with summaries, verses, and audio recitations.</p>
+          </div>
+          <button class="px-5 py-2 rounded-full border border-saffron text-saffron font-semibold">Download Library</button>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-beige rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold">The Vedas</h3>
+            <p class="text-sm text-slate-600 mt-2">Rooted in cosmic hymns and rituals, guiding universal harmony.</p>
+            <a class="text-xs text-sacredGold font-semibold mt-3 inline-block" href="#">Read verses</a>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2021/11/03/audio_0467eb0cba.mp3?filename=temple-bells-93354.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="bg-beige rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold">Upanishads</h3>
+            <p class="text-sm text-slate-600 mt-2">Mystical dialogues uncovering the nature of self and Brahman.</p>
+            <a class="text-xs text-sacredGold font-semibold mt-3 inline-block" href="#">Explore teachings</a>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2022/07/26/audio_9b14e4f06b.mp3?filename=meditation-121125.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="bg-beige rounded-3xl p-6 shadow">
+            <h3 class="text-xl font-semibold">Bhagavad Gita</h3>
+            <p class="text-sm text-slate-600 mt-2">A divine discourse on duty, devotion, and liberation.</p>
+            <a class="text-xs text-sacredGold font-semibold mt-3 inline-block" href="#">Listen to verses</a>
+            <audio class="mt-4 w-full" controls preload="none">
+              <source src="https://cdn.pixabay.com/download/audio/2022/02/07/audio_9dcae16c1a.mp3?filename=soft-bells-110624.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="scroll-section py-20 bg-beige">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-deepRed">Contact Us</h2>
+            <p class="mt-4 text-slate-600">Connect for pooja bookings, temple visits, or spiritual guidance.</p>
+            <div class="mt-6 space-y-4 text-sm text-slate-700">
+              <p><strong>Phone:</strong> +91 98765 43210</p>
+              <p><strong>Email:</strong> connect@sanatandharma.org</p>
+              <p><strong>Address:</strong> Sacred Harmony Center, Varanasi, Uttar Pradesh</p>
+            </div>
+            <div class="mt-6 bg-white rounded-3xl p-4 shadow">
+              <iframe title="Temple map" class="w-full h-56 rounded-2xl" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.163606188162!2d83.0081042!3d25.3176456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2e6b09bcb1a5%3A0x8f5b1f6d1d1c4a6a!2sShri%20Kashi%20Vishwanath%20Temple!5e0!3m2!1sen!2sin!4v1712400000000!5m2!1sen!2sin"></iframe>
+            </div>
+            <div class="mt-6 flex gap-4 text-xl">
+              <a href="https://www.facebook.com/" aria-label="Facebook" class="text-saffron hover:text-sacredGold"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/" aria-label="Instagram" class="text-saffron hover:text-sacredGold"><i class="fab fa-instagram"></i></a>
+              <a href="https://twitter.com/" aria-label="Twitter" class="text-saffron hover:text-sacredGold"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/" aria-label="LinkedIn" class="text-saffron hover:text-sacredGold"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="bg-white rounded-3xl p-8 shadow">
+            <h3 class="text-xl font-semibold">Send an Inquiry</h3>
+            <form class="mt-6 space-y-4">
+              <input type="text" placeholder="Full name" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-saffron">
+              <input type="email" placeholder="Email address" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-saffron">
+              <input type="text" placeholder="Pooja or temple request" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-saffron">
+              <textarea placeholder="Your message" rows="4" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-saffron"></textarea>
+              <button type="submit" class="w-full rounded-xl bg-saffron text-white py-3 font-semibold shadow-glow">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-deepRed text-white">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="text-lg font-semibold">Sanatan Dharma</h4>
+        <p class="text-sm text-white/80 mt-3">A modern portal for ancient wisdom, sacred rituals, and spiritual community.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm text-white/80">
+          <li><a href="#about" class="hover:text-sacredGold">About Us</a></li>
+          <li><a href="#rituals" class="hover:text-sacredGold">Rituals</a></li>
+          <li><a href="#festivals" class="hover:text-sacredGold">Festivals</a></li>
+          <li><a href="#temples" class="hover:text-sacredGold">Pilgrimages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold">Resources</h4>
+        <ul class="mt-3 space-y-2 text-sm text-white/80">
+          <li><a href="#scriptures" class="hover:text-sacredGold">Scriptures</a></li>
+          <li><a href="#deities" class="hover:text-sacredGold">Deities</a></li>
+          <li><a href="#contact" class="hover:text-sacredGold">Contact Us</a></li>
+          <li><a href="#" class="hover:text-sacredGold">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold">Stay Connected</h4>
+        <p class="text-sm text-white/80 mt-3">Receive festival updates and new mantra drops.</p>
+        <form class="mt-4 flex gap-2">
+          <input type="email" placeholder="Email address" class="flex-1 rounded-full px-4 py-2 text-sm text-slate-900">
+          <button class="rounded-full bg-sacredGold text-slate-900 px-4 py-2 text-sm font-semibold">Subscribe</button>
         </form>
+      </div>
     </div>
+    <div class="border-t border-white/10 py-4 text-center text-sm text-white/70">
+      © 2024 Sanatan Dharma. All rights reserved.
     </div>
+  </footer>
 
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
+    const templeCard = document.getElementById('temple-3d');
+    const floatingTemple = document.getElementById('floating-temple');
+    const zoomRange = document.getElementById('zoom-range');
 
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
+    floatingTemple.addEventListener('mousemove', (event) => {
+      const rect = floatingTemple.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+      const rotateX = (-y / rect.height) * 20;
+      const rotateY = (x / rect.width) * 20;
+      templeCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${zoomRange.value})`;
+    });
 
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
+    floatingTemple.addEventListener('mouseleave', () => {
+      templeCard.style.transform = `rotateX(0deg) rotateY(0deg) scale(${zoomRange.value})`;
+    });
 
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
+    zoomRange.addEventListener('input', () => {
+      templeCard.style.transform = `rotateX(0deg) rotateY(0deg) scale(${zoomRange.value})`;
+    });
 
-                  </div>
+    const countdownEl = document.getElementById('festival-countdown');
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 18);
 
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        countdownEl.textContent = 'Festival begins today!';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m`;
+    };
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
 
-              </div>
-          </div>
-      </div>
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
 
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = Array.from({ length: 80 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        z: Math.random() * 2 + 0.5,
+        radius: Math.random() * 2 + 1,
+        speed: Math.random() * 0.6 + 0.2
+      }));
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.y -= p.speed;
+        if (p.y < -10) p.y = canvas.height + 10;
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(250, 204, 21, ${0.15 * p.z})`;
+        ctx.arc(p.x, p.y, p.radius * p.z, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    };
+    animate();
+
+    const searchInput = document.getElementById('site-search');
+    searchInput.addEventListener('input', (event) => {
+      const query = event.target.value.toLowerCase();
+      document.querySelectorAll('section').forEach((section) => {
+        const match = section.textContent.toLowerCase().includes(query);
+        section.style.opacity = query && !match ? 0.4 : 1;
+      });
+    });
+  </script>
 </body>
 </html>
