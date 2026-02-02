@@ -1,77 +1,78 @@
-$(document).ready(function(){
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.navbar');
+const navLinks = document.querySelectorAll('.navbar a');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
     });
+}
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+    });
+});
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+
+const sections = document.querySelectorAll('section');
+const activateNavLink = () => {
+    let currentId = '';
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+            currentId = section.getAttribute('id');
         }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
     });
-
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
+    navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
     });
+};
 
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
+window.addEventListener('scroll', activateNavLink);
+activateNavLink();
+
+const ritualSteps = document.querySelectorAll('#ritual-steps li');
+const nextStepButton = document.getElementById('next-step');
+let currentStep = 0;
+
+const setActiveStep = () => {
+    ritualSteps.forEach((step, index) => {
+        step.classList.toggle('active', index === currentStep);
     });
-    
-})(jQuery);
+};
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
+if (nextStepButton) {
+    nextStepButton.addEventListener('click', () => {
+        currentStep = (currentStep + 1) % ritualSteps.length;
+        setActiveStep();
+    });
+}
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+const scriptureSearch = document.getElementById('scripture-search');
+const scriptureCards = document.querySelectorAll('#scripture-grid .info-card');
 
-});
+if (scriptureSearch) {
+    scriptureSearch.addEventListener('input', (event) => {
+        const query = event.target.value.toLowerCase();
+        scriptureCards.forEach((card) => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(query) ? 'block' : 'none';
+        });
+    });
+}
