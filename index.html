@@ -1,489 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanatan Dharma | A Sacred Journey</title>
+  <meta name="description" content="Discover the spiritual richness of Sanatan Dharma. Explore deities, rituals, temples, pilgrimages, festivals, and scriptures with immersive experiences and interactive guides.">
+  <meta name="keywords" content="Sanatan Dharma, Hinduism, deities, rituals, temples, pilgrimages, festivals, scriptures, pooja">
+  <meta name="theme-color" content="#d65a14">
+  <meta property="og:title" content="Sanatan Dharma | A Sacred Journey">
+  <meta property="og:description" content="An immersive portal into rituals, deities, mandirs, pilgrimages, and sacred texts.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" href="./images/image.png">
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
+  <header class="site-header" id="top">
+    <div class="logo" aria-label="Sanatan Dharma logo">
+      <span class="logo-icon">🕉️</span>
+      <div>
+        <p class="logo-title">Sanatan Dharma</p>
+        <span class="logo-subtitle">Eternal Path of Light</span>
+      </div>
     </div>
-  </section>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    <nav class="primary-nav" id="primary-navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#deities">Deities</a></li>
+        <li><a href="#rituals">Rituals</a></li>
+        <li><a href="#mandirs">Mandirs</a></li>
+        <li><a href="#pilgrimages">Pilgrimages</a></li>
+        <li><a href="#festivals">Festivals</a></li>
+        <li><a href="#scriptures">Scriptures</a></li>
+        <li><a href="#book-pooja" class="nav-cta">Book Pooja</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="nav-search">
+      <label for="search" class="sr-only">Search deities, rituals, temples</label>
+      <input type="search" id="search" placeholder="Search deities, rituals, temples">
+      <i class="fas fa-search" aria-hidden="true"></i>
+    </div>
+  </header>
 
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-tag">Sacred | Timeless | Living Tradition</p>
+        <h1>Embark on a Sacred Journey of Sanatan Dharma</h1>
+        <p>
+          Explore the eternal path of spiritual knowledge, living rituals, vibrant festivals,
+          and the divine presence of sacred deities across mandirs and pilgrimages.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#deities">Start Exploring</a>
+          <a class="btn ghost" href="#rituals">Learn More</a>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
+        <div class="hero-stats">
+          <div>
+            <h3>108+</h3>
+            <span>Sacred Mantras</span>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
+          <div>
+            <h3>65+</h3>
+            <span>Ritual Guides</span>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
+          <div>
+            <h3>40+</h3>
+            <span>Pilgrimage Trails</span>
           </div>
         </div>
       </div>
-    </div>
-</div>
+    </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
-        <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
+    <section class="intro-section" id="about">
+      <div class="section-heading">
+        <h2>Sanatan Dharma: The Living Spiritual Heritage</h2>
+        <p>
+          Sanatan Dharma is the eternal way of truth, devotion, compassion, and inner awakening.
+          This immersive portal guides you through rituals, temples, sacred texts, and festivals
+          that celebrate dharma in daily life.
+        </p>
       </div>
-    </div>
-</div>
+      <div class="intro-grid">
+        <article>
+          <h3>Timeless Wisdom</h3>
+          <p>Learn the teachings of the Vedas, Upanishads, and the Bhagavad Gita through curated summaries and verses.</p>
+        </article>
+        <article>
+          <h3>Living Rituals</h3>
+          <p>Follow interactive pooja guides with step-by-step practices, mantra audio, and sacred symbolism.</p>
+        </article>
+        <article>
+          <h3>Sacred Geography</h3>
+          <p>Discover mandirs and pilgrimages across India and the world with maps, timings, and spiritual insights.</p>
+        </article>
+      </div>
+    </section>
 
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+    <section class="deities-section" id="deities">
+      <div class="section-heading">
+        <h2>Divine Deities</h2>
+        <p>Meet the beloved deities of Sanatan Dharma and immerse yourself in their stories, symbolism, and mantras.</p>
+      </div>
+      <div class="card-grid" data-search-grid>
+        <article class="card deity-card reveal" data-search="shiva mahadev rudra">
+          <img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=600&q=80" alt="Lord Shiva statue" loading="lazy">
+          <div class="card-body">
+            <h3>Lord Shiva</h3>
+            <p>Embodiment of transformation and inner stillness. His cosmic dance preserves balance.</p>
+            <div class="card-highlight">"Om Namah Shivaya" • Courage • Compassion</div>
+            <div class="card-actions">
+              <a href="#scriptures" class="btn small">Prayer</a>
+              <a href="#book-pooja" class="btn outline">Book Pooja</a>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+          </div>
+        </article>
+        <article class="card deity-card reveal" data-search="vishnu narayan">
+          <img src="https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?auto=format&fit=crop&w=600&q=80" alt="Lord Vishnu artwork" loading="lazy">
+          <div class="card-body">
+            <h3>Lord Vishnu</h3>
+            <p>Protector of dharma and preserver of cosmic order through his avatars and grace.</p>
+            <div class="card-highlight">"Om Namo Narayanaya" • Harmony • Protection</div>
+            <div class="card-actions">
+              <a href="#scriptures" class="btn small">Prayer</a>
+              <a href="#book-pooja" class="btn outline">Book Pooja</a>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+          </div>
+        </article>
+        <article class="card deity-card reveal" data-search="durga devi shakti">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Goddess Durga idol" loading="lazy">
+          <div class="card-body">
+            <h3>Goddess Durga</h3>
+            <p>The fierce protector and divine mother who removes fear and restores balance.</p>
+            <div class="card-highlight">"Ya Devi Sarva Bhuteshu" • Strength • Grace</div>
+            <div class="card-actions">
+              <a href="#scriptures" class="btn small">Prayer</a>
+              <a href="#book-pooja" class="btn outline">Book Pooja</a>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+          </div>
+        </article>
+        <article class="card deity-card reveal" data-search="lakshmi prosperity">
+          <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80" alt="Goddess Lakshmi depiction" loading="lazy">
+          <div class="card-body">
+            <h3>Goddess Lakshmi</h3>
+            <p>Symbol of abundance, prosperity, and auspicious beginnings, blessing homes with harmony.</p>
+            <div class="card-highlight">"Om Shreem Mahalakshmiyei Namah" • Abundance</div>
+            <div class="card-actions">
+              <a href="#scriptures" class="btn small">Prayer</a>
+              <a href="#book-pooja" class="btn outline">Book Pooja</a>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+          </div>
+        </article>
+        <article class="card deity-card reveal" data-search="saraswati knowledge">
+          <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=600&q=80" alt="Goddess Saraswati artwork" loading="lazy">
+          <div class="card-body">
+            <h3>Goddess Saraswati</h3>
+            <p>Patron of wisdom, music, and learning, guiding seekers to clarity and creativity.</p>
+            <div class="card-highlight">"Om Aim Saraswatyai Namah" • Knowledge</div>
+            <div class="card-actions">
+              <a href="#scriptures" class="btn small">Prayer</a>
+              <a href="#book-pooja" class="btn outline">Book Pooja</a>
             </div>
+          </div>
+        </article>
+        <article class="card deity-card reveal" data-search="ganesha vinayaka">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" alt="Lord Ganesha idol" loading="lazy">
+          <div class="card-body">
+            <h3>Lord Ganesha</h3>
+            <p>Remover of obstacles and guardian of new beginnings with gentle wisdom.</p>
+            <div class="card-highlight">"Vakratunda Mahakaya" • Auspiciousness</div>
+            <div class="card-actions">
+              <a href="#scriptures" class="btn small">Prayer</a>
+              <a href="#book-pooja" class="btn outline">Book Pooja</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="rituals-section" id="rituals">
+      <div class="section-heading">
+        <h2>Pooja & Ritual Guides</h2>
+        <p>Experience the sacred rituals with interactive steps, mantra audio, and spiritual reflections.</p>
+      </div>
+      <div class="rituals-grid">
+        <article class="ritual-card reveal" data-search="aarti">
+          <div class="ritual-header">
+            <h3>Sandhya Aarti</h3>
+            <span class="tag">Daily Ritual</span>
+          </div>
+          <ol class="ritual-steps">
+            <li>Cleanse the space and light the diya.</li>
+            <li>Offer flowers, incense, and sacred water.</li>
+            <li>Chant the Aarti mantra with a calm breath.</li>
+            <li>Offer gratitude and distribute prasad.</li>
+          </ol>
+          <audio controls preload="none">
+            <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b9a4f30f2.mp3?filename=om-mantra-12896.mp3" type="audio/mpeg">
+          </audio>
+          <blockquote>"Let the lamp of wisdom dispel the darkness of ignorance."</blockquote>
+          <div class="card-actions">
+            <a href="#book-pooja" class="btn small">Book Aarti</a>
+            <button class="btn outline" data-open="aarti">View Steps</button>
+          </div>
+        </article>
+        <article class="ritual-card reveal" data-search="navratri">
+          <div class="ritual-header">
+            <h3>Navratri Pooja</h3>
+            <span class="tag">Festival Ritual</span>
+          </div>
+          <ol class="ritual-steps">
+            <li>Prepare a sanctified altar with kalash and grains.</li>
+            <li>Invoke the Devi with sacred chants.</li>
+            <li>Offer nine forms of devotion with flowers and fruits.</li>
+            <li>Conclude with kirtan and communal blessings.</li>
+          </ol>
+          <audio controls preload="none">
+            <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_50570f470c.mp3?filename=om-chant-12897.mp3" type="audio/mpeg">
+          </audio>
+          <blockquote>"The Divine Mother awakens strength, courage, and compassion."</blockquote>
+          <div class="card-actions">
+            <a href="#book-pooja" class="btn small">Book Navratri</a>
+            <button class="btn outline" data-open="navratri">View Steps</button>
+          </div>
+        </article>
+        <article class="ritual-card reveal" data-search="ganesh chaturthi">
+          <div class="ritual-header">
+            <h3>Ganesh Chaturthi</h3>
+            <span class="tag">Community Pooja</span>
+          </div>
+          <ol class="ritual-steps">
+            <li>Install the murti with reverence and purity.</li>
+            <li>Offer modak, durva grass, and incense.</li>
+            <li>Chant Ganapati Atharvashirsha.</li>
+            <li>Conclude with visarjan and prayer.</li>
+          </ol>
+          <audio controls preload="none">
+            <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_f2d9e239b4.mp3?filename=meditation-ambient-6828.mp3" type="audio/mpeg">
+          </audio>
+          <blockquote>"May the remover of obstacles bless every beginning."</blockquote>
+          <div class="card-actions">
+            <a href="#book-pooja" class="btn small">Book Ganesh Pooja</a>
+            <button class="btn outline" data-open="ganesha">View Steps</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mandirs-section" id="mandirs">
+      <div class="section-heading">
+        <h2>Mandirs & Sacred Temples</h2>
+        <p>Discover the spiritual sanctuaries of Sanatan Dharma with timings, rituals, and virtual glimpses.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card temple-card reveal" data-search="kashi vishwanath">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" alt="Kashi Vishwanath temple" loading="lazy">
+          <div class="card-body">
+            <h3>Kashi Vishwanath</h3>
+            <p>Varanasi, Uttar Pradesh • Timings: 3:00 AM - 11:00 PM • Rituals: Mangala Aarti, Rudrabhishek.</p>
+            <div class="card-highlight">Festival: Mahashivratri • Significance: Jyotirlinga of Shiva</div>
+            <iframe loading="lazy" title="Kashi Vishwanath map" src="https://www.google.com/maps?q=Kashi%20Vishwanath%20Temple&output=embed"></iframe>
+          </div>
+        </article>
+        <article class="card temple-card reveal" data-search="somnath">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Somnath temple" loading="lazy">
+          <div class="card-body">
+            <h3>Somnath</h3>
+            <p>Veraval, Gujarat • Timings: 6:00 AM - 9:00 PM • Rituals: Abhishekam, Evening Aarti.</p>
+            <div class="card-highlight">Festival: Kartik Purnima • Significance: First Jyotirlinga</div>
+            <iframe loading="lazy" title="Somnath map" src="https://www.google.com/maps?q=Somnath%20Temple&output=embed"></iframe>
+          </div>
+        </article>
+        <article class="card temple-card reveal" data-search="vaishno devi">
+          <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=600&q=80" alt="Vaishno Devi shrine" loading="lazy">
+          <div class="card-body">
+            <h3>Vaishno Devi</h3>
+            <p>Katra, Jammu • Timings: Open 24 hrs • Rituals: Bhajan, Mata Aarti.</p>
+            <div class="card-highlight">Festival: Navratri • Significance: Holy cave shrine</div>
+            <iframe loading="lazy" title="Vaishno Devi map" src="https://www.google.com/maps?q=Vaishno%20Devi%20Temple&output=embed"></iframe>
+          </div>
+        </article>
+        <article class="card temple-card reveal" data-search="tirupati">
+          <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80" alt="Tirupati temple" loading="lazy">
+          <div class="card-body">
+            <h3>Tirupati Balaji</h3>
+            <p>Tirumala, Andhra Pradesh • Timings: 2:30 AM - 1:00 AM • Rituals: Suprabhatam, Kalyanotsavam.</p>
+            <div class="card-highlight">Festival: Brahmotsavam • Significance: Lord Venkateswara</div>
+            <iframe loading="lazy" title="Tirupati map" src="https://www.google.com/maps?q=Tirumala%20Temple&output=embed"></iframe>
+          </div>
+        </article>
+        <article class="card temple-card reveal" data-search="golden temple">
+          <img src="https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?auto=format&fit=crop&w=600&q=80" alt="Golden Temple" loading="lazy">
+          <div class="card-body">
+            <h3>Golden Temple</h3>
+            <p>Amritsar, Punjab • Timings: 4:00 AM - 11:00 PM • Rituals: Kirtan, Langar seva.</p>
+            <div class="card-highlight">Festival: Guru Nanak Jayanti • Significance: Sacred sarovar</div>
+            <iframe loading="lazy" title="Golden Temple map" src="https://www.google.com/maps?q=Golden%20Temple%20Amritsar&output=embed"></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="pilgrimage-section" id="pilgrimages">
+      <div class="section-heading">
+        <h2>Pilgrimages</h2>
+        <p>Plan your sacred journeys with guidance on travel, accommodation, and spiritual practices.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card pilgrimage-card reveal" data-search="kedarnath">
+          <h3>Kedarnath</h3>
+          <p>How to reach: Rishikesh → Sonprayag → Trek/heli. Best season: May - Oct.</p>
+          <p>Stay: GMVN guesthouses, eco-camps. Rituals: Rudrabhishek, evening aarti.</p>
+          <div class="card-actions">
+            <a href="#contact" class="btn small">Plan Trip</a>
+            <a href="#" class="btn outline">Virtual Tour</a>
+          </div>
+        </article>
+        <article class="card pilgrimage-card reveal" data-search="rishikesh">
+          <h3>Rishikesh</h3>
+          <p>How to reach: Dehradun airport (35 km). Best season: Oct - Mar.</p>
+          <p>Stay: Ashrams, riverside resorts. Rituals: Ganga Aarti at Triveni Ghat.</p>
+          <div class="card-actions">
+            <a href="#contact" class="btn small">Plan Trip</a>
+            <a href="#" class="btn outline">Virtual Tour</a>
+          </div>
+        </article>
+        <article class="card pilgrimage-card reveal" data-search="haridwar">
+          <h3>Haridwar</h3>
+          <p>How to reach: Direct trains from major cities. Best season: Feb - Apr.</p>
+          <p>Stay: Dharamshalas, heritage hotels. Rituals: Har ki Pauri aarti.</p>
+          <div class="card-actions">
+            <a href="#contact" class="btn small">Plan Trip</a>
+            <a href="#" class="btn outline">Virtual Tour</a>
+          </div>
+        </article>
+        <article class="card pilgrimage-card reveal" data-search="tirupati">
+          <h3>Tirupati</h3>
+          <p>How to reach: Tirupati airport, rail connectivity. Best season: Sep - Feb.</p>
+          <p>Stay: TTD cottages, nearby hotels. Rituals: Suprabhatam, darshan slots.</p>
+          <div class="card-actions">
+            <a href="#contact" class="btn small">Plan Trip</a>
+            <a href="#" class="btn outline">Virtual Tour</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="festivals-section" id="festivals">
+      <div class="section-heading">
+        <h2>Festivals & Celebrations</h2>
+        <p>Celebrate the vibrant festivals of Sanatan Dharma with rituals, stories, and live countdowns.</p>
+      </div>
+      <div class="festival-grid">
+        <article class="festival-card reveal" data-date="2025-11-01">
+          <h3>Diwali</h3>
+          <p>Festival of Lights honoring the victory of dharma over darkness.</p>
+          <div class="countdown" aria-live="polite">Loading countdown...</div>
+          <a href="https://calendar.google.com" class="btn outline">Add to Calendar</a>
+        </article>
+        <article class="festival-card reveal" data-date="2025-03-14">
+          <h3>Holi</h3>
+          <p>Celebration of colors, joy, and the arrival of spring.</p>
+          <div class="countdown" aria-live="polite">Loading countdown...</div>
+          <a href="https://calendar.google.com" class="btn outline">Add to Calendar</a>
+        </article>
+        <article class="festival-card reveal" data-date="2025-10-01">
+          <h3>Navratri</h3>
+          <p>Nine sacred nights devoted to the Divine Mother.</p>
+          <div class="countdown" aria-live="polite">Loading countdown...</div>
+          <a href="https://calendar.google.com" class="btn outline">Add to Calendar</a>
+        </article>
+        <article class="festival-card reveal" data-date="2025-09-07">
+          <h3>Ganesh Chaturthi</h3>
+          <p>Honors Lord Ganesha with community poojas and devotion.</p>
+          <div class="countdown" aria-live="polite">Loading countdown...</div>
+          <a href="https://calendar.google.com" class="btn outline">Add to Calendar</a>
+        </article>
+        <article class="festival-card reveal" data-date="2025-10-03">
+          <h3>Durga Puja</h3>
+          <p>Celebrates the triumph of goddess Durga over negativity.</p>
+          <div class="countdown" aria-live="polite">Loading countdown...</div>
+          <a href="https://calendar.google.com" class="btn outline">Add to Calendar</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="scriptures-section" id="scriptures">
+      <div class="section-heading">
+        <h2>Sacred Scriptures</h2>
+        <p>Read and listen to the timeless teachings from the foundational texts of Sanatan Dharma.</p>
+      </div>
+      <div class="card-grid" data-search-grid>
+        <article class="card scripture-card reveal" data-search="vedas">
+          <h3>Vedas</h3>
+          <p>Ancient hymns revealing cosmic order, rituals, and spiritual knowledge.</p>
+          <blockquote>"Truth is one, sages call it by many names."</blockquote>
+          <a href="https://www.sacred-texts.com/hin/" class="btn outline">Read Online</a>
+        </article>
+        <article class="card scripture-card reveal" data-search="upanishads">
+          <h3>Upanishads</h3>
+          <p>Philosophical dialogues guiding seekers to self-realization and the nature of Brahman.</p>
+          <blockquote>"From the unreal lead me to the real."</blockquote>
+          <a href="https://www.sacred-texts.com/hin/" class="btn outline">Read Online</a>
+        </article>
+        <article class="card scripture-card reveal" data-search="bhagavad gita">
+          <h3>Bhagavad Gita</h3>
+          <p>The divine conversation of Krishna and Arjuna on dharma, devotion, and action.</p>
+          <blockquote>"You have a right to perform your duty."</blockquote>
+          <a href="https://www.holy-bhagavad-gita.org/" class="btn outline">Read Online</a>
+        </article>
+        <article class="card scripture-card reveal" data-search="ramayana">
+          <h3>Ramayana</h3>
+          <p>The epic journey of Rama, Sita, and Hanuman embodying righteousness.</p>
+          <blockquote>"Dharma protects those who protect it."</blockquote>
+          <a href="https://www.sacred-texts.com/hin/" class="btn outline">Read Online</a>
+        </article>
+        <article class="card scripture-card reveal" data-search="mahabharata">
+          <h3>Mahabharata</h3>
+          <p>A grand epic on duty, devotion, and the complexities of life.</p>
+          <blockquote>"With righteousness as your companion, you will never falter."</blockquote>
+          <a href="https://www.sacred-texts.com/hin/" class="btn outline">Read Online</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="book-pooja" id="book-pooja">
+      <div class="section-heading">
+        <h2>Book a Pooja</h2>
+        <p>Schedule online or in-person poojas with verified pandits for your chosen deity or occasion.</p>
+      </div>
+      <div class="book-grid">
+        <div class="book-card">
+          <h3>Choose Deity</h3>
+          <p>Select your deity, ritual, and preferred date for a personalized ceremony.</p>
+          <button class="btn primary">Select Deity</button>
         </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
+        <div class="book-card">
+          <h3>Pick Occasion</h3>
+          <p>From griha pravesh to anniversaries, align with auspicious timings.</p>
+          <button class="btn primary">View Calendar</button>
         </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
+        <div class="book-card">
+          <h3>Confirm & Offerings</h3>
+          <p>Complete the booking and add sacred offerings delivered to your home.</p>
+          <button class="btn primary">Book Now</button>
         </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
+      </div>
+    </section>
 
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
+    <section class="contact-section" id="contact">
+      <div class="section-heading">
+        <h2>Contact Us</h2>
+        <p>Connect with our spiritual guides for personalized journeys and community events.</p>
       </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
+      <div class="contact-grid">
+        <form class="contact-form" action="./contactme.php" method="POST">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn primary">Send Message</button>
         </form>
+        <div class="contact-details">
+          <h3>Spiritual Center</h3>
+          <p>88 Dharma Marg, Varanasi, Uttar Pradesh</p>
+          <p><strong>Phone:</strong> +91 90000 00000</p>
+          <p><strong>Email:</strong> seva@sanatandharma.org</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <iframe loading="lazy" title="Sanatan Dharma center map" src="https://www.google.com/maps?q=Varanasi%20India&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Sitemap</a>
+      <a href="#">Terms of Service</a>
     </div>
-    </div>
+    <p>© <span id="year"></span> Sanatan Dharma. All rights reserved.</p>
+  </footer>
 
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  <script src="./js/main.js"></script>
 </body>
 </html>
