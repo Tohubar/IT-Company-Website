@@ -1,77 +1,101 @@
-$(document).ready(function(){
+const body = document.body;
+const themeToggle = document.getElementById('theme-toggle');
+const contrastToggle = document.getElementById('contrast-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileNav = document.getElementById('mobile-nav');
+const toast = document.getElementById('toast');
+const notifyBtn = document.getElementById('notify-btn');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+const setTheme = (mode) => {
+  if (mode === 'dark') {
+    body.classList.add('dark');
+    document.documentElement.classList.add('dark');
+    themeToggle.textContent = '☀️';
+  } else {
+    body.classList.remove('dark');
+    document.documentElement.classList.remove('dark');
+    themeToggle.textContent = '🌙';
+  }
+  body.dataset.theme = mode;
+};
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+const storedTheme = localStorage.getItem('theme') || 'light';
+setTheme(storedTheme);
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+  });
+}
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
+if (contrastToggle) {
+  contrastToggle.addEventListener('click', () => {
+    body.classList.toggle('high-contrast');
+  });
+}
 
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
+if (mobileMenu) {
+  mobileMenu.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+  });
+}
 
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
+const showToast = (message) => {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+};
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
+if (notifyBtn) {
+  notifyBtn.addEventListener('click', () => {
+    showToast('Festival alerts enabled! Upcoming: Navratri starts in 5 days.');
+  });
+}
+
+const festivals = [
+  { day: 3, title: 'Ganesh Chaturthi' },
+  { day: 9, title: 'Radha Ashtami' },
+  { day: 15, title: 'Purnima Vrata' },
+  { day: 21, title: 'Navratri Begins' },
+  { day: 28, title: 'Durga Puja' }
+];
+
+const calendar = document.getElementById('calendar');
+const festivalList = document.getElementById('festival-list');
+
+if (calendar) {
+  const days = Array.from({ length: 30 }, (_, index) => index + 1);
+  days.forEach((day) => {
+    const dayEl = document.createElement('div');
+    const match = festivals.find((fest) => fest.day === day);
+    dayEl.className = 'rounded-xl border border-maroon/10 p-2 text-xs dark:border-gold/10';
+    if (match) {
+      dayEl.classList.add('bg-gold/30', 'text-maroon', 'font-semibold');
+      dayEl.innerHTML = `<div>${day}</div><div class="text-[10px]">${match.title}</div>`;
     } else {
-        $('.back-to-top').fadeOut('slow');
+      dayEl.textContent = day;
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
+    calendar.appendChild(dayEl);
+  });
+}
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+if (festivalList) {
+  festivals.forEach((festival) => {
+    const li = document.createElement('li');
+    li.className = 'flex items-center justify-between rounded-xl border border-maroon/10 px-4 py-2 dark:border-gold/10';
+    li.innerHTML = `<span>${festival.title}</span><span class="text-xs">Day ${festival.day}</span>`;
+    festivalList.appendChild(li);
+  });
+}
 
+const searchInputs = document.querySelectorAll('#global-search, #mobile-nav input[type="text"]');
+searchInputs.forEach((input) => {
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      showToast(`Searching for: ${event.target.value}`);
+    }
+  });
 });
