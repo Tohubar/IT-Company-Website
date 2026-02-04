@@ -1,489 +1,465 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সনাতন সেবালয় | Digital Mandir UI</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./images/image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./js/main.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+  <a class="skip-link" href="#main-content" data-i18n="a11y.skip_to_content">মূল কনটেন্টে যান</a>
 
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="logo" href="#home" aria-label="সনাতন সেবালয়">
+        <span class="logo-mark" aria-hidden="true">ॐ</span>
+        <span class="logo-text" data-i18n="brand.title">সনাতন সেবালয়</span>
+      </a>
 
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
+      <nav class="site-nav" aria-label="প্রধান নেভিগেশন">
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="sr-only" data-i18n="nav.toggle">মেনু খুলুন</span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" data-i18n="nav.home">হোম</a></li>
+          <li><a href="#puja" data-i18n="nav.puja">পূজা</a></li>
+          <li><a href="#calendar" data-i18n="nav.calendar">পূজা ক্যালেন্ডার</a></li>
+          <li><a href="#articles" data-i18n="nav.articles">ধার্মিক প্রবন্ধ</a></li>
+          <li><a href="#library" data-i18n="nav.library">পাঁচালি ও গ্রন্থ</a></li>
+          <li><a href="#kirtan" data-i18n="nav.kirtan">কীর্তন</a></li>
+          <li><a href="#mandir" data-i18n="nav.mandir">মন্দির ভ্রমণ</a></li>
+          <li><a href="#news" data-i18n="nav.news">ধর্ম সংবাদ</a></li>
+          <li><a href="#about" data-i18n="nav.about">সনাতন ধর্ম</a></li>
+        </ul>
+      </nav>
 
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
+      <div class="header-actions">
+        <label class="language-switcher" for="language" data-i18n="lang.label">ভাষা</label>
+        <select id="language" name="language" aria-label="ভাষা নির্বাচন">
+          <option value="bn" selected>বাংলা</option>
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="sa">संस्कृत</option>
+        </select>
+        <button class="theme-toggle" type="button" aria-pressed="false" data-i18n="theme.toggle">
+          শান্ত রাত্রি মোড
+        </button>
       </div>
     </div>
-</div>
+  </header>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
+  <main id="main-content">
+    <section id="home" class="hero">
+      <div class="container hero-content">
         <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
-        </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
-        </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
-        </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+          <p class="hero-kicker" data-i18n="home.kicker">শান্তি · সেবা · ভক্তি</p>
+          <h1 data-i18n="home.title">সনাতন ধর্মের শান্ত আলয়</h1>
+          <p class="hero-subtitle" data-i18n="home.subtitle">ডিজিটাল মন্দিরের মতো নিবিড় অনুভূতি—প্রত্যেকদিনের পূজা, ধর্মীয় পাঠ, এবং সেবার অনুপ্রেরণা একত্রে।</p>
+          <blockquote class="hero-quote" data-i18n="home.quote">“সত্যম্ ব্রূयাত্, প্রিয়ম্ ব্রূयাত্, ন ব্রূयাত্ সত্যমপ্রিয়ম্।”</blockquote>
+          <div class="hero-actions">
+            <a class="button primary" href="#puja" data-i18n="home.cta_primary">আজকের পূজা দেখুন</a>
+            <a class="button ghost" href="#articles" data-i18n="home.cta_secondary">ধর্মীয় পাঠ</a>
           </div>
         </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
+        <div class="hero-card">
+          <p class="card-label" data-i18n="home.hero_card.label">আজকের অনুশীলন</p>
+          <h2 data-i18n="home.hero_card.title">শ্রী গায়ত্রী জপ</h2>
+          <p data-i18n="home.hero_card.desc">শুদ্ধ চিত্তে ১০৮ বার জপ, প্রভাতের আলোয়।</p>
+          <div class="card-meta">
+            <span data-i18n="home.hero_card.time">সময়: প্রভাত ৫:৩০</span>
+            <span data-i18n="home.hero_card.location">স্থান: গৃহ মন্দির</span>
           </div>
         </div>
       </div>
-    </div>
-</div>
+    </section>
 
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
+    <section id="puja" class="section">
       <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
+        <div class="section-header">
+          <h2 data-i18n="puja.title">আজকের পূজা ও আগাম পূজা</h2>
+          <p data-i18n="puja.subtitle">ভক্তির ধারাবাহিকতা বজায় রাখতে দৈনিক ও আসন্ন পূজার একটি শান্ত তালিকা।</p>
+        </div>
+        <div class="grid two">
+          <div class="panel">
+            <h3 data-i18n="puja.today.title">আজকের পূজা</h3>
+            <ul class="list">
+              <li>
+                <strong data-i18n="puja.today.item1">শ্রী গনেশ আরতি</strong>
+                <span data-i18n="puja.today.time1">সন্ধ্যা ৭:০০ · সরল আরতি</span>
+              </li>
+              <li>
+                <strong data-i18n="puja.today.item2">মহামৃত্যুঞ্জয় মন্ত্র</strong>
+                <span data-i18n="puja.today.time2">রাত্রি ৮:৩০ · ২১ বার জপ</span>
+              </li>
+              <li>
+                <strong data-i18n="puja.today.item3">তুলসী পরিক্রমা</strong>
+                <span data-i18n="puja.today.time3">ভোর ৬:১৫ · ১১ প্রদক্ষিণ</span>
+              </li>
+            </ul>
           </div>
+          <div class="panel highlight">
+            <h3 data-i18n="puja.upcoming.title">আগামী পূজা</h3>
+            <div class="upcoming">
+              <div>
+                <p class="upcoming-date" data-i18n="puja.upcoming.date">ফাল্গুন ৮ · বৃহস্পতিবার</p>
+                <h4 data-i18n="puja.upcoming.name">শ্রী রাধা অষ্টমী</h4>
+                <p data-i18n="puja.upcoming.desc">ভোরে কীর্তন, মধ্যাহ্ন ভোগ, সন্ধ্যায় ভক্ত সমাবেশ।</p>
+              </div>
+              <a class="button subtle" href="#calendar" data-i18n="puja.upcoming.cta">ক্যালেন্ডার দেখুন</a>
+            </div>
+          </div>
+        </div>
+        <div class="festival-banner" role="status">
+          <span class="festival-label" data-i18n="puja.banner.label">উৎসব বার্তা</span>
+          <p data-i18n="puja.banner.text">নবরাত্রি আসন্ন — সকাল ও সন্ধ্যায় দেবীর আরতি উপলব্ধ।</p>
+        </div>
+        <div class="featured-article">
+          <div>
+            <p class="card-label" data-i18n="puja.featured.label">বিশেষ প্রবন্ধ</p>
+            <h3 data-i18n="puja.featured.title">জপ, ধ্যান ও দৈনিক সাধনার পথ</h3>
+            <p data-i18n="puja.featured.desc">সংক্ষিপ্ত ধ্যানচর্চা কীভাবে মনের শান্তি ও সহমর্মিতা বাড়ায়, তার সহজ নির্দেশনা।</p>
+          </div>
+          <a class="button ghost" href="#articles" data-i18n="puja.featured.cta">সম্পূর্ণ পড়ুন</a>
+        </div>
+        <div class="quick-access">
+          <a class="access-card" href="#calendar">
+            <span data-i18n="quick.calendar.title">পূজা ক্যালেন্ডার</span>
+            <small data-i18n="quick.calendar.desc">মাসিক তালিকা</small>
+          </a>
+          <a class="access-card" href="#library">
+            <span data-i18n="quick.panchali.title">পাঁচালি</span>
+            <small data-i18n="quick.panchali.desc">শ্রবণ ও পাঠ</small>
+          </a>
+          <a class="access-card" href="#library">
+            <span data-i18n="quick.books.title">গ্রন্থ</span>
+            <small data-i18n="quick.books.desc">শাস্ত্র পাঠাগার</small>
+          </a>
+          <a class="access-card" href="#kirtan">
+            <span data-i18n="quick.kirtan.title">কীর্তন</span>
+            <small data-i18n="quick.kirtan.desc">স্বর ও ভজন</small>
+          </a>
+          <a class="access-card" href="#mandir">
+            <span data-i18n="quick.mandir.title">মন্দির ভ্রমণ</span>
+            <small data-i18n="quick.mandir.desc">পরিচিতি ও ইতিহাস</small>
+          </a>
+        </div>
       </div>
-  </div>
+    </section>
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+    <section id="calendar" class="section muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="calendar.title">পূজা ক্যালেন্ডার</h2>
+          <p data-i18n="calendar.subtitle">মাসিক পূজা তালিকা — গুরুত্বপূর্ণ দিনগুলি হাইলাইট করা।</p>
+        </div>
+        <div class="calendar">
+          <div class="calendar-header">
+            <button class="button subtle" type="button" aria-label="পূর্ববর্তী মাস">←</button>
+            <h3 data-i18n="calendar.month">ফাল্গুন ১৪৩১</h3>
+            <button class="button subtle" type="button" aria-label="পরবর্তী মাস">→</button>
+          </div>
+          <div class="calendar-grid">
+            <div class="calendar-day" data-i18n="calendar.week.sun">রবি</div>
+            <div class="calendar-day" data-i18n="calendar.week.mon">সোম</div>
+            <div class="calendar-day" data-i18n="calendar.week.tue">মঙ্গল</div>
+            <div class="calendar-day" data-i18n="calendar.week.wed">বুধ</div>
+            <div class="calendar-day" data-i18n="calendar.week.thu">বৃহঃ</div>
+            <div class="calendar-day" data-i18n="calendar.week.fri">শুক্র</div>
+            <div class="calendar-day" data-i18n="calendar.week.sat">শনি</div>
+
+            <div class="calendar-cell">
+              <span class="date">৩</span>
+              <p data-i18n="calendar.item1">সরস্বতী পূজা</p>
+            </div>
+            <div class="calendar-cell highlight">
+              <span class="date">৮</span>
+              <p data-i18n="calendar.item2">রাধা অষ্টমী</p>
+            </div>
+            <div class="calendar-cell">
+              <span class="date">১৪</span>
+              <p data-i18n="calendar.item3">শিবরাত্রি</p>
+            </div>
+            <div class="calendar-cell">
+              <span class="date">২১</span>
+              <p data-i18n="calendar.item4">পূর্ণিমা ব্রত</p>
+            </div>
+            <div class="calendar-cell">
+              <span class="date">২৮</span>
+              <p data-i18n="calendar.item5">দোল পূর্ণিমা</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="articles.title">ধার্মিক প্রবন্ধ</h2>
+          <p data-i18n="articles.subtitle">শাস্ত্র, ইতিহাস, ও জীবনবোধের আলোকিত পাঠ।</p>
+        </div>
+        <div class="category-tags" role="tablist">
+          <button class="tag active" type="button" data-i18n="articles.category.philosophy">সনাতন দর্শন</button>
+          <button class="tag" type="button" data-i18n="articles.category.rituals">পূজা ও রীতি</button>
+          <button class="tag" type="button" data-i18n="articles.category.history">ইতিহাস ও সংস্কৃতি</button>
+          <button class="tag" type="button" data-i18n="articles.category.moral">নৈতিক শিক্ষা</button>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <p class="card-label" data-i18n="articles.item1.category">সনাতন দর্শন</p>
+            <h3 data-i18n="articles.item1.title">ধর্ম, অর্থ, কাম, মোক্ষের ভারসাম্য</h3>
+            <p data-i18n="articles.item1.desc">জীবনের চার পুরুষার্থ কীভাবে দৈনন্দিন জীবনে প্রয়োগ করা যায়।</p>
+          </article>
+          <article class="card">
+            <p class="card-label" data-i18n="articles.item2.category">পূজা ও রীতি</p>
+            <h3 data-i18n="articles.item2.title">দৈনিক স্নান ও সংকলিত আচার</h3>
+            <p data-i18n="articles.item2.desc">শুদ্ধতার সহজ নিয়ম ও শান্ত রুটিন।</p>
+          </article>
+          <article class="card">
+            <p class="card-label" data-i18n="articles.item3.category">ইতিহাস ও সংস্কৃতি</p>
+            <h3 data-i18n="articles.item3.title">বাংলার তীর্থভূমির ইতিহাস</h3>
+            <p data-i18n="articles.item3.desc">মন্দিরস্থাপত্য ও লোকধারার সংক্ষিপ্ত পরিচয়।</p>
+          </article>
+          <article class="card">
+            <p class="card-label" data-i18n="articles.item4.category">নৈতিক শিক্ষা</p>
+            <h3 data-i18n="articles.item4.title">দৈনন্দিন জীবনে অহিংসা</h3>
+            <p data-i18n="articles.item4.desc">শান্ত আচরণ ও মনোজগতের উন্নতি।</p>
+          </article>
+          <article class="card">
+            <p class="card-label" data-i18n="articles.item5.category">পূজা ও রীতি</p>
+            <h3 data-i18n="articles.item5.title">প্রদীপ জ্বালানোর অর্থ ও বিধি</h3>
+            <p data-i18n="articles.item5.desc">প্রদীপের আলোকে আধ্যাত্মিক প্রতীক।</p>
+          </article>
+          <article class="card">
+            <p class="card-label" data-i18n="articles.item6.category">সনাতন দর্শন</p>
+            <h3 data-i18n="articles.item6.title">নামজপের গুরুত্ব</h3>
+            <p data-i18n="articles.item6.desc">নিয়মিত নামজপে মানসিক স্থিরতা ও কৃতজ্ঞতা।</p>
+          </article>
+        </div>
+
+        <article class="reading" aria-labelledby="article-reading-title">
+          <header>
+            <p class="card-label" data-i18n="article.detail.label">পাঠ্য প্রবন্ধ</p>
+            <h3 id="article-reading-title" data-i18n="article.detail.title">ভক্তি, জ্ঞান ও কর্মের সমন্বিত পথ</h3>
+            <p class="reading-meta" data-i18n="article.detail.meta">সময়: ৮ মিনিট · ধ্যানমূলক পাঠ</p>
+          </header>
+          <p data-i18n="article.detail.paragraph1">ভক্তি মানুষের হৃদয়কে নরম করে, জ্ঞান তাকে আলো দেয়, আর কর্ম তাকে সমাজের সঙ্গে যুক্ত রাখে। তিনটির সমন্বয়ে পূর্ণতা আসে।</p>
+          <blockquote data-i18n="article.detail.quote">“যে কাজ ভক্তি সহকারে করা হয়, তা আত্মাকে শুদ্ধ করে।”</blockquote>
+          <p data-i18n="article.detail.paragraph2">প্রতিদিন কিছু সময় শাস্ত্র পাঠ, কিছু সময় আত্মনিরীক্ষা, এবং কিছু সময় সেবা—এই তিনটি অভ্যাস হৃদয়ে স্থায়ী শান্তি প্রতিষ্ঠা করে।</p>
+          <div class="verse">
+            <p data-i18n="article.detail.verse">ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्मा अमृतं गमय ॥</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="library" class="section muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="library.title">পাঁচালি ও ধর্মীয় গ্রন্থাগার</h2>
+          <p data-i18n="library.subtitle">শ্রদ্ধার সাথে সংরক্ষিত পাঁচালি, পুরাণ ও ধর্মগ্রন্থ।</p>
+        </div>
+        <div class="grid three">
+          <div class="book-card">
+            <h3 data-i18n="library.item1.title">চন্ডীপাঠ পাঁচালি</h3>
+            <p data-i18n="library.item1.desc">মাতৃ আরাধনার জন্য পাঠ্য কাহিনি ও মন্ত্র।</p>
+            <div class="book-actions">
+              <button class="button subtle" type="button" data-i18n="library.read">অনলাইন পাঠ</button>
+              <button class="button ghost" type="button" data-i18n="library.download">ডাউনলোড</button>
+            </div>
+          </div>
+          <div class="book-card">
+            <h3 data-i18n="library.item2.title">শ্রীমদ্ভাগবত</h3>
+            <p data-i18n="library.item2.desc">কথামালা ও ভক্তিপথের বিস্তৃত দর্শন।</p>
+            <div class="book-actions">
+              <button class="button subtle" type="button" data-i18n="library.read">অনলাইন পাঠ</button>
+              <button class="button ghost" type="button" data-i18n="library.download">ডাউনলোড</button>
+            </div>
+          </div>
+          <div class="book-card">
+            <h3 data-i18n="library.item3.title">গীতা সারাংশ</h3>
+            <p data-i18n="library.item3.desc">কর্মযোগ ও ধর্মবোধের সহজ ব্যাখ্যা।</p>
+            <div class="book-actions">
+              <button class="button subtle" type="button" data-i18n="library.read">অনলাইন পাঠ</button>
+              <button class="button ghost" type="button" data-i18n="library.download">ডাউনলোড</button>
+            </div>
+          </div>
+        </div>
+        <div class="detail-panel">
+          <h3 data-i18n="library.detail.title">গ্রন্থ বিস্তারিত</h3>
+          <p data-i18n="library.detail.desc">গ্রন্থের উৎস, পাঠের নিয়ম, এবং প্রাসঙ্গিক মন্ত্রসহ পরিচিতি। ভবিষ্যতে অনুসন্ধান ও বুকমার্ক যুক্ত হবে।</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kirtan" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="kirtan.title">কীর্তন ও ভজন</h2>
+          <p data-i18n="kirtan.subtitle">স্বর, ধ্বনি ও হৃদয়ের শান্ত সমবেত আরাধনা।</p>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" type="button" data-tab="morning" data-i18n="kirtan.tabs.morning">প্রভাতী</button>
+          <button class="tab" type="button" data-tab="evening" data-i18n="kirtan.tabs.evening">সন্ধ্যা</button>
+          <button class="tab" type="button" data-tab="bhajan" data-i18n="kirtan.tabs.bhajan">ভজন</button>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active" data-tab-panel="morning">
+            <div class="audio-card">
+              <div>
+                <h3 data-i18n="kirtan.item1.title">শ্রী হরি নাম সংকীর্তন</h3>
+                <p data-i18n="kirtan.item1.desc">শান্ত তাল ও কোমল বীণা।</p>
+              </div>
+              <div class="audio-controls" aria-label="অডিও প্লেয়ার">
+                <button class="button subtle" type="button" data-i18n="kirtan.play">প্লে</button>
+                <div class="progress">
+                  <span></span>
+                </div>
+                <span class="time" data-i18n="kirtan.duration">০৩:৪৫</span>
+              </div>
+            </div>
+            <div class="lyrics">
+              <h4 data-i18n="kirtan.lyrics.title">গীতাংশ</h4>
+              <p data-i18n="kirtan.lyrics.body">হরে কৃষ্ণ হরে কৃষ্ণ, কৃষ্ণ কৃষ্ণ হরে হরে। হরে রাম হরে রাম, রাম রাম হরে হরে।</p>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="evening">
+            <div class="audio-card">
+              <div>
+                <h3 data-i18n="kirtan.item2.title">সন্ধ্যা আরতি</h3>
+                <p data-i18n="kirtan.item2.desc">দীপ ও ধূপের মৃদু সুর।</p>
+              </div>
+              <div class="audio-controls" aria-label="অডিও প্লেয়ার">
+                <button class="button subtle" type="button" data-i18n="kirtan.play">প্লে</button>
+                <div class="progress">
+                  <span></span>
+                </div>
+                <span class="time" data-i18n="kirtan.duration">০৪:২০</span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="bhajan">
+            <div class="audio-card">
+              <div>
+                <h3 data-i18n="kirtan.item3.title">ভজন: হৃদয়ের প্রদীপ</h3>
+                <p data-i18n="kirtan.item3.desc">সহজ কথা, গভীর অনুভব।</p>
+              </div>
+              <div class="audio-controls" aria-label="অডিও প্লেয়ার">
+                <button class="button subtle" type="button" data-i18n="kirtan.play">প্লে</button>
+                <div class="progress">
+                  <span></span>
+                </div>
+                <span class="time" data-i18n="kirtan.duration">০৫:১০</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mandir" class="section muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="mandir.title">মন্দির ভ্রমণ</h2>
+          <p data-i18n="mandir.subtitle">মন্দিরের ইতিহাস, স্থাপত্য ও সেবার পরিচিতি।</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3 data-i18n="mandir.list1.title">তারকেশ্বর মন্দির</h3>
+            <p data-i18n="mandir.list1.desc">শিবমন্দিরের শান্ত আঙিনা ও প্রাচীন ইতিহাস।</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="mandir.list2.title">দক্ষিণেশ্বর কালীমন্দির</h3>
+            <p data-i18n="mandir.list2.desc">ভক্তির ধারাবাহিকতা ও গঙ্গার শান্ত ধারা।</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="mandir.list3.title">বেলুড় মঠ</h3>
+            <p data-i18n="mandir.list3.desc">সমন্বয়ের মন্দির ও সেবার কেন্দ্র।</p>
+          </article>
+        </div>
+        <div class="detail-panel">
+          <div>
+            <h3 data-i18n="mandir.detail.title">মন্দির বিস্তারিত</h3>
+            <p data-i18n="mandir.detail.desc">ইতিহাস, দর্শন সময়, এবং ধ্যান-পরিক্রমার পরামর্শ।</p>
+            <ul class="list">
+              <li data-i18n="mandir.detail.history">ইতিহাস: প্রতিষ্ঠা ও প্রধান উৎসবের তথ্য</li>
+              <li data-i18n="mandir.detail.location">অবস্থান: নদীতীরবর্তী শান্ত পরিবেশ</li>
+              <li data-i18n="mandir.detail.tour">ভ্রমণ তথ্য: প্রবেশ ও দর্শন সময়সূচি</li>
+            </ul>
+          </div>
+          <div class="gallery">
+            <div class="gallery-item" data-i18n="mandir.detail.gallery1">প্রধান মন্দির</div>
+            <div class="gallery-item" data-i18n="mandir.detail.gallery2">আরতি স্থান</div>
+            <div class="gallery-item" data-i18n="mandir.detail.gallery3">ধ্যান কক্ষ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="news.title">ধর্ম সংবাদ ও আপডেট</h2>
+          <p data-i18n="news.subtitle">উৎসব ঘোষণা, কমিউনিটি কার্যক্রম, এবং সেবার সংবাদ।</p>
+        </div>
+        <div class="grid two">
+          <article class="news-card">
+            <p class="card-label" data-i18n="news.item1.label">উৎসব ঘোষণা</p>
+            <h3 data-i18n="news.item1.title">নবরাত্রি সেবা সমারোহ</h3>
+            <p data-i18n="news.item1.desc">প্রতিদিন সন্ধ্যায় কীর্তন ও প্রাসাদ বিতরণ।</p>
+          </article>
+          <article class="news-card">
+            <p class="card-label" data-i18n="news.item2.label">কমিউনিটি আপডেট</p>
+            <h3 data-i18n="news.item2.title">রক্তদান ও অন্নদান উদ্যোগ</h3>
+            <p data-i18n="news.item2.desc">পরিবারসহ অংশগ্রহণের অনুরোধ।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section muted">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="about.title">সনাতন ধর্ম সম্পর্কে</h2>
+          <p data-i18n="about.subtitle">দীর্ঘকালীন ঐতিহ্য, শিক্ষা ও মানবকল্যাণ।</p>
+        </div>
+        <div class="reading">
+          <p data-i18n="about.paragraph1">সনাতন ধর্ম মানবতার কল্যাণে নিবেদিত একটি চিরন্তন পথ। এটি আত্মশুদ্ধি, করুণা, এবং সত্যের অনুশীলনকে গুরুত্ব দেয়।</p>
+          <p data-i18n="about.paragraph2">শিক্ষা, সংস্কৃতি, এবং নৈতিকতার ভিত্তিতে সনাতন ধর্ম মানুষের মনকে শান্ত রাখে ও সমাজের প্রতি দায়িত্বশীল করে তোলে।</p>
+          <div class="verse">
+            <p data-i18n="about.verse">वसुधैव कुटुम्बकम् — সমগ্র পৃথিবী একটি পরিবার।</p>
+          </div>
+          <p data-i18n="about.paragraph3">এই ডিজিটাল সেবালয় একটি নির্ভরযোগ্য, শান্ত, এবং ভবিষ্যৎ-বান্ধব তথ্যভাণ্ডার হিসেবে গড়ে ওঠার উদ্দেশ্যে।</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <p class="footer-quote" data-i18n="footer.quote">“শান্তি আসে যখন সেবা হৃদয়ে থাকে।”</p>
+        <p class="footer-note" data-i18n="footer.note">এই সাইট সনাতন ধর্মের সেবা হিসেবে নির্মিত, কোনো বাণিজ্যিক উদ্দেশ্য নেই।</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home" data-i18n="footer.links.home">হোম</a>
+        <a href="#calendar" data-i18n="footer.links.calendar">ক্যালেন্ডার</a>
+        <a href="#library" data-i18n="footer.links.library">গ্রন্থ</a>
+        <a href="#about" data-i18n="footer.links.about">সনাতন ধর্ম</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© ২০২4 সনাতন সেবালয় — সর্বস্বত্ব সংরক্ষিত।</p>
+    </div>
+  </footer>
 </body>
 </html>
