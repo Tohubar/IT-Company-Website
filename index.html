@@ -1,489 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanatani Spiritual Sanctuary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #121212;
+      --saffron: #f4a638;
+      --gold: #e6c98f;
+      --green: #6cc285;
+    }
+    body {
+      font-family: "Inter", sans-serif;
+    }
+    h1, h2, h3, h4, .font-serif {
+      font-family: "Eczar", serif;
+    }
+    .glass {
+      background: rgba(15, 15, 15, 0.72);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .slow-fade {
+      animation: slowFade 5s ease-in-out infinite alternate;
+    }
+    @keyframes slowFade {
+      0% { opacity: 0.7; transform: translateY(0); }
+      100% { opacity: 1; transform: translateY(-6px); }
+    }
+    .float-glow {
+      animation: floatGlow 6s ease-in-out infinite;
+    }
+    @keyframes floatGlow {
+      0% { transform: translateY(0); box-shadow: 0 0 20px rgba(244, 166, 56, 0.2); }
+      50% { transform: translateY(-8px); box-shadow: 0 0 36px rgba(230, 201, 143, 0.35); }
+      100% { transform: translateY(0); box-shadow: 0 0 20px rgba(244, 166, 56, 0.2); }
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-[var(--bg)] text-slate-100">
+  <header class="sticky top-0 z-50 glass">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-semibold text-[var(--gold)]">
+        <span class="h-10 w-10 rounded-full border border-[var(--gold)]/40 bg-[var(--panel)] flex items-center justify-center">ॐ</span>
+        Sanatani Sanctuary
+      </a>
+      <div class="hidden items-center gap-6 text-sm uppercase tracking-[0.2em] text-slate-200 md:flex">
+        <a href="index.html" class="hover:text-[var(--saffron)]">Home</a>
+        <a href="temples.html" class="hover:text-[var(--saffron)]">Temples</a>
+        <a href="books.html" class="hover:text-[var(--saffron)]">Scriptures</a>
+        <a href="kirtan.html" class="hover:text-[var(--saffron)]">Kirtan</a>
+        <a href="puja.html" class="hover:text-[var(--saffron)]">Puja</a>
+        <a href="articles.html" class="hover:text-[var(--saffron)]">Articles</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="hidden md:flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
+          <span>Dark</span>
+          <span class="h-4 w-8 rounded-full bg-slate-700/60 relative">
+            <span class="absolute top-0.5 left-0.5 h-3 w-3 rounded-full bg-[var(--saffron)]"></span>
+          </span>
+          <span>Light</span>
+        </div>
+        <button class="rounded-full border border-[var(--saffron)]/60 px-4 py-2 text-xs uppercase tracking-[0.2em] text-[var(--saffron)] hover:bg-[var(--saffron)] hover:text-black transition">
+          Join Satsang
+        </button>
+      </div>
+    </nav>
+  </header>
 
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
+  <section class="relative h-[90vh] overflow-hidden">
+    <video
+      class="absolute inset-0 h-full w-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="https://images.pexels.com/photos/2670898/pexels-photo-2670898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    >
+      <source src="https://cdn.coverr.co/videos/coverr-temple-celebration-8886/1080p.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-center px-6">
+      <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Timeless Dharma • Eternal Light</p>
+      <h1 class="mt-4 text-4xl font-semibold text-[var(--gold)] md:text-6xl">
+        Awaken the Soul with Sanatani Wisdom
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-slate-200">
+        Immerse in sacred chants, divine scriptures, and the living heritage of the mandirs. A premium spiritual
+        sanctuary crafted for seekers of inner light.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="books.html" class="rounded-full bg-[var(--saffron)] px-6 py-3 text-sm uppercase tracking-[0.2em] text-black">
+          Explore Scriptures
+        </a>
+        <a href="puja.html" class="rounded-full border border-[var(--gold)] px-6 py-3 text-sm uppercase tracking-[0.2em] text-[var(--gold)]">
+          Upcoming Puja
+        </a>
+      </div>
+    </div>
   </section>
 
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-10 md:grid-cols-2">
+      <div>
+        <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">About Sanatana</p>
+        <h2 class="mt-4 text-3xl font-semibold text-[var(--gold)] md:text-4xl">An Eternal Path of Harmony</h2>
+        <p class="mt-6 text-slate-300">
+          Sanatana Dharma is the timeless journey of the soul, rooted in compassion, devotion, and the rhythm of the cosmos.
+          Our mission is to design a digital mandir that honors sacred traditions while guiding modern seekers toward inner peace.
+        </p>
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-700/60 bg-[var(--panel)] p-6">
+            <h3 class="text-xl font-semibold text-[var(--gold)]">Sacred Heritage</h3>
+            <p class="mt-2 text-sm text-slate-400">Curated scriptures, rituals, and festivals from the Vedic lineage.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-700/60 bg-[var(--panel)] p-6">
+            <h3 class="text-xl font-semibold text-[var(--gold)]">Divine Practices</h3>
+            <p class="mt-2 text-sm text-slate-400">Guided kirtans, pujas, and meditations to nurture devotion.</p>
+          </div>
         </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -top-6 right-6 h-40 w-40 rounded-full bg-[var(--saffron)]/20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-[var(--green)]/20 blur-2xl"></div>
+        <div class="glass relative rounded-3xl p-8">
+          <h3 class="text-2xl font-semibold text-[var(--gold)]">Daily Mantra</h3>
+          <p class="mt-4 text-slate-200">"ॐ असतो मा सद्गमय। तमसो मा ज्योतिर्गमय।"</p>
+          <p class="mt-4 text-sm text-slate-400">Lead us from the unreal to the real, from darkness to light.</p>
+          <div class="mt-6 flex items-center gap-4">
+            <div class="h-12 w-12 rounded-full border border-[var(--gold)]/50 flex items-center justify-center text-[var(--gold)]">ॐ</div>
+            <div>
+              <p class="text-sm text-slate-300">Meditation Cycle</p>
+              <p class="text-xs uppercase tracking-[0.3em] text-[var(--green)]">12 minutes</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
+  <section class="bg-[var(--panel)] py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="flex items-center justify-between">
         <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
+          <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Scriptures</p>
+          <h2 class="mt-3 text-3xl font-semibold text-[var(--gold)]">Sacred Texts & Panchali</h2>
         </div>
-        <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
+        <a href="books.html" class="text-sm uppercase tracking-[0.3em] text-[var(--saffron)]">View All</a>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-700/60 bg-black/40 p-6 slow-fade">
+          <p class="text-xs uppercase tracking-[0.3em] text-[var(--green)]">Bhagavad Gita</p>
+          <h3 class="mt-2 text-xl font-semibold text-[var(--gold)]">Song of Divine Guidance</h3>
+          <p class="mt-4 text-sm text-slate-400">Discover the dialogue between Krishna and Arjuna on dharma and duty.</p>
         </div>
-        <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
+        <div class="rounded-2xl border border-slate-700/60 bg-black/40 p-6 slow-fade">
+          <p class="text-xs uppercase tracking-[0.3em] text-[var(--green)]">Ramcharitmanas</p>
+          <h3 class="mt-2 text-xl font-semibold text-[var(--gold)]">Rama’s Sacred Journey</h3>
+          <p class="mt-4 text-sm text-slate-400">Relive devotion and valor through Tulsidas’ poetic masterpiece.</p>
         </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
-        </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
+        <div class="rounded-2xl border border-slate-700/60 bg-black/40 p-6 slow-fade">
+          <p class="text-xs uppercase tracking-[0.3em] text-[var(--green)]">Devi Mahatmya</p>
+          <h3 class="mt-2 text-xl font-semibold text-[var(--gold)]">The Supreme Shakti</h3>
+          <p class="mt-4 text-sm text-slate-400">Celebrate the cosmic feminine power in poetic Sanskrit hymns.</p>
         </div>
       </div>
     </div>
-</div>
-
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
-        </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-        </div>
-    </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
-
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
   </section>
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-8 md:grid-cols-2">
+      <div class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-10 float-glow">
+        <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Deity Darshan</p>
+        <h2 class="mt-4 text-3xl font-semibold text-[var(--gold)]">Divine Forms</h2>
+        <p class="mt-4 text-slate-300">Each deity embodies a celestial attribute. Connect with the energies of Shiva, Devi, Vishnu, and Hanuman.</p>
+        <div class="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-300">
+          <div class="rounded-2xl bg-black/40 p-4">Shiva • Transformation</div>
+          <div class="rounded-2xl bg-black/40 p-4">Lakshmi • Abundance</div>
+          <div class="rounded-2xl bg-black/40 p-4">Saraswati • Wisdom</div>
+          <div class="rounded-2xl bg-black/40 p-4">Hanuman • Strength</div>
+        </div>
       </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
+      <div class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-10">
+        <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Kirtan & Puja</p>
+        <h2 class="mt-4 text-3xl font-semibold text-[var(--gold)]">Daily Devotional Flow</h2>
+        <p class="mt-4 text-slate-300">Immerse in serene kirtans and plan puja experiences aligned with the lunar calendar.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="kirtan.html" class="rounded-full border border-[var(--gold)] px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Kirtan Library</a>
+          <a href="puja.html" class="rounded-full border border-[var(--gold)] px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Puja Calendar</a>
+        </div>
       </div>
-  </div>
+    </div>
+  </section>
 
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  <section class="bg-[var(--panel)] py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Articles</p>
+          <h2 class="mt-3 text-3xl font-semibold text-[var(--gold)]">Spiritual Insights</h2>
+        </div>
+        <a href="articles.html" class="text-sm uppercase tracking-[0.3em] text-[var(--saffron)]">Read More</a>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-slate-700/60 bg-black/40 p-6">
+          <p class="text-xs uppercase tracking-[0.3em] text-[var(--green)]">Dharma</p>
+          <h3 class="mt-3 text-xl font-semibold text-[var(--gold)]">Living the Yamas & Niyamas</h3>
+          <p class="mt-4 text-sm text-slate-400">A guide to integrating ethical pillars into modern life.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-700/60 bg-black/40 p-6">
+          <p class="text-xs uppercase tracking-[0.3em] text-[var(--green)]">Vedanta</p>
+          <h3 class="mt-3 text-xl font-semibold text-[var(--gold)]">The Self Beyond the Mind</h3>
+          <p class="mt-4 text-sm text-slate-400">Understand Atman through contemplative practices.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-700/60 bg-black/40 p-6">
+          <p class="text-xs uppercase tracking-[0.3em] text-[var(--green)]">Festivals</p>
+          <h3 class="mt-3 text-xl font-semibold text-[var(--gold)]">Colors of Devotion</h3>
+          <p class="mt-4 text-sm text-slate-400">Explore the ritual symbolism behind major celebrations.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Holy Places</p>
+        <h2 class="mt-3 text-3xl font-semibold text-[var(--gold)]">Mandirs & Pilgrimage</h2>
+      </div>
+      <a href="temples.html" class="text-sm uppercase tracking-[0.3em] text-[var(--saffron)]">Explore</a>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold)]">Kashi Vishwanath</h3>
+        <p class="mt-3 text-sm text-slate-400">The eternal city of Shiva, where the Ganga flows with blessings.</p>
+      </div>
+      <div class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold)]">Tirupati Balaji</h3>
+        <p class="mt-3 text-sm text-slate-400">A luminous hill shrine devoted to Lord Venkateswara.</p>
+      </div>
+      <div class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-6">
+        <h3 class="text-xl font-semibold text-[var(--gold)]">Kamakhya Devi</h3>
+        <p class="mt-3 text-sm text-slate-400">Shakti peeth resonating with the divine feminine energy.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 bg-black py-12">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
+      <div>
+        <h3 class="text-xl font-semibold text-[var(--gold)]">Sanatani Sanctuary</h3>
+        <p class="mt-2 text-sm text-slate-400">A premium digital mandir for seekers of eternal truth.</p>
+      </div>
+      <div class="flex gap-6 text-xs uppercase tracking-[0.3em] text-slate-400">
+        <a href="books.html" class="hover:text-[var(--saffron)]">Scriptures</a>
+        <a href="kirtan.html" class="hover:text-[var(--saffron)]">Kirtan</a>
+        <a href="puja.html" class="hover:text-[var(--saffron)]">Puja</a>
+      </div>
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-500">© 2024 Sanatani UI</p>
+    </div>
+  </footer>
 </body>
 </html>

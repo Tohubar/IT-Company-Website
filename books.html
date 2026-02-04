@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scriptures • Sanatani Sanctuary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #121212;
+      --saffron: #f4a638;
+      --gold: #e6c98f;
+      --green: #6cc285;
+    }
+    body { font-family: "Inter", sans-serif; }
+    h1, h2, h3, h4, .font-serif { font-family: "Eczar", serif; }
+  </style>
+</head>
+<body class="bg-[var(--bg)] text-slate-100">
+  <header class="sticky top-0 z-50 bg-black/70 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-semibold text-[var(--gold)]">
+        <span class="h-10 w-10 rounded-full border border-[var(--gold)]/40 bg-[var(--panel)] flex items-center justify-center">ॐ</span>
+        Sanatani Sanctuary
+      </a>
+      <div class="hidden items-center gap-6 text-sm uppercase tracking-[0.2em] text-slate-200 md:flex">
+        <a href="index.html" class="hover:text-[var(--saffron)]">Home</a>
+        <a href="temples.html" class="hover:text-[var(--saffron)]">Temples</a>
+        <a href="books.html" class="hover:text-[var(--saffron)]">Scriptures</a>
+        <a href="kirtan.html" class="hover:text-[var(--saffron)]">Kirtan</a>
+        <a href="puja.html" class="hover:text-[var(--saffron)]">Puja</a>
+        <a href="articles.html" class="hover:text-[var(--saffron)]">Articles</a>
+      </div>
+      <a href="articles.html" class="rounded-full border border-[var(--saffron)]/60 px-4 py-2 text-xs uppercase tracking-[0.2em] text-[var(--saffron)]">Daily Wisdom</a>
+    </nav>
+  </header>
+
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Scriptures & Panchali</p>
+    <h1 class="mt-4 text-4xl font-semibold text-[var(--gold)]">Sacred Libraries</h1>
+    <p class="mt-4 max-w-2xl text-slate-300">An immersive reading space for the timeless Sanskrit and regional scriptures.</p>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <article class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-6">
+        <div class="h-40 rounded-2xl bg-gradient-to-br from-[var(--saffron)]/30 to-black flex items-center justify-center text-3xl text-[var(--gold)]">ॐ</div>
+        <h3 class="mt-4 text-xl font-semibold text-[var(--gold)]">Bhagavad Gita</h3>
+        <p class="mt-2 text-sm text-slate-400">18 chapters of divine counsel.</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em]">
+          <a href="book-details.html" class="rounded-full bg-[var(--saffron)] px-4 py-2 text-black">Read Online</a>
+          <button class="rounded-full border border-[var(--gold)] px-4 py-2 text-[var(--gold)]">Download PDF</button>
+        </div>
+      </article>
+      <article class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-6">
+        <div class="h-40 rounded-2xl bg-gradient-to-br from-[var(--green)]/30 to-black flex items-center justify-center text-3xl text-[var(--gold)]">राम</div>
+        <h3 class="mt-4 text-xl font-semibold text-[var(--gold)]">Ramcharitmanas</h3>
+        <p class="mt-2 text-sm text-slate-400">Seven kandas of devotional poetry.</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em]">
+          <a href="book-details.html" class="rounded-full bg-[var(--saffron)] px-4 py-2 text-black">Read Online</a>
+          <button class="rounded-full border border-[var(--gold)] px-4 py-2 text-[var(--gold)]">Download PDF</button>
+        </div>
+      </article>
+      <article class="rounded-3xl border border-slate-700/60 bg-[var(--panel)] p-6">
+        <div class="h-40 rounded-2xl bg-gradient-to-br from-[var(--gold)]/30 to-black flex items-center justify-center text-3xl text-[var(--gold)]">देवी</div>
+        <h3 class="mt-4 text-xl font-semibold text-[var(--gold)]">Devi Mahatmya</h3>
+        <p class="mt-2 text-sm text-slate-400">The cosmic power of Shakti.</p>
+        <div class="mt-4 flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em]">
+          <a href="book-details.html" class="rounded-full bg-[var(--saffron)] px-4 py-2 text-black">Read Online</a>
+          <button class="rounded-full border border-[var(--gold)] px-4 py-2 text-[var(--gold)]">Download PDF</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 bg-black py-12">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
+      <div>
+        <h3 class="text-xl font-semibold text-[var(--gold)]">Sanatani Sanctuary</h3>
+        <p class="mt-2 text-sm text-slate-400">A premium digital mandir for seekers of eternal truth.</p>
+      </div>
+      <div class="flex gap-6 text-xs uppercase tracking-[0.3em] text-slate-400">
+        <a href="temples.html" class="hover:text-[var(--saffron)]">Temples</a>
+        <a href="kirtan.html" class="hover:text-[var(--saffron)]">Kirtan</a>
+        <a href="puja.html" class="hover:text-[var(--saffron)]">Puja</a>
+      </div>
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-500">© 2024 Sanatani UI</p>
+    </div>
+  </footer>
+</body>
+</html>
