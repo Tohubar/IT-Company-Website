@@ -1,489 +1,588 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Company Website</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" href="./images/image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaCoin — Premium Web3 Crypto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    body {
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.25), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.28), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(34, 211, 238, 0.2), transparent 45%),
+        #05050a;
+      color: #e5e7eb;
+      overflow-x: hidden;
+    }
+    .glass {
+      background: rgba(10, 14, 30, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(18px);
+    }
+    .glow {
+      box-shadow: 0 0 45px rgba(59, 130, 246, 0.5), 0 0 120px rgba(147, 51, 234, 0.35);
+    }
+    .section-title {
+      background: linear-gradient(90deg, #7c3aed, #38bdf8, #22d3ee);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .coin-wrapper {
+      perspective: 1200px;
+    }
+    .coin {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      transform-style: preserve-3d;
+      animation: spin 18s linear infinite;
+    }
+    .coin-face,
+    .coin-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.65), transparent 55%),
+        radial-gradient(circle at 60% 70%, rgba(56, 189, 248, 0.35), transparent 50%),
+        linear-gradient(140deg, #1d4ed8, #7c3aed 45%, #0ea5e9 75%);
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.15), 0 0 45px rgba(56, 189, 248, 0.6);
+      display: grid;
+      place-items: center;
+    }
+    .coin-face::after {
+      content: "NC";
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 0.2rem;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 0 20px rgba(147, 51, 234, 0.8);
+    }
+    .coin-back {
+      transform: rotateY(180deg);
+      background: radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.55), transparent 55%),
+        linear-gradient(120deg, #0ea5e9, #1e40af 55%, #14b8a6);
+    }
+    .coin-edge {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      transform-style: preserve-3d;
+    }
+    .coin-edge span {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(56, 189, 248, 0.35), rgba(255, 255, 255, 0.08));
+      transform: rotateY(calc(var(--i) * 15deg)) translateZ(18px);
+    }
+    @keyframes spin {
+      0% {
+        transform: rotateY(0deg) rotateX(12deg);
+      }
+      50% {
+        transform: rotateY(180deg) rotateX(16deg);
+      }
+      100% {
+        transform: rotateY(360deg) rotateX(12deg);
+      }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .gradient-border {
+      border: 1px solid transparent;
+      background: linear-gradient(#0b1225, #0b1225) padding-box,
+        linear-gradient(140deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8), rgba(34, 211, 238, 0.8)) border-box;
+    }
+    canvas#starfield {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+    .progress-bar::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: var(--progress, 0%);
+      background: linear-gradient(90deg, #38bdf8, #7c3aed, #22d3ee);
+      border-radius: 999px;
+      transition: width 1.4s ease;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
-        <div class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
-                <li><a href="#portfolio">portfolio</a></li>
-                <li><a href="#team">team</a></li>
-                <li><a href="careers.html">career</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+  <canvas id="starfield"></canvas>
 
-  <section id="home" class="home">
-      <h1>Bring your Business Online</h1>
-      <h2>with IT Company Services</h2>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </section>
-
-  <section id="about" class="about">
-    <h1 class="heading">about us</h1>
-    <div class="row">
-        <div class="content">
-            <h3>We make creativity work for your brand!</h3>
-            <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
-                With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
-        </div>
-    </div>
-  </section>
-
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We help you to build high-quality digital solutions and products as well as deliver a wide range of related professional services. We are providing world-class service to our clients.
-            </p>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-laptop"></i></span>
-            <h6>Web App Development</h6>
-            <p>Our Custom Web Development Services Include Both Front-End And Back-End Development. Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our Developers Are Up For The Challenge.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-android"></i></span>
-            <h6>Mobile App Development</h6>
-            <p>We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile App That Runs Smoothly On Multiple Platforms.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-magic"></i></span>
-            <h6>Digital Marketing</h6>
-            <p>The digital marketing services that we provide have their own set of charms. By taking our digital marketing services, our clients will be able to increase visibility and engage with their customers at the online platform.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-  <section class="counters">
-    <div class="container">
+  <header class="sticky top-0 z-50">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 glass rounded-b-3xl">
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-400 glow"></div>
         <div>
-            <i class="far fa-clock fa-4x"></i>
-            <div class="counter" data-target="13500">0</div>
-            <h3>Working Hours</h3>
+          <p class="text-lg font-semibold">NovaCoin</p>
+          <p class="text-xs text-slate-400">NVC • Layered Liquidity</p>
         </div>
+      </div>
+      <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#tokenomics" class="hover:text-white">Tokenomics</a>
+        <a href="#utility" class="hover:text-white">Utility</a>
+        <a href="#roadmap" class="hover:text-white">Roadmap</a>
+        <a href="#team" class="hover:text-white">Team</a>
+        <a href="#community" class="hover:text-white">Community</a>
+      </nav>
+      <button class="hidden rounded-full border border-cyan-400/50 px-5 py-2 text-sm text-cyan-200 transition hover:border-cyan-300 hover:text-white md:block">
+        Launch App
+      </button>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6">
+    <section id="home" class="relative flex flex-col items-center gap-12 pb-24 pt-20 lg:flex-row lg:items-start">
+      <div class="max-w-xl space-y-6">
+        <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-cyan-200">
+          <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+          Quantum-grade decentralized asset
+        </p>
+        <h1 class="text-4xl font-semibold leading-tight text-white md:text-6xl">
+          The premium crypto coin built for <span class="section-title">ultra-fast</span> global liquidity.
+        </h1>
+        <p class="text-lg text-slate-300">
+          NovaCoin is a high-performance Web3 asset that combines institutional-grade security with cinematic, real-time settlement. Power the future of commerce, DeFi, and intelligent economies.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#" class="rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105">Buy Now</a>
+          <a href="#" class="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40">Whitepaper</a>
+          <a href="#tokenomics" class="rounded-full border border-purple-400/40 px-6 py-3 text-sm font-semibold text-purple-200 transition hover:border-purple-300">Explore Tokenomics</a>
+        </div>
+        <div class="grid grid-cols-2 gap-6 pt-6 text-sm text-slate-300 md:grid-cols-3">
+          <div class="glass rounded-2xl p-4">
+            <p class="text-xs uppercase text-slate-400">Market Cap</p>
+            <p class="text-xl font-semibold text-white">$8.4B</p>
+          </div>
+          <div class="glass rounded-2xl p-4">
+            <p class="text-xs uppercase text-slate-400">TPS</p>
+            <p class="text-xl font-semibold text-white">120K+</p>
+          </div>
+          <div class="glass rounded-2xl p-4">
+            <p class="text-xs uppercase text-slate-400">Staked</p>
+            <p class="text-xl font-semibold text-white">68%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="coin-wrapper flex w-full flex-1 justify-center">
+        <div class="relative">
+          <div class="coin" aria-label="Rotating NovaCoin">
+            <div class="coin-face"></div>
+            <div class="coin-back"></div>
+            <div class="coin-edge">
+              <span style="--i: 0"></span>
+              <span style="--i: 1"></span>
+              <span style="--i: 2"></span>
+              <span style="--i: 3"></span>
+              <span style="--i: 4"></span>
+              <span style="--i: 5"></span>
+              <span style="--i: 6"></span>
+              <span style="--i: 7"></span>
+              <span style="--i: 8"></span>
+              <span style="--i: 9"></span>
+              <span style="--i: 10"></span>
+              <span style="--i: 11"></span>
+              <span style="--i: 12"></span>
+              <span style="--i: 13"></span>
+              <span style="--i: 14"></span>
+              <span style="--i: 15"></span>
+              <span style="--i: 16"></span>
+              <span style="--i: 17"></span>
+              <span style="--i: 18"></span>
+              <span style="--i: 19"></span>
+              <span style="--i: 20"></span>
+              <span style="--i: 21"></span>
+              <span style="--i: 22"></span>
+              <span style="--i: 23"></span>
+            </div>
+          </div>
+          <div class="absolute inset-0 -z-10 rounded-full blur-3xl glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="reveal grid gap-10 pb-24 lg:grid-cols-2">
+      <div class="space-y-4">
+        <p class="text-sm uppercase tracking-[0.35em] text-slate-400">About the Coin</p>
+        <h2 class="text-3xl font-semibold text-white md:text-4xl">A next-generation asset powering secure, instant digital value.</h2>
+        <p class="text-slate-300">
+          NovaCoin combines a high-speed consensus engine with adaptive liquidity pools. Every transaction is verified through multi-layered cryptography and mirrored across decentralized validator clusters for maximum resilience.
+        </p>
+        <div class="grid gap-4">
+          <div class="glass rounded-2xl p-4">
+            <h3 class="font-semibold text-white">Vision</h3>
+            <p class="text-sm text-slate-300">Empower a decentralized economy where capital moves at the speed of thought.</p>
+          </div>
+          <div class="glass rounded-2xl p-4">
+            <h3 class="font-semibold text-white">Mission</h3>
+            <p class="text-sm text-slate-300">Deliver institutional-grade infrastructure with consumer-friendly simplicity.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid gap-6">
+        <div class="gradient-border rounded-3xl p-6">
+          <p class="text-xs uppercase text-slate-400">Trusted by Builders</p>
+          <h3 class="mt-2 text-2xl font-semibold text-white">99.99% network uptime & bulletproof liquidity routing.</h3>
+          <p class="mt-3 text-sm text-slate-300">Adaptive routing optimizes slippage in real time. Built for global markets and always-on settlements.</p>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <p class="text-xs uppercase text-slate-400">Audited Security</p>
+          <h3 class="mt-2 text-2xl font-semibold text-white">Triple-audited smart contracts + quantum-resilient keys.</h3>
+          <p class="mt-3 text-sm text-slate-300">Security layers run in parallel across trusted execution environments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tokenomics" class="reveal pb-24">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
-            <i class="fas fa-gift fa-4x"></i>
-            <div class="counter" data-target="720">0</div>
-            <h3>Completed Projects</h3>
+          <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Tokenomics</p>
+          <h2 class="text-3xl font-semibold text-white md:text-4xl">Balanced supply engineered for long-term growth.</h2>
         </div>
+        <div class="text-sm text-slate-400">Total Supply: <span class="text-white">1,000,000,000 NVC</span></div>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <div class="glass rounded-3xl p-6 space-y-4">
+          <h3 class="text-lg font-semibold text-white">Distribution</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-xs uppercase text-slate-400">
+                <span>Community Rewards</span>
+                <span>42%</span>
+              </div>
+              <div class="mt-2 h-2 rounded-full bg-white/10 progress-bar" style="--progress: 42%"></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs uppercase text-slate-400">
+                <span>Liquidity</span>
+                <span>25%</span>
+              </div>
+              <div class="mt-2 h-2 rounded-full bg-white/10 progress-bar" style="--progress: 25%"></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs uppercase text-slate-400">
+                <span>Team & Advisors</span>
+                <span>18%</span>
+              </div>
+              <div class="mt-2 h-2 rounded-full bg-white/10 progress-bar" style="--progress: 18%"></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs uppercase text-slate-400">
+                <span>Foundation</span>
+                <span>15%</span>
+              </div>
+              <div class="mt-2 h-2 rounded-full bg-white/10 progress-bar" style="--progress: 15%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-6 space-y-4">
+          <h3 class="text-lg font-semibold text-white">Deflation Engine</h3>
+          <p class="text-sm text-slate-300">Dynamic burn cycles remove supply based on network volume, rewarding long-term holders.</p>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-xs uppercase text-slate-400">
+                <span>Quarterly Burn</span>
+                <span>3.5%</span>
+              </div>
+              <div class="mt-2 h-2 rounded-full bg-white/10 progress-bar" style="--progress: 35%"></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs uppercase text-slate-400">
+                <span>Stake Rewards</span>
+                <span>8.2%</span>
+              </div>
+              <div class="mt-2 h-2 rounded-full bg-white/10 progress-bar" style="--progress: 82%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-6 space-y-4">
+          <h3 class="text-lg font-semibold text-white">Liquidity Wall</h3>
+          <p class="text-sm text-slate-300">Autonomous market-making vaults keep spreads tight across global venues.</p>
+          <div class="rounded-2xl border border-white/10 p-4 text-sm text-slate-300">
+            <p><span class="text-white">$420M</span> locked in protocol liquidity.</p>
+            <p class="mt-3"><span class="text-white">6+</span> centralized & decentralized exchanges live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="utility" class="reveal pb-24">
+      <div class="text-center">
+        <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Utility</p>
+        <h2 class="text-3xl font-semibold text-white md:text-4xl">Designed for real-world Web3 power.</h2>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div class="glass rounded-3xl p-6 transition hover:-translate-y-2 hover:shadow-xl">
+          <div class="mb-4 h-12 w-12 rounded-2xl bg-cyan-400/20 p-3 text-cyan-300">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l4 8H8l4-8z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 12l8 10 8-10H4z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">DeFi Liquidity</h3>
+          <p class="text-sm text-slate-300">Earn yield across multi-chain pools with adaptive risk controls.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 transition hover:-translate-y-2 hover:shadow-xl">
+          <div class="mb-4 h-12 w-12 rounded-2xl bg-purple-500/20 p-3 text-purple-300">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="9" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8M12 8v8" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Instant Settlements</h3>
+          <p class="text-sm text-slate-300">Send global payments with sub-second confirmation times.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 transition hover:-translate-y-2 hover:shadow-xl">
+          <div class="mb-4 h-12 w-12 rounded-2xl bg-blue-500/20 p-3 text-blue-300">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 10v10h14V10" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">NFT Vaults</h3>
+          <p class="text-sm text-slate-300">Tokenize and collateralize premium digital assets with zero friction.</p>
+        </div>
+        <div class="glass rounded-3xl p-6 transition hover:-translate-y-2 hover:shadow-xl">
+          <div class="mb-4 h-12 w-12 rounded-2xl bg-teal-500/20 p-3 text-teal-300">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
+              <circle cx="12" cy="12" r="9" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">AI Commerce</h3>
+          <p class="text-sm text-slate-300">Autonomous smart agents settle trades with predictive liquidity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="reveal pb-24">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-            <i class="fas fa-users fa-4x"></i>
-            <div class="counter" data-target="480">0</div>
-            <h3>Happy Clients</h3>
+          <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Roadmap</p>
+          <h2 class="text-3xl font-semibold text-white md:text-4xl">Precision execution across every phase.</h2>
         </div>
-        <div>
-            <i class="fas fa-award fa-4x"></i>
-            <div class="counter" data-target="120">0</div>
-            <h3>Awards Received</h3>
+        <p class="text-sm text-slate-400">2024 — 2026</p>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-4">
+        <div class="glass rounded-3xl p-6">
+          <p class="text-xs uppercase text-purple-300">Phase 01</p>
+          <h3 class="mt-2 text-lg font-semibold text-white">Genesis Launch</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>Token generation event</li>
+            <li>Strategic liquidity partners</li>
+            <li>Validator onboarding</li>
+          </ul>
         </div>
-    </div>
-</section>
-
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h4 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
+        <div class="glass rounded-3xl p-6">
+          <p class="text-xs uppercase text-cyan-300">Phase 02</p>
+          <h3 class="mt-2 text-lg font-semibold text-white">Ecosystem Expansion</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>DAO governance launch</li>
+            <li>Cross-chain bridges</li>
+            <li>Institutional custody</li>
+          </ul>
         </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
+        <div class="glass rounded-3xl p-6">
+          <p class="text-xs uppercase text-blue-300">Phase 03</p>
+          <h3 class="mt-2 text-lg font-semibold text-white">Global Adoption</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>Global payment rails</li>
+            <li>Enterprise integrations</li>
+            <li>Developer grants</li>
+          </ul>
         </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
+        <div class="glass rounded-3xl p-6">
+          <p class="text-xs uppercase text-teal-300">Phase 04</p>
+          <h3 class="mt-2 text-lg font-semibold text-white">Hyper Scale</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>Quantum-secured ledger</li>
+            <li>AI liquidity protocols</li>
+            <li>Global on-chain identity</li>
+          </ul>
         </div>
       </div>
-    </div>
-</div>
+    </section>
 
-<div class="communicate">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+    <section id="technology" class="reveal pb-24">
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div class="space-y-4">
+          <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Technology</p>
+          <h2 class="text-3xl font-semibold text-white md:text-4xl">Built on the NovaChain hyper-ledger.</h2>
+          <p class="text-slate-300">A hybrid proof-of-stake model combines lightning throughput with energy-efficient security. The chain handles high-frequency transfers, smart contracts, and privacy-preserving computation.</p>
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="glass rounded-2xl p-4">
+              <h3 class="font-semibold text-white">Security</h3>
+              <p class="text-sm text-slate-300">Post-quantum encryption, continuous audits, and real-time anomaly detection.</p>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+            <div class="glass rounded-2xl p-4">
+              <h3 class="font-semibold text-white">Scalability</h3>
+              <p class="text-sm text-slate-300">Dynamic sharding keeps throughput high without sacrificing decentralization.</p>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-</div>
-
-<div class="clients mt-100">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Clients</h2>
-            <p>
-                We don't just build softwares, we build your business.
-            </p>
+        <div class="grid gap-6">
+          <div class="gradient-border rounded-3xl p-6">
+            <p class="text-xs uppercase text-slate-400">Consensus</p>
+            <h3 class="mt-2 text-2xl font-semibold text-white">NovaBFT + Staked Validators</h3>
+            <p class="mt-3 text-sm text-slate-300">Hybrid fault tolerance ensures finality in under 500ms while maintaining democratic governance.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <p class="text-xs uppercase text-slate-400">Developer Stack</p>
+            <h3 class="mt-2 text-2xl font-semibold text-white">EVM Compatible + Web3 SDKs</h3>
+            <p class="mt-3 text-sm text-slate-300">Build, deploy, and scale dApps with enterprise-level tooling and seamless wallet support.</p>
+          </div>
         </div>
-        <div class="owl-carousel clients-carousel">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
-            <img src="./images/image.png" alt="Client Logo">
+      </div>
+    </section>
+
+    <section id="team" class="reveal pb-24">
+      <div class="text-center">
+        <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Team</p>
+        <h2 class="text-3xl font-semibold text-white md:text-4xl">Visionaries behind NovaCoin.</h2>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div class="glass rounded-3xl p-6 text-center transition hover:-translate-y-2">
+          <div class="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
+          <h3 class="mt-4 text-lg font-semibold text-white">Ava Sterling</h3>
+          <p class="text-sm text-slate-300">CEO / Protocol Architect</p>
         </div>
+        <div class="glass rounded-3xl p-6 text-center transition hover:-translate-y-2">
+          <div class="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600"></div>
+          <h3 class="mt-4 text-lg font-semibold text-white">Noah Vega</h3>
+          <p class="text-sm text-slate-300">CTO / Chain Security</p>
+        </div>
+        <div class="glass rounded-3xl p-6 text-center transition hover:-translate-y-2">
+          <div class="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-purple-400 to-pink-500"></div>
+          <h3 class="mt-4 text-lg font-semibold text-white">Sienna Park</h3>
+          <p class="text-sm text-slate-300">Head of Growth</p>
+        </div>
+        <div class="glass rounded-3xl p-6 text-center transition hover:-translate-y-2">
+          <div class="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500"></div>
+          <h3 class="mt-4 text-lg font-semibold text-white">Eli Harrow</h3>
+          <p class="text-sm text-slate-300">Lead Product Designer</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="reveal pb-24">
+      <div class="text-center">
+        <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Partners & Exchanges</p>
+        <h2 class="text-3xl font-semibold text-white md:text-4xl">Trusted by industry leaders.</h2>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3 lg:grid-cols-6">
+        <div class="glass rounded-2xl p-6 text-center text-sm text-slate-300 transition hover:text-white">NebulaX</div>
+        <div class="glass rounded-2xl p-6 text-center text-sm text-slate-300 transition hover:text-white">AxisSwap</div>
+        <div class="glass rounded-2xl p-6 text-center text-sm text-slate-300 transition hover:text-white">LumenPay</div>
+        <div class="glass rounded-2xl p-6 text-center text-sm text-slate-300 transition hover:text-white">StellarDex</div>
+        <div class="glass rounded-2xl p-6 text-center text-sm text-slate-300 transition hover:text-white">BlockGate</div>
+        <div class="glass rounded-2xl p-6 text-center text-sm text-slate-300 transition hover:text-white">AuroraFi</div>
+      </div>
+    </section>
+
+    <section id="community" class="reveal pb-24">
+      <div class="gradient-border rounded-3xl p-10 text-center">
+        <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Community</p>
+        <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">Join the global NovaCoin alliance.</h2>
+        <p class="mt-4 text-slate-300">Stay ahead with alpha drops, governance votes, and priority staking opportunities.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="#" class="rounded-full border border-cyan-400/60 px-6 py-3 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-400/20">Telegram</a>
+          <a href="#" class="rounded-full border border-purple-400/60 px-6 py-3 text-sm font-semibold text-purple-200 transition hover:bg-purple-400/20">X / Twitter</a>
+          <a href="#" class="rounded-full border border-blue-400/60 px-6 py-3 text-sm font-semibold text-blue-200 transition hover:bg-blue-400/20">Discord</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-black/40 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-lg font-semibold text-white">NovaCoin</p>
+        <p class="text-sm text-slate-400">Premium Web3 liquidity infrastructure.</p>
+      </div>
+      <div class="flex flex-wrap gap-6 text-sm text-slate-400">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Legal</a>
+      </div>
+      <p class="text-sm text-slate-500">© 2024 NovaCoin. All rights reserved.</p>
     </div>
-</div>
-<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
+  </footer>
 
-<section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-<section id="contact" class="contact">
-    <h1 class="heading">get in touch</h1>
-</section>
-<div class="contact-in">
-    <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30711243.17762776!2d64.4398422293091!3d20.011408266548177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1644684739958!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="contact-form">
-        <form action="./contactme.php" method="POST">
-            <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
-            <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
-            <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-            <input type="submit" value="Submit" name="submit" class="contact-form-btn">
-        </form>
-    </div>
-    </div>
+    reveals.forEach((section) => revealObserver.observe(section));
 
-    <section class="faq">
-      <h1 class="heading" style="margin-top: -2rem; color: #00bfff;" id="faq">FAQ</h1>
-      <div class="row">
-          <div class="accordion-container">
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How much will it cost?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc. 
-                          Then we’ll be able to give you a ballpark figure. 
-                          If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How long it takes to design?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The time limit of any assignment is normally dictated by the client. If you have any time limit in mind we will attempt to assemble it for you. 
-                          The main general delay in the making of a website is waiting for the content of the pages to be sent to us by the client.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>How do I associate with IT Company?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>The process begins when you contact us with your requirements. We analyze your requirements and respond to you. 
-                          On the basis of the further discussion, you can choose an engagement model that suits you the best. 
-                          After that, we begin the process of development.</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>Can you help my current site look more professional?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>Yes. Give us your requirements and we have experienced expertise to help you give a 
-                          new professional look that really wonders!</p>
-                  </div>
-              </div>
-              <div class="accordion">
-                  <div class="accordion-header">
-                      <span>+</span>
-                      <h3>When do I pay?</h3>
-                  </div>
-                  <div class="accordion-body">
-                      <p>For most projects, equal payments are made at the start, midway, and the end of the project, but we can work with you to set up a schedule that meets your needs. 
-                          We understand that this is a big investment and want to help you budget for the expense in whatever way possible.
-                          We accept checks, PayPal, and all major credit cards.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+    const canvas = document.getElementById("starfield");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
 
-    <div class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>About Us</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
-                      </ul>
-                  </div>
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = Array.from({ length: Math.min(160, Math.floor(window.innerWidth / 10)) }).map(() => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.8,
+        alpha: Math.random() * 0.7 + 0.2,
+        speed: Math.random() * 0.4 + 0.1,
+      }));
+    }
 
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Useful Links</h4>
-                      <ul>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
-                      </ul>
-                  </div>
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255,255,255,0.8)";
+      stars.forEach((star) => {
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+        ctx.globalAlpha = star.alpha;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(drawStars);
+    }
 
-                  <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
-                      <h4>Contact Us</h4>
-                      <p>
-                          1300  Center Avenue<br>
-                          Fresno, California<br>
-                          United States <br>
-                          <strong>Phone:</strong> +123-456-7890<br>
-                          <strong>Email:</strong> info@example.com<br>
-                      </p>
-
-                      <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div>
-
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
-                  Copyright &copy; 2021 IT Company Website. All Rights Reserved.
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+    drawStars();
+  </script>
 </body>
 </html>
