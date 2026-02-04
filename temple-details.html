@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temple Details • Sanatani Sanctuary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #121212;
+      --saffron: #f4a638;
+      --gold: #e6c98f;
+      --green: #6cc285;
+    }
+    body { font-family: "Inter", sans-serif; }
+    h1, h2, h3, h4, .font-serif { font-family: "Eczar", serif; }
+  </style>
+</head>
+<body class="bg-[var(--bg)] text-slate-100">
+  <header class="sticky top-0 z-50 bg-black/70 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3 text-xl font-semibold text-[var(--gold)]">
+        <span class="h-10 w-10 rounded-full border border-[var(--gold)]/40 bg-[var(--panel)] flex items-center justify-center">ॐ</span>
+        Sanatani Sanctuary
+      </a>
+      <div class="hidden items-center gap-6 text-sm uppercase tracking-[0.2em] text-slate-200 md:flex">
+        <a href="index.html" class="hover:text-[var(--saffron)]">Home</a>
+        <a href="temples.html" class="hover:text-[var(--saffron)]">Temples</a>
+        <a href="books.html" class="hover:text-[var(--saffron)]">Scriptures</a>
+        <a href="kirtan.html" class="hover:text-[var(--saffron)]">Kirtan</a>
+        <a href="puja.html" class="hover:text-[var(--saffron)]">Puja</a>
+        <a href="articles.html" class="hover:text-[var(--saffron)]">Articles</a>
+      </div>
+      <a href="temples.html" class="rounded-full border border-[var(--saffron)]/60 px-4 py-2 text-xs uppercase tracking-[0.2em] text-[var(--saffron)]">Back to Temples</a>
+    </nav>
+  </header>
+
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div class="overflow-hidden rounded-3xl border border-slate-700/60">
+        <img src="https://images.pexels.com/photos/3870384/pexels-photo-3870384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1260" alt="Temple" class="h-full w-full object-cover" />
+      </div>
+      <div>
+        <p class="text-sm uppercase tracking-[0.4em] text-[var(--green)]">Temple Details</p>
+        <h1 class="mt-4 text-4xl font-semibold text-[var(--gold)]">Kashi Vishwanath Mandir</h1>
+        <p class="mt-4 text-slate-300">A luminous abode of Lord Shiva on the banks of the Ganga, revered for its cosmic resonance and sacred rituals.</p>
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-slate-700/60 bg-[var(--panel)] p-4">
+            <h3 class="text-sm uppercase tracking-[0.3em] text-[var(--green)]">Aarti</h3>
+            <p class="mt-2 text-sm text-slate-300">Mangala, Bhog, Sandhya, Shringar</p>
+          </div>
+          <div class="rounded-2xl border border-slate-700/60 bg-[var(--panel)] p-4">
+            <h3 class="text-sm uppercase tracking-[0.3em] text-[var(--green)]">Pilgrimage</h3>
+            <p class="mt-2 text-sm text-slate-300">Varanasi, Uttar Pradesh</p>
+          </div>
+          <div class="rounded-2xl border border-slate-700/60 bg-[var(--panel)] p-4">
+            <h3 class="text-sm uppercase tracking-[0.3em] text-[var(--green)]">Darshan Hours</h3>
+            <p class="mt-2 text-sm text-slate-300">4:00 AM - 10:00 PM</p>
+          </div>
+          <div class="rounded-2xl border border-slate-700/60 bg-[var(--panel)] p-4">
+            <h3 class="text-sm uppercase tracking-[0.3em] text-[var(--green)]">Sacred Note</h3>
+            <p class="mt-2 text-sm text-slate-300">Jyotirlinga of supreme consciousness.</p>
+          </div>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="rounded-full bg-[var(--saffron)]/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--saffron)]">Ritual Guide</span>
+          <span class="rounded-full bg-[var(--saffron)]/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--saffron)]">Sacred Map</span>
+          <span class="rounded-full bg-[var(--saffron)]/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--saffron)]">Offerings</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--panel)] py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-2xl font-semibold text-[var(--gold)]">Temple Experience</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-700/60 bg-black/40 p-6">
+          <h3 class="text-lg font-semibold text-[var(--gold)]">Pradakshina Path</h3>
+          <p class="mt-3 text-sm text-slate-400">Walk the sacred corridor imbued with Vedic chants.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-700/60 bg-black/40 p-6">
+          <h3 class="text-lg font-semibold text-[var(--gold)]">Ganga Arati</h3>
+          <p class="mt-3 text-sm text-slate-400">Witness the luminous lamps offered at twilight.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-700/60 bg-black/40 p-6">
+          <h3 class="text-lg font-semibold text-[var(--gold)]">Meditation Kuteer</h3>
+          <p class="mt-3 text-sm text-slate-400">Quiet spaces designed for inner stillness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-800 bg-black py-12">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
+      <div>
+        <h3 class="text-xl font-semibold text-[var(--gold)]">Sanatani Sanctuary</h3>
+        <p class="mt-2 text-sm text-slate-400">A premium digital mandir for seekers of eternal truth.</p>
+      </div>
+      <div class="flex gap-6 text-xs uppercase tracking-[0.3em] text-slate-400">
+        <a href="books.html" class="hover:text-[var(--saffron)]">Scriptures</a>
+        <a href="kirtan.html" class="hover:text-[var(--saffron)]">Kirtan</a>
+        <a href="puja.html" class="hover:text-[var(--saffron)]">Puja</a>
+      </div>
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-500">© 2024 Sanatani UI</p>
+    </div>
+  </footer>
+</body>
+</html>
