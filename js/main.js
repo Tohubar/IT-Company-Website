@@ -1,77 +1,66 @@
-$(document).ready(function(){
+const root = document.documentElement;
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+const themeToggle = document.querySelector('.theme-toggle');
+const backToTop = document.querySelector('.back-to-top');
+const languageChips = document.querySelectorAll('.language-switcher .chip');
+const tabs = document.querySelectorAll('.tab');
+const tabPanels = document.querySelectorAll('.tab-panel');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+const applyTheme = (theme) => {
+  root.setAttribute('data-theme', theme);
+  themeToggle.setAttribute('aria-pressed', theme === 'dark');
+  themeToggle.querySelector('.theme-toggle__icon').textContent = theme === 'dark' ? '☀' : '☾';
+};
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+const storedTheme = localStorage.getItem('sanatan-theme');
+if (storedTheme) {
+  applyTheme(storedTheme);
+}
 
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
-
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
+themeToggle.addEventListener('click', () => {
+  const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(nextTheme);
+  localStorage.setItem('sanatan-theme', nextTheme);
 });
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
+menuToggle.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('is-open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
 });
 
+nav.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+languageChips.forEach((chip) => {
+  chip.addEventListener('click', () => {
+    languageChips.forEach((item) => item.classList.remove('is-active'));
+    chip.classList.add('is-active');
+  });
+});
+
+tabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+    tabs.forEach((item) => {
+      item.classList.toggle('is-active', item === tab);
+      item.setAttribute('aria-selected', item === tab);
+    });
+    tabPanels.forEach((panel) => {
+      panel.classList.toggle('is-active', panel.dataset.panel === target);
+    });
+  });
+});
+
+window.addEventListener('scroll', () => {
+  const shouldShow = window.scrollY > 300;
+  backToTop.classList.toggle('is-visible', shouldShow);
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
