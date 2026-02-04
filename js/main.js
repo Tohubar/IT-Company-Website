@@ -1,77 +1,118 @@
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.documentElement;
+  const themeToggle = document.querySelector('.theme-toggle');
+  const navToggle = document.querySelector('.nav-toggle');
+  const header = document.querySelector('.site-header');
+  const popup = document.querySelector('.puja-popup');
+  const popupClose = document.querySelector('.puja-popup__close');
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) {
+    root.setAttribute('data-theme', storedTheme);
+  }
+
+  const updateThemeLabel = () => {
+    if (!themeToggle) return;
+    const icon = themeToggle.querySelector('.theme-toggle__icon');
+    const text = themeToggle.querySelector('.theme-toggle__text');
+    const isLight = root.getAttribute('data-theme') === 'light';
+    icon.textContent = isLight ? '☀' : '☾';
+    text.textContent = isLight ? 'Light' : 'Dark';
+  };
+
+  updateThemeLabel();
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      const nextTheme = isLight ? 'dark' : 'light';
+      root.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+      updateThemeLabel();
+    });
+  }
+
+  if (navToggle && header) {
+    navToggle.addEventListener('click', () => {
+      header.classList.toggle('nav-open');
     });
 
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
+    header.querySelectorAll('.nav-links a').forEach((link) => {
+      link.addEventListener('click', () => header.classList.remove('nav-open'));
     });
+  }
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
+  if (popup && popupClose) {
+    const dismissed = sessionStorage.getItem('pujaPopupDismissed');
+    if (!dismissed) {
+      popup.classList.add('active');
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+    popupClose.addEventListener('click', () => {
+      popup.classList.remove('active');
+      sessionStorage.setItem('pujaPopupDismissed', 'true');
+    });
+  }
 
+  document.querySelectorAll('[data-audio-player]').forEach((player) => {
+    const audio = player.querySelector('audio');
+    const button = player.querySelector('[data-audio-toggle]');
+    const status = player.querySelector('.audio-status');
+
+    if (!audio || !button) return;
+
+    button.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        button.textContent = 'Pause';
+        if (status) status.textContent = 'Now playing';
+      } else {
+        audio.pause();
+        button.textContent = 'Play';
+        if (status) status.textContent = 'Paused';
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      button.textContent = 'Play';
+      if (status) status.textContent = 'Ready to play';
+    });
+  });
+
+  const calendars = document.querySelectorAll('.puja-calendar');
+  if (calendars.length) {
+    const today = new Date();
+    const month = today.toLocaleString('default', { month: 'long' });
+    const year = today.getFullYear();
+
+    calendars.forEach((calendar) => {
+      const highlight = calendar.dataset.highlight;
+      const highlightDate = highlight ? new Date(highlight) : null;
+
+      const startOfMonth = new Date(year, today.getMonth(), 1);
+      const endOfMonth = new Date(year, today.getMonth() + 1, 0);
+      const totalDays = endOfMonth.getDate();
+      const startDay = startOfMonth.getDay();
+
+      calendar.innerHTML = `
+        <h3>${month} ${year}</h3>
+        <div class="calendar-grid">
+          ${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+            .map((day) => `<div class="calendar-label">${day}</div>`)
+            .join('')}
+          ${Array.from({ length: startDay }).map(() => '<div class="calendar-day"></div>').join('')}
+          ${Array.from({ length: totalDays })
+            .map((_, index) => {
+              const day = index + 1;
+              const current = new Date(year, today.getMonth(), day);
+              const isHighlight =
+                highlightDate &&
+                current.toDateString() === highlightDate.toDateString();
+              return `<div class="calendar-day${isHighlight ? ' highlight' : ''}">${day}</div>`;
+            })
+            .join('')}
+        </div>
+      `;
+    });
+  }
 });
