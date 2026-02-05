@@ -1,77 +1,354 @@
-$(document).ready(function(){
-
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
-
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
+document.addEventListener('DOMContentLoaded', () => {
+    const translations = {
+        en: {
+            'topbar.themeDark': 'Dark Mode',
+            'topbar.themeLight': 'Light Mode',
+            'brand.logo': 'Sanatan Dharma',
+            'nav.home': 'Home',
+            'nav.panchali': 'Panchali',
+            'nav.tirtha': 'Tirtha Sthan',
+            'nav.roadmap': 'Roadmap',
+            'nav.kirtan': 'Kirtan Book',
+            'hero.mantra': 'ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्मा अमृतं गमय ॥',
+            'hero.title': 'A Sacred Journey into Sanatan Dharma',
+            'hero.ctaPrimary': 'Begin the Darshan',
+            'hero.ctaSecondary': 'Explore Tirtha Sthan',
+            'about.title': 'About the Sacred Platform',
+            'about.description': 'This sanctuary celebrates Sanatan Dharma through timeless stories, rituals, and spiritual practices. Discover a path of harmony, compassion, and self-realization that has guided seekers for millennia.',
+            'about.button': 'Learn More',
+            'upcoming.title': 'Upcoming Puja & Rituals',
+            'upcoming.subtitle': 'Immerse in sacred observances that nourish the soul.',
+            'upcoming.card1': 'Sharad Durga Puja',
+            'upcoming.card2': 'Deepavali Lakshmi Arati',
+            'upcoming.card3': 'Ganga Arghya & Snan',
+            'upcoming.textTitle': 'Ritual Significance',
+            'upcoming.textBody': 'Each puja aligns us with cosmic rhythms. From Durga Puja invoking divine protection to Lakshmi Arati honoring abundance, every ritual awakens gratitude, devotion, and inner balance.',
+            'upcoming.list1': 'Morning Sandhya with Vedic hymns.',
+            'upcoming.list2': 'Evening diya lighting with sankalpa.',
+            'upcoming.list3': 'Community bhog and prasadam sharing.',
+            'kirtan.title': 'Sacred Kirtan Flow',
+            'kirtan.shloka': 'हरे राम हरे राम राम राम हरे हरे । हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ॥',
+            'kirtan.description': 'Kirtan is the collective chanting of divine names, uplifting the heart and dissolving distractions. It fosters unity, joy, and devotion in every seeker.',
+            'kirtan.button': 'Read Kirtan',
+            'bidhan.title': 'Puja Bidhan & Samskara',
+            'bidhan.subtitle': 'Ritual guides for sacred milestones.',
+            'bidhan.card1.title': 'Puja',
+            'bidhan.card1.text': 'Daily worship for gratitude, protection, and inner alignment.',
+            'bidhan.card2.title': 'Brata (Vows)',
+            'bidhan.card2.text': 'Sacred vows to cultivate discipline and devotion.',
+            'bidhan.card3.title': 'Marriage',
+            'bidhan.card3.text': 'Union blessed with mantras, fire rituals, and harmony.',
+            'bidhan.card4.title': 'Annaprashan',
+            'bidhan.card4.text': 'First rice ceremony welcoming divine nourishment.',
+            'deva.title': 'Deva-Devi Darshan',
+            'deva.subtitle': 'Meet the guardians of cosmic harmony.',
+            'deva.card1.title': 'Lord Shiva',
+            'deva.card1.text': 'The stillness of transformation and inner peace.',
+            'deva.card2.title': 'Lord Vishnu',
+            'deva.card2.text': 'Preserver of dharma and universal balance.',
+            'deva.card3.title': 'Goddess Durga',
+            'deva.card3.text': 'Embodiment of protection and divine courage.',
+            'deva.card4.title': 'Lord Ganesha',
+            'deva.card4.text': 'Remover of obstacles and patron of wisdom.',
+            'practice.title': 'Spiritual Practices',
+            'practice.subtitle': 'Daily disciplines for serenity and strength.',
+            'practice.card1.title': 'Yoga',
+            'practice.card1.text': 'Align body, breath, and consciousness.',
+            'practice.card2.title': 'Meditation',
+            'practice.card2.text': 'Enter the silence where wisdom blossoms.',
+            'practice.card3.title': 'Kirtan',
+            'practice.card3.text': 'Collective singing that elevates the heart.',
+            'shloka.title': 'Shloka & Mantra Treasury',
+            'shloka.subtitle': 'Invoke auspicious energy through sacred sound.',
+            'shloka.card1.title': 'Gayatri Mantra',
+            'shloka.card1.text': 'ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं...',
+            'shloka.card2.title': 'Mahamrityunjaya',
+            'shloka.card2.text': 'ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्...',
+            'shloka.card3.title': 'Shanti Path',
+            'shloka.card3.text': 'ॐ सह नाववतु सह नौ भुनक्तु...',
+            'blog.title': 'Religious Blog',
+            'blog.subtitle': 'Insights into dharma, devotion, and daily rituals.',
+            'blog.card1.title': 'Morning Arati Rituals',
+            'blog.card1.text': 'A gentle guide to start the day with devotional light.',
+            'blog.card2.title': 'Temple Bells & Energy',
+            'blog.card2.text': 'Why sacred sound cleansing is integral to puja.',
+            'blog.card3.title': 'Living the Bhagavad Gita',
+            'blog.card3.text': 'Daily reflections to embody Krishna’s teachings.',
+            'personalities.title': 'Great Personalities',
+            'personalities.subtitle': 'Wisdom from luminous guides of Sanatan Dharma.',
+            'personalities.quote1': '“Arise, awake, and stop not till the goal is reached.”',
+            'personalities.author1': '— Swami Vivekananda',
+            'personalities.quote2': '“The future of India will be built on spiritual strength.”',
+            'personalities.author2': '— Sri Aurobindo',
+            'personalities.quote3': '“Truth alone triumphs, not falsehood.”',
+            'personalities.author3': '— Mahatma Gandhi',
+            'footer.brand': 'Sanatan Dharma',
+            'footer.description': 'A peaceful space to honor dharma, devotion, and divine wisdom.',
+            'footer.quick': 'Quick Links',
+            'footer.link1': 'About',
+            'footer.link2': 'Puja Calendar',
+            'footer.link3': 'Deva-Devi',
+            'footer.link4': 'Contact',
+            'footer.more': 'Resources',
+            'footer.resource1': 'Vedabase',
+            'footer.resource2': 'Sacred Texts',
+            'footer.resource3': 'ISKCON',
+            'footer.resource4': 'Ramakrishna Mission',
+            'footer.contact': 'Contact',
+            'footer.address': 'Varanasi, Uttar Pradesh, India',
+            'footer.email': 'Email: seva@sanatandharma.org',
+            'footer.phone': 'Phone: +91 90000 00000',
+            'footer.copy': '© 2024 Sanatan Dharma. All Rights Reserved.'
+        },
+        bn: {
+            'topbar.themeDark': 'ডার্ক মোড',
+            'topbar.themeLight': 'লাইট মোড',
+            'brand.logo': 'সনাতন ধর্ম',
+            'nav.home': 'হোম',
+            'nav.panchali': 'পঞ্চালি',
+            'nav.tirtha': 'তীর্থ স্থান',
+            'nav.roadmap': 'রোডম্যাপ',
+            'nav.kirtan': 'কীর্তন বই',
+            'hero.mantra': 'ॐ অসতো মা সদ্গময় । তমসো মা জ্যোতির্গময় । মৃত্যোর্ মা অমৃতং গময় ॥',
+            'hero.title': 'সনাতন ধর্মের এক পবিত্র যাত্রা',
+            'hero.ctaPrimary': 'দর্শন শুরু করুন',
+            'hero.ctaSecondary': 'তীর্থ স্থান দেখুন',
+            'about.title': 'পবিত্র প্ল্যাটফর্ম সম্পর্কে',
+            'about.description': 'এই আধ্যাত্মিক আশ্রম সনাতন ধর্মের চিরন্তন কাহিনি, আচার এবং সাধনাকে উদযাপন করে। সহমর্মিতা ও আত্মবোধের পথ আবিষ্কার করুন।',
+            'about.button': 'আরও জানুন',
+            'upcoming.title': 'আসন্ন পূজা ও আচার',
+            'upcoming.subtitle': 'আত্মাকে পুষ্ট করে এমন পবিত্র অনুশীলনে অংশ নিন।',
+            'upcoming.card1': 'শারদ দুর্গা পূজা',
+            'upcoming.card2': 'দীপাবলি লক্ষ্মী আরতি',
+            'upcoming.card3': 'গঙ্গা আর্ঘ্য ও স্নান',
+            'upcoming.textTitle': 'আচারগুলির তাৎপর্য',
+            'upcoming.textBody': 'প্রতিটি পূজা আমাদের মহাজাগতিক ছন্দের সাথে যুক্ত করে। দুর্গা পূজা রক্ষা করে, লক্ষ্মী আরতি সমৃদ্ধি জাগায়।',
+            'upcoming.list1': 'বেদিক স্তোত্রসহ প্রাতঃসন্ধ্যা।',
+            'upcoming.list2': 'সন্ধ্যায় সংকল্পসহ দীপ জ্বালানো।',
+            'upcoming.list3': 'সম্মিলিত ভোগ ও প্রসাদ বিতরণ।',
+            'kirtan.title': 'পবিত্র কীর্তনের সুর',
+            'kirtan.shloka': 'হরে রাম হরে রাম রাম রাম হরে হরে । হরে কৃষ্ণ হরে কৃষ্ণ কৃষ্ণ কৃষ্ণ হরে হরে ॥',
+            'kirtan.description': 'কীর্তন হৃদয়কে উন্নত করে ও মনকে শান্ত করে। এটি ঐক্য, আনন্দ ও ভক্তি জাগায়।',
+            'kirtan.button': 'কীর্তন পড়ুন',
+            'bidhan.title': 'পূজা বিধান ও সংস্কার',
+            'bidhan.subtitle': 'পবিত্র জীবনের মাইলফলকগুলির জন্য নির্দেশিকা।',
+            'bidhan.card1.title': 'পূজা',
+            'bidhan.card1.text': 'কৃতজ্ঞতা, সুরক্ষা ও সামঞ্জস্যের জন্য দৈনন্দিন পূজা।',
+            'bidhan.card2.title': 'ব্রত',
+            'bidhan.card2.text': 'শৃঙ্খলা ও ভক্তি বৃদ্ধির জন্য পবিত্র অঙ্গীকার।',
+            'bidhan.card3.title': 'বিবাহ',
+            'bidhan.card3.text': 'মন্ত্র ও অগ্নিসাক্ষী সহ আশীর্বাদিত মিলন।',
+            'bidhan.card4.title': 'অন্নপ্রাশন',
+            'bidhan.card4.text': 'প্রথম অন্ন গ্রহণের পবিত্র অনুষ্ঠান।',
+            'deva.title': 'দেব-দেবী দর্শন',
+            'deva.subtitle': 'বিশ্বের ভারসাম্য রক্ষাকারী ঈশ্বরীয় সত্তাসমূহ।',
+            'deva.card1.title': 'ভগবান শিব',
+            'deva.card1.text': 'রূপান্তর ও অন্তর্গত শান্তির প্রতীক।',
+            'deva.card2.title': 'ভগবান বিষ্ণু',
+            'deva.card2.text': 'ধর্ম ও ভারসাম্যের রক্ষক।',
+            'deva.card3.title': 'দুর্গা দেবী',
+            'deva.card3.text': 'রক্ষা ও সাহসের মূর্তি।',
+            'deva.card4.title': 'গণেশ',
+            'deva.card4.text': 'বাধা দূরকারী ও জ্ঞানের অধিপতি।',
+            'practice.title': 'আধ্যাত্মিক সাধনা',
+            'practice.subtitle': 'প্রতিদিনের অনুশীলনে শান্তি ও শক্তি।',
+            'practice.card1.title': 'যোগ',
+            'practice.card1.text': 'দেহ, শ্বাস ও চেতনার সমন্বয়।',
+            'practice.card2.title': 'ধ্যান',
+            'practice.card2.text': 'নীরবতায় জ্ঞান প্রস্ফুটিত হয়।',
+            'practice.card3.title': 'কীর্তন',
+            'practice.card3.text': 'সমবেত গান হৃদয়কে উদ্দীপ্ত করে।',
+            'shloka.title': 'শ্লোক ও মন্ত্রের ভাণ্ডার',
+            'shloka.subtitle': 'পবিত্র উচ্চারণে কল্যাণ আহ্বান করুন।',
+            'shloka.card1.title': 'গায়ত্রী মন্ত্র',
+            'shloka.card1.text': 'ॐ ভুর্ভুবঃ স্বঃ তৎসবিতুর্বরেণ্যং...',
+            'shloka.card2.title': 'মহামৃত্যুঞ্জয়',
+            'shloka.card2.text': 'ॐ ত্র্যম্বকং যজামহে সুগন্ধিং পুষ্টিবর্ধনম্...',
+            'shloka.card3.title': 'শান্তি পাঠ',
+            'shloka.card3.text': 'ॐ সহ নাবভতু সহ নৌ ভুনক্তু...',
+            'blog.title': 'ধর্মীয় ব্লগ',
+            'blog.subtitle': 'ধর্ম, ভক্তি ও নিত্য আচার নিয়ে চিন্তাধারা।',
+            'blog.card1.title': 'সকালের আরতি',
+            'blog.card1.text': 'দিবসের শুরুতে পবিত্র আলোর অভ্যাস।',
+            'blog.card2.title': 'মন্দিরের ঘণ্টা',
+            'blog.card2.text': 'পূজায় ঘণ্টাধ্বনির আধ্যাত্মিক তাৎপর্য।',
+            'blog.card3.title': 'গীতা অনুশীলন',
+            'blog.card3.text': 'কৃষ্ণের শিক্ষাকে দৈনন্দিন জীবনে প্রয়োগ।',
+            'personalities.title': 'মহান ব্যক্তিত্ব',
+            'personalities.subtitle': 'সনাতন ধর্মের আলোকিত পথপ্রদর্শক।',
+            'personalities.quote1': '“ওঠো, জাগো এবং লক্ষ্যে পৌঁছানো পর্যন্ত থেমো না।”',
+            'personalities.author1': '— স্বামী বিবেকানন্দ',
+            'personalities.quote2': '“ভারতের ভবিষ্যৎ গড়ে উঠবে আধ্যাত্মিক শক্তিতে।”',
+            'personalities.author2': '— শ্রী অরবিন্দ',
+            'personalities.quote3': '“সত্যই জয়ী হয়, মিথ্যা নয়।”',
+            'personalities.author3': '— মহাত্মা গান্ধী',
+            'footer.brand': 'সনাতন ধর্ম',
+            'footer.description': 'ধর্ম, ভক্তি ও দিব্য জ্ঞানের শান্ত আশ্রয়।',
+            'footer.quick': 'দ্রুত লিঙ্ক',
+            'footer.link1': 'পরিচিতি',
+            'footer.link2': 'পূজা ক্যালেন্ডার',
+            'footer.link3': 'দেব-দেবী',
+            'footer.link4': 'যোগাযোগ',
+            'footer.more': 'রিসোর্স',
+            'footer.resource1': 'বেদাবেস',
+            'footer.resource2': 'সেক্রেড টেক্সটস',
+            'footer.resource3': 'ইস্কন',
+            'footer.resource4': 'রামকৃষ্ণ মিশন',
+            'footer.contact': 'যোগাযোগ',
+            'footer.address': 'বারাণসী, উত্তর প্রদেশ, ভারত',
+            'footer.email': 'ইমেইল: seva@sanatandharma.org',
+            'footer.phone': 'ফোন: +৯১ ৯০০০০ ০০০০০',
+            'footer.copy': '© ২০২৪ সনাতন ধর্ম। সর্বস্বত্ব সংরক্ষিত।'
+        },
+        sa: {
+            'topbar.themeDark': 'अन्धकार मोड',
+            'topbar.themeLight': 'प्रकाश मोड',
+            'brand.logo': 'सनातन धर्म',
+            'nav.home': 'गृह',
+            'nav.panchali': 'पञ्चाली',
+            'nav.tirtha': 'तीर्थस्थान',
+            'nav.roadmap': 'मार्गदर्शिका',
+            'nav.kirtan': 'कीर्तन ग्रन्थ',
+            'hero.mantra': 'ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्मा अमृतं गमय ॥',
+            'hero.title': 'सनातन धर्मस्य पवित्रा यात्रा',
+            'hero.ctaPrimary': 'दर्शनम् आरभ्यताम्',
+            'hero.ctaSecondary': 'तीर्थस्थानं पश्यन्तु',
+            'about.title': 'पवित्रमञ्चस्य परिचयः',
+            'about.description': 'अयं आश्रमः सनातनधर्मस्य कथा, अनुष्ठान, साधनां च सम्मानयति। करुणा-समाधानस्य मार्गं अनुभवन्तु।',
+            'about.button': 'अधिकं पठन्तु',
+            'upcoming.title': 'आगामी पूजाः अनुष्ठानानि च',
+            'upcoming.subtitle': 'आत्मानं पोषयन्ति पवित्राः साधनाः।',
+            'upcoming.card1': 'शारदीय दुर्गा पूजा',
+            'upcoming.card2': 'दीपावली लक्ष्मी आरती',
+            'upcoming.card3': 'गङ्गा अर्घ्य स्नानम्',
+            'upcoming.textTitle': 'अनुष्ठानस्य महत्त्वम्',
+            'upcoming.textBody': 'प्रत्येकं पूजनं ब्रह्माण्डीय लयेन अस्मान् संयोजयति। दुर्गा पूजा संरक्षणं ददाति, लक्ष्मी आरती समृद्धिम् आह्वयति।',
+            'upcoming.list1': 'प्रातःसंध्या वेदस्तुतिभिः।',
+            'upcoming.list2': 'सायं दीपप्रज्वलनं संकल्पेन।',
+            'upcoming.list3': 'समूहभोगः प्रसादवितरणं च।',
+            'kirtan.title': 'पवित्र कीर्तन प्रवाहः',
+            'kirtan.shloka': 'हरे राम हरे राम राम राम हरे हरे । हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ॥',
+            'kirtan.description': 'कीर्तनं हृदयं उन्नयति, चित्तं प्रशाम्यति। एकता-आनन्द-भक्तिम् जनयति।',
+            'kirtan.button': 'कीर्तनं पठन्तु',
+            'bidhan.title': 'पूजा विधानम् एवं संस्काराः',
+            'bidhan.subtitle': 'जीवनस्य पवित्रानां माइलस्टोन्स् कृते मार्गदर्शनम्।',
+            'bidhan.card1.title': 'पूजा',
+            'bidhan.card1.text': 'कृतज्ञता-सुरक्षा-सामञ्जस्याय नित्यपूजा।',
+            'bidhan.card2.title': 'व्रतम्',
+            'bidhan.card2.text': 'शुचिता-भक्तिवर्धनाय पवित्रप्रतिज्ञा।',
+            'bidhan.card3.title': 'विवाहः',
+            'bidhan.card3.text': 'मन्त्रैः अग्निसाक्षी च समन्वितः मिलनम्।',
+            'bidhan.card4.title': 'अन्नप्राशनम्',
+            'bidhan.card4.text': 'प्रथम अन्नसंस्कारः दिव्यपोषणम्।',
+            'deva.title': 'देव-देवी दर्शनम्',
+            'deva.subtitle': 'विश्वसामञ्जस्यस्य रक्षकाः।',
+            'deva.card1.title': 'भगवान् शिवः',
+            'deva.card1.text': 'परिवर्तनस्य शान्तेः च प्रतीकः।',
+            'deva.card2.title': 'भगवान् विष्णुः',
+            'deva.card2.text': 'धर्मस्य विश्वसमतायाः रक्षकः।',
+            'deva.card3.title': 'देवी दुर्गा',
+            'deva.card3.text': 'संरक्षणस्य साहसस्य च रूपम्।',
+            'deva.card4.title': 'गणेशः',
+            'deva.card4.text': 'विघ्नहर्ता ज्ञानस्य च अधिपः।',
+            'practice.title': 'आध्यात्मिक साधनाः',
+            'practice.subtitle': 'प्रतिदिनस्य साधनाः शान्तये बलाय च।',
+            'practice.card1.title': 'योगः',
+            'practice.card1.text': 'देह-श्वास-चेतनायाः समन्वयः।',
+            'practice.card2.title': 'ध्यानम्',
+            'practice.card2.text': 'यत्र मौनं तत्र ज्ञानप्रकाशः।',
+            'practice.card3.title': 'कीर्तनम्',
+            'practice.card3.text': 'समूहगीतिः हृदयं उन्नयति।',
+            'shloka.title': 'श्लोक मन्त्र कोषः',
+            'shloka.subtitle': 'पवित्रध्वनिना शुभं आह्वयन्तु।',
+            'shloka.card1.title': 'गायत्री मन्त्रः',
+            'shloka.card1.text': 'ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं...',
+            'shloka.card2.title': 'महामृत्युञ्जयः',
+            'shloka.card2.text': 'ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्...',
+            'shloka.card3.title': 'शान्ति पाठः',
+            'shloka.card3.text': 'ॐ सह नाववतु सह नौ भुनक्तु...',
+            'blog.title': 'धार्मिक लेखाः',
+            'blog.subtitle': 'धर्म, भक्ति, नित्यकर्म विषयक चिंतनम्।',
+            'blog.card1.title': 'प्रातः आरती',
+            'blog.card1.text': 'दिनारम्भे पवित्रदीपस्य विधिः।',
+            'blog.card2.title': 'मन्दिरघण्टानादः',
+            'blog.card2.text': 'पूजायां ध्वनिशुद्धेः महत्त्वम्।',
+            'blog.card3.title': 'गीता-जीवनम्',
+            'blog.card3.text': 'कृष्णोपदेशानां नित्यजीवने प्रयोगः।',
+            'personalities.title': 'महानुभावाः',
+            'personalities.subtitle': 'सनातनधर्मस्य प्रकाशमानाः मार्गदर्शकाः।',
+            'personalities.quote1': '“उत्तिष्ठत जाग्रत प्राप्य वरान्निबोधत।”',
+            'personalities.author1': '— स्वामी विवेकानन्दः',
+            'personalities.quote2': '“भारतस्य भविष्यं आध्यात्मिकबले निर्मीयते।”',
+            'personalities.author2': '— श्री अरविन्दः',
+            'personalities.quote3': '“सत्यं एव जयते, नानृतम्।”',
+            'personalities.author3': '— महात्मा गान्धी',
+            'footer.brand': 'सनातन धर्म',
+            'footer.description': 'धर्मस्य भक्ति च दिव्यज्ञानस्य शान्त आश्रयः।',
+            'footer.quick': 'शीघ्र सम्पर्काः',
+            'footer.link1': 'परिचयः',
+            'footer.link2': 'पूजा पञ्चाङ्गम्',
+            'footer.link3': 'देव-देवी',
+            'footer.link4': 'सम्पर्कः',
+            'footer.more': 'संसाधनानि',
+            'footer.resource1': 'वेदाबेस',
+            'footer.resource2': 'सैक्रेड टेक्स्ट्स',
+            'footer.resource3': 'इस्कॉन',
+            'footer.resource4': 'रामकृष्ण मिशन',
+            'footer.contact': 'सम्पर्कः',
+            'footer.address': 'वाराणसी, उत्तर प्रदेश, भारत',
+            'footer.email': 'ईमेल: seva@sanatandharma.org',
+            'footer.phone': 'दूरभाषः: +९१ ९०००० ००००',
+            'footer.copy': '© २०२४ सनातन धर्म। सर्वाधिकार सुरक्षिताः।'
         }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
+    };
+
+    const languageSelect = document.getElementById('language-select');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    const setLanguage = (lang) => {
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+            const key = element.dataset.i18n;
+            const text = translations[lang][key];
+            if (text) {
+                element.textContent = text;
+            }
+        });
+    };
+
+    languageSelect.addEventListener('change', (event) => {
+        setLanguage(event.target.value);
+        setThemeLabel();
     });
 
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
+    const setThemeLabel = () => {
+        const isDark = document.body.classList.contains('dark-theme');
+        const currentLang = languageSelect.value;
+        const labelKey = isDark ? 'topbar.themeLight' : 'topbar.themeDark';
+        const label = translations[currentLang][labelKey];
+        themeToggle.querySelector('span').textContent = label;
+        themeToggle.querySelector('i').className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    };
 
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        document.body.classList.toggle('light-theme');
+        setThemeLabel();
     });
 
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+        const track = carousel.querySelector('.carousel-track');
+        const next = carousel.querySelector('[data-carousel-next]');
+        const prev = carousel.querySelector('[data-carousel-prev]');
+
+        next.addEventListener('click', () => {
+            track.scrollBy({ left: 260, behavior: 'smooth' });
+        });
+
+        prev.addEventListener('click', () => {
+            track.scrollBy({ left: -260, behavior: 'smooth' });
+        });
     });
-    
-})(jQuery);
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-});
-
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
-
+    setLanguage('en');
+    setThemeLabel();
 });
