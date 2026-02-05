@@ -1,77 +1,310 @@
-$(document).ready(function(){
+const translations = {
+  en: {
+    navHome: "Home",
+    navPanchali: "Panchali",
+    navTirtha: "Tirtha Sthan",
+    navRoadmap: "Roadmap",
+    navKirtan: "Kirtan Book",
+    heroMantra: "ॐ नमः शिवाय · शान्तिः शान्तिः शान्तिः",
+    heroTitle: "Walk the timeless path of Sanatan Dharma",
+    heroSubtitle: "A sanctuary for sacred wisdom, rituals, and devotional practice.",
+    heroCtaPrimary: "Begin Your Journey",
+    heroCtaSecondary: "Explore Puja Calendar",
+    aboutLabel: "About the Sacred Vision",
+    aboutTitle: "Sanatan Dharma, eternal and compassionate",
+    aboutDescription: "This space is created to honor the living traditions of Hindu Dharma with reverence, depth, and beauty. From sacred rituals to soulful teachings, every section invites a deeper remembrance of the divine.",
+    aboutExplanation: "Sanatan Dharma celebrates the oneness of all life, the power of devotion, and the harmonious rhythm of dharma, artha, kama, and moksha. It is a path that unites the inner and outer pilgrimage.",
+    aboutCta: "Learn More",
+    pujaLabel: "Upcoming Puja",
+    pujaTitle: "Celebrate the sacred calendar",
+    pujaHighlight: "Sharad Navaratri & Kartik Deepotsav",
+    pujaDescription: "Join the collective prayer ceremonies, yajnas, and kirtans that light up the season. Each puja is accompanied by a guided sankalpa, traditional offerings, and serene meditation sessions.",
+    pujaListOne: "Morning abhishekam and alankaram rituals",
+    pujaListTwo: "Evening arati with live conch and bells",
+    pujaListThree: "Prasad distribution and community seva",
+    kirtanLabel: "Kirtan Section",
+    kirtanTitle: "Call the divine through sacred sound",
+    kirtanText: "हरे कृष्ण हरे कृष्ण · कृष्ण कृष्ण हरे हरे · हरे राम हरे राम · राम राम हरे हरे",
+    kirtanDescription: "Kirtan is the rhythmic remembrance of the divine name. Through melody, we transform the mind into a temple of devotion and love.",
+    kirtanCta: "Read Kirtan",
+    bidhanLabel: "Puja Bidhan",
+    bidhanTitle: "Guided rituals for every sacred milestone",
+    bidhanPuja: "Puja",
+    bidhanPujaText: "Daily worship practices with shodashopachara guidelines and mantra guidance.",
+    bidhanBrata: "Brata (Vows)",
+    bidhanBrataText: "Vow rituals honoring devotion, discipline, and spiritual clarity.",
+    bidhanMarriage: "Marriage",
+    bidhanMarriageText: "Sacred vivaha samskara with detailed mantras and auspicious rites.",
+    bidhanAnnaprashan: "Annaprashan",
+    bidhanAnnaprashanText: "First feeding ceremony with blessings for health and prosperity.",
+    devaLabel: "Deva-Devi",
+    devaTitle: "Honoring the divine forms",
+    devaShiva: "Lord Shiva",
+    devaShivaText: "The auspicious one, guardian of transformation and inner stillness.",
+    devaLakshmi: "Goddess Lakshmi",
+    devaLakshmiText: "Bestower of prosperity, grace, and luminous abundance.",
+    devaVishnu: "Lord Vishnu",
+    devaVishnuText: "Protector of dharma and cosmic balance across the ages.",
+    practiceLabel: "Spiritual Practice",
+    practiceTitle: "Daily disciplines for inner peace",
+    practiceYoga: "Yoga",
+    practiceYogaText: "Align body and breath to awaken prana and steady the mind.",
+    practiceMeditation: "Meditation",
+    practiceMeditationText: "Cultivate silence and clarity, returning to the heart of consciousness.",
+    practiceKirtan: "Kirtan",
+    practiceKirtanText: "Let devotional song uplift the spirit and heal the collective heart.",
+    shlokaLabel: "Shloka & Mantra",
+    shlokaTitle: "Sacred verses for daily recitation",
+    shlokaOneTitle: "Ganesha Vandana",
+    shlokaOneText: "वक्रतुंड महाकाय सूर्यकोटि समप्रभा · निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा",
+    shlokaTwoTitle: "Guru Stotra",
+    shlokaTwoText: "गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः · गुरुः साक्षात् परं ब्रह्म तस्मै श्रीगुरवे नमः",
+    shlokaThreeTitle: "Gayatri Mantra",
+    shlokaThreeText: "ॐ भूर्भुवः स्वः · तत्सवितुर्वरेण्यं · भर्गो देवस्य धीमहि · धियो यो नः प्रचोदयात्",
+    blogLabel: "Religious Blog",
+    blogTitle: "Stories, traditions, and pilgrim diaries",
+    blogOneTitle: "The symbolism of the diya flame",
+    blogOneText: "Discover how light offerings deepen inner awakening and spiritual courage.",
+    blogTwoTitle: "Pilgrimage to Varanasi",
+    blogTwoText: "A journey through the ghats, mantras, and timeless rituals of Kashi.",
+    blogThreeTitle: "Preparing for Navaratri",
+    blogThreeText: "Nine nights of devotion, devotion planning, and sacred fasting practices.",
+    personalityLabel: "Great Personalities",
+    personalityTitle: "Voices that inspire devotion",
+    personalityOne: "\"When the mind is pure, the divine appears in every breath.\"",
+    personalityOneName: "— Sri Ramakrishna",
+    personalityTwo: "\"Bhakti is the gentle rain that makes the soul blossom.\"",
+    personalityTwoName: "— Meera Bai",
+    personalityThree: "\"Serve all beings as the beloved, and peace will follow.\"",
+    personalityThreeName: "— Swami Vivekananda",
+    footerDescription: "A sanctuary for timeless rituals, sacred arts, and devotional living.",
+    footerQuick: "Quick Links",
+    footerInfo: "Additional Information",
+    footerInfoOne: "Puja Calendar",
+    footerInfoTwo: "Sanskrit Learning",
+    footerInfoThree: "Temple Etiquette",
+    footerContact: "Contact",
+    footerCopyright: "© 2024 Sanatani Sacred Journey. All rights reserved."
+  },
+  bn: {
+    navHome: "হোম",
+    navPanchali: "পাঁচালি",
+    navTirtha: "তীর্থস্থান",
+    navRoadmap: "রোডম্যাপ",
+    navKirtan: "কীর্তন বই",
+    heroMantra: "ॐ নমঃ শিবায় · শান্তিঃ শান্তিঃ শান্তিঃ",
+    heroTitle: "সনাতন ধর্মের চিরন্তন পথে যাত্রা",
+    heroSubtitle: "পবিত্র জ্ঞান, আচার ও ভক্তির জন্য এক শান্ত আশ্রম।",
+    heroCtaPrimary: "যাত্রা শুরু করুন",
+    heroCtaSecondary: "পূজা ক্যালেন্ডার দেখুন",
+    aboutLabel: "পবিত্র ভাবনার কথা",
+    aboutTitle: "সনাতন ধর্ম—চিরন্তন ও করুণাময়",
+    aboutDescription: "হিন্দু ধর্মের জীবন্ত ধারাকে শ্রদ্ধা ও সৌন্দর্যে তুলে ধরতে এই পরিসর। প্রতিটি অংশ আপনাকে ঈশ্বর স্মরণের পথে নিয়ে যায়।",
+    aboutExplanation: "সনাতন ধর্ম জীবন ও ঐক্যের সেতুবন্ধন; ধর্ম, অর্থ, কাম ও মোক্ষের সুষম পথচলা।",
+    aboutCta: "আরও জানুন",
+    pujaLabel: "আসন্ন পূজা",
+    pujaTitle: "পবিত্র ক্যালেন্ডারের আনন্দ",
+    pujaHighlight: "শারদীয়া নবরাত্রি ও কার্তিক দীপোৎসব",
+    pujaDescription: "সমবেত প্রার্থনা, যজ্ঞ ও কীর্তনের সঙ্গে প্রতিটি পূজায় থাকে সংকল্প, প্রসাদ ও ধ্যানের আয়োজন।",
+    pujaListOne: "প্রাতঃকালের অভিষেক ও অলংকার",
+    pujaListTwo: "সান্ধ্য আরতি শঙ্খ-ঘণ্টাধ্বনি সহ",
+    pujaListThree: "প্রসাদ বিতরণ ও সেবা",
+    kirtanLabel: "কীর্তন বিভাগ",
+    kirtanTitle: "ধ্বনির মাধ্যমে ঈশ্বর স্মরণ",
+    kirtanText: "হরে কৃষ্ণ হরে কৃষ্ণ · কৃষ্ণ কৃষ্ণ হরে হরে · হরে রাম হরে রাম · রাম রাম হরে হরে",
+    kirtanDescription: "কীর্তন মনকে ভক্তিময় করে এবং হৃদয়ে প্রশান্তি আনে।",
+    kirtanCta: "কীর্তন পড়ুন",
+    bidhanLabel: "পূজা বিধান",
+    bidhanTitle: "প্রতিটি পবিত্র মাইলফলকের রীতি",
+    bidhanPuja: "পূজা",
+    bidhanPujaText: "ষোড়শোপচারের নির্দেশসহ দৈনিক পূজা পদ্ধতি।",
+    bidhanBrata: "ব্রত",
+    bidhanBrataText: "ভক্তি ও শৃঙ্খলার প্রতিশ্রুতি রীতি।",
+    bidhanMarriage: "বিবাহ",
+    bidhanMarriageText: "মন্ত্র ও শুভ রীতি সহ বিবাহ সংস্কার।",
+    bidhanAnnaprashan: "অন্নপ্রাশন",
+    bidhanAnnaprashanText: "শিশুর প্রথম অন্ন গ্রহণের আশীর্বাদ।",
+    devaLabel: "দেব-দেবী",
+    devaTitle: "দিব্য রূপের বন্দনা",
+    devaShiva: "ভগবান শিব",
+    devaShivaText: "শান্তি ও রূপান্তরের দেবতা।",
+    devaLakshmi: "মাতা লক্ষ্মী",
+    devaLakshmiText: "সমৃদ্ধি ও কৃপা দানকারিণী।",
+    devaVishnu: "ভগবান বিষ্ণু",
+    devaVishnuText: "ধর্মের রক্ষক ও বিশ্ব নিয়ন্ত্রণ।",
+    practiceLabel: "আধ্যাত্মিক অনুশীলন",
+    practiceTitle: "অন্তরের শান্তির দৈনন্দিন সাধনা",
+    practiceYoga: "যোগ",
+    practiceYogaText: "দেহ ও শ্বাসকে সমন্বয়ে নিয়ে প্রाण জাগ্রত করে।",
+    practiceMeditation: "ধ্যান",
+    practiceMeditationText: "নীরবতার মধ্য দিয়ে মনকে স্থির করে।",
+    practiceKirtan: "কীর্তন",
+    practiceKirtanText: "ভক্তির সুরে হৃদয়কে উজ্জ্বল করে তোলে।",
+    shlokaLabel: "শ্লোক ও মন্ত্র",
+    shlokaTitle: "দৈনন্দিন জপের জন্য পবিত্র বাণী",
+    shlokaOneTitle: "গণেশ বন্দনা",
+    shlokaOneText: "বক্রতুণ্ড মহাকায় সূর্যকোটী সমপ্রভা · নির্বিঘ্নং কুরু মে দেব সর্বকার্যেষু সর্বদা",
+    shlokaTwoTitle: "গুরু স্তোত্র",
+    shlokaTwoText: "গুরু ব্রহ্মা গুরু বিষ্ণু গুরু দেবো মহেশ্বরঃ · গুরু সাক্ষাৎ পরং ব্রহ্ম তস্মৈ শ্রীগুরবে নমঃ",
+    shlokaThreeTitle: "গায়ত্রী মন্ত্র",
+    shlokaThreeText: "ॐ ভূর্ভুবঃ স্বঃ · তৎ সবিতুর্ বরেণ্যং · ভর্গো দেবস্য ধীমহি · ধিয়ো যো নঃ প্রচোদয়াত্",
+    blogLabel: "ধর্মীয় ব্লগ",
+    blogTitle: "ঐতিহ্য ও তীর্থযাত্রার গল্প",
+    blogOneTitle: "দীপের প্রতীক",
+    blogOneText: "আলো নিবেদন কীভাবে অন্তরকে জাগিয়ে তোলে।",
+    blogTwoTitle: "বারাণসী তীর্থ",
+    blogTwoText: "ঘাট, মন্ত্র ও অনন্ত রীতির যাত্রা।",
+    blogThreeTitle: "নবরাত্রি প্রস্তুতি",
+    blogThreeText: "উপবাস ও ভক্তির নয় রাত্রির পরিকল্পনা।",
+    personalityLabel: "মহান ব্যক্তিত্ব",
+    personalityTitle: "যাঁদের বাণী ভক্তিকে জাগায়",
+    personalityOne: "\"মন শুদ্ধ হলে ঈশ্বর সর্বত্র প্রকাশিত হন।\"",
+    personalityOneName: "— শ্রী রামকৃষ্ণ",
+    personalityTwo: "\"ভক্তি হলো আত্মার জন্য কোমল বর্ষা।\"",
+    personalityTwoName: "— মীরাবাই",
+    personalityThree: "\"সব জীবকে প্রিয়তম জেনে সেবা করো।\"",
+    personalityThreeName: "— স্বামী বিবেকানন্দ",
+    footerDescription: "চিরন্তন আচার, শিল্প ও ভক্তির জন্য এক পবিত্র আশ্রম।",
+    footerQuick: "দ্রুত লিংক",
+    footerInfo: "অতিরিক্ত তথ্য",
+    footerInfoOne: "পূজা ক্যালেন্ডার",
+    footerInfoTwo: "সংস্কৃত শিক্ষা",
+    footerInfoThree: "মন্দির শিষ্টাচার",
+    footerContact: "যোগাযোগ",
+    footerCopyright: "© ২০২4 সনাতনি স্যাক্রেড জার্নি। সর্বস্বত্ব সংরক্ষিত।"
+  },
+  sa: {
+    navHome: "गृह",
+    navPanchali: "पञ्चाली",
+    navTirtha: "तीर्थस्थान",
+    navRoadmap: "मार्गचित्रम्",
+    navKirtan: "कीर्तनग्रन्थः",
+    heroMantra: "ॐ नमः शिवाय · शान्तिः शान्तिः शान्तिः",
+    heroTitle: "सनातनधर्मस्य शाश्वतमार्गे विचरन्तु",
+    heroSubtitle: "पवित्रज्ञानस्य, अनुष्ठानस्य, भक्तेः च शान्तालयः।",
+    heroCtaPrimary: "यात्रां आरभताम्",
+    heroCtaSecondary: "पूजापञ्चाङ्गं पश्यतु",
+    aboutLabel: "पवित्रदृष्टिः",
+    aboutTitle: "सनातनधर्मः शाश्वतः करुणामयश्च",
+    aboutDescription: "अयं स्थलः हिन्दुधर्मस्य जीवितपरम्परां श्रद्धया सौन्दर्येन च पूजयति। सर्वे विभागाः दिव्यस्मरणं दीपयन्ति।",
+    aboutExplanation: "सनातनधर्मः एकत्वं, भक्तिं, धर्मार्थकाममोक्षाणां सन्तुलनं च बोधयति।",
+    aboutCta: "अधिकं पठतु",
+    pujaLabel: "आगामिनी पूजा",
+    pujaTitle: "पवित्रपञ्चाङ्गस्य उत्सवः",
+    pujaHighlight: "शारदनवरात्रि एवं कार्तिकदीपो्सवः",
+    pujaDescription: "सामूहिकप्रार्थनाः, यज्ञाः, कीर्तनानि च—प्रत्येकपूजायां सङ्कल्पः, प्रसादः, ध्यानं च अस्ति।",
+    pujaListOne: "प्रातः अभिषेकः एवं अलङ्कारः",
+    pujaListTwo: "सायं आरती शङ्खघण्टानिनादेन सह",
+    pujaListThree: "प्रसादवितरणं एवं सेवा",
+    kirtanLabel: "कीर्तन विभागः",
+    kirtanTitle: "ध्वन्या दिव्यं स्मर्यताम्",
+    kirtanText: "हरे कृष्ण हरे कृष्ण · कृष्ण कृष्ण हरे हरे · हरे राम हरे राम · राम राम हरे हरे",
+    kirtanDescription: "कीर्तनं नामस्मरणस्य लययुक्तं रूपं यत् मनः देवालयं करोति।",
+    kirtanCta: "कीर्तनं पठतु",
+    bidhanLabel: "पूजाविधानम्",
+    bidhanTitle: "प्रत्येक पावनसंस्कारस्य मार्गदर्शनम्",
+    bidhanPuja: "पूजा",
+    bidhanPujaText: "षोडशोपचारनिर्देशसहितं नित्यपूजाविधानम्।",
+    bidhanBrata: "व्रतम्",
+    bidhanBrataText: "भक्तेः अनुशासनस्य च प्रतिज्ञारूपाः अनुष्ठानाः।",
+    bidhanMarriage: "विवाहः",
+    bidhanMarriageText: "मन्त्रैः शुभसंस्कारैः च सह विवाहविधिः।",
+    bidhanAnnaprashan: "अन्नप्राशनम्",
+    bidhanAnnaprashanText: "बालकस्य प्रथमअन्नग्रहणसंस्कारः।",
+    devaLabel: "देव-देवी",
+    devaTitle: "दिव्यस्वरूपाणां वन्दना",
+    devaShiva: "भगवान् शिवः",
+    devaShivaText: "परिवर्तनस्य, शान्तेः च अधिपः।",
+    devaLakshmi: "देवी लक्ष्मी",
+    devaLakshmiText: "समृद्धेः, कृपायाः च दात्री।",
+    devaVishnu: "भगवान् विष्णुः",
+    devaVishnuText: "धर्मरक्षकः तथा विश्वपालकः।",
+    practiceLabel: "आध्यात्मिक अभ्यासः",
+    practiceTitle: "अन्तःशान्तये नित्यनियमाः",
+    practiceYoga: "योगः",
+    practiceYogaText: "देहश्वासयोः समन्वयेन प्राणशक्तिः जागर्ति।",
+    practiceMeditation: "ध्यानम्",
+    practiceMeditationText: "निस्तब्धतायां मनः स्थिरीकरोति।",
+    practiceKirtan: "कीर्तनम्",
+    practiceKirtanText: "भक्तिस्वरैः हृदयम् उत्थापयति।",
+    shlokaLabel: "श्लोकाः मन्त्राश्च",
+    shlokaTitle: "दैनन्दिनजपाय पवित्रवचनानि",
+    shlokaOneTitle: "गणेशवन्दना",
+    shlokaOneText: "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभा · निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा",
+    shlokaTwoTitle: "गुरुस्तोत्रम्",
+    shlokaTwoText: "गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः · गुरु साक्षात् परं ब्रह्म तस्मै श्रीगुरवे नमः",
+    shlokaThreeTitle: "गायत्री मन्त्रः",
+    shlokaThreeText: "ॐ भूर्भुवः स्वः · तत्सवितुर्वरेण्यं · भर्गो देवस्य धीमहि · धियो यो नः प्रचोदयात्",
+    blogLabel: "धार्मिक ब्लॉग",
+    blogTitle: "परम्परा, कथा, तीर्थयात्रा",
+    blogOneTitle: "दीपस्य प्रतीकः",
+    blogOneText: "दीपार्पणं कथं अन्तःप्रकाशं जागरयति।",
+    blogTwoTitle: "वाराणसी तीर्थः",
+    blogTwoText: "घाटाः, मन्त्राः, शाश्वतानुष्ठानानि च।",
+    blogThreeTitle: "नवरात्रिपूर्वतयारी",
+    blogThreeText: "उपवासः, भक्तिः, नवदिने आयोजने।",
+    personalityLabel: "महापुरुषाः",
+    personalityTitle: "ये भक्तिं प्रेरयन्ति",
+    personalityOne: "\"मनः शुद्धे सति सर्वत्र दिव्यदर्शनम्।\"",
+    personalityOneName: "— श्री रामकृष्णः",
+    personalityTwo: "\"भक्तिः आत्मनः मृदुला वर्षा अस्ति।\"",
+    personalityTwoName: "— मीरा बाई",
+    personalityThree: "\"सर्वभूतं प्रियतमं मत्वा सेवां कुरुत।\"",
+    personalityThreeName: "— स्वामी विवेकानन्दः",
+    footerDescription: "शाश्वतानुष्ठानं, कला, भक्तिमयजीवनं च अत्र।",
+    footerQuick: "शीघ्रलिङ्काः",
+    footerInfo: "अतिरिक्तविवरणम्",
+    footerInfoOne: "पूजापञ्चाङ्गः",
+    footerInfoTwo: "संस्कृताध्ययनम्",
+    footerInfoThree: "मन्दिरशिष्टाचारः",
+    footerContact: "सम्पर्कः",
+    footerCopyright: "© 2024 सनातनी पवित्रयात्रा। सर्वाधिकारः सुरक्षितः।"
+  }
+};
 
-     $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
-
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if($(window).scrollTop()>35)
-        {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
-        }
-        else
-        {
-            $('.header').css({'background':'none','box-shadow':'none'});
-        }
-    });
-
-    const counters = document.querySelectorAll('.counter');
-    const speed = 120;
-    counters.forEach(counter => {
-	const updateCount = () => {
-		const target = +counter.getAttribute('data-target');
-		const count = +counter.innerText;
-		const inc = target / speed;
-		if (count < target) {
-			counter.innerText = count + inc;
-			setTimeout(updateCount, 1);
-		} else {
-			counter.innerText = target;
-		}
-	};
-	  updateCount();
-   });
-
-   (function ($) {
-    "use strict";
-    
-    $(".clients-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 2}, 768: {items: 4}, 900: {items: 6} }
-    });
-
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: { 0: {items: 1}, 576: {items: 2}, 768: {items: 3}, 992: {items: 4} }
-    });
-    
-})(jQuery);
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
+const setLanguage = (lang) => {
+  const strings = translations[lang] || translations.en;
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    if (strings[key]) {
+      element.textContent = strings[key];
     }
-});
-$('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
+  });
+};
+
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
+}
+
+document.querySelectorAll("[data-lang]").forEach((button) => {
+  button.addEventListener("click", () => {
+    setLanguage(button.dataset.lang);
+  });
 });
 
-$('.accordion-header').click(function(){
-    $('.accordion .accordion-body').slideUp(500);
-    $(this).next('.accordion-body').slideDown(500);
-    $('.accordion .accordion-header span').text('+');
-    $(this).children('span').text('-');
-});
+const setupCarousel = (name) => {
+  const carousel = document.querySelector(`[data-carousel="${name}"]`);
+  if (!carousel) return;
+  const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
+  const next = carousel.querySelector(`[data-carousel-next="${name}"]`);
+  const prev = carousel.querySelector(`[data-carousel-prev="${name}"]`);
+  let index = 0;
 
-});
+  const showSlide = (newIndex) => {
+    slides[index].classList.remove("is-active");
+    index = (newIndex + slides.length) % slides.length;
+    slides[index].classList.add("is-active");
+  };
+
+  next?.addEventListener("click", () => showSlide(index + 1));
+  prev?.addEventListener("click", () => showSlide(index - 1));
+
+  setInterval(() => showSlide(index + 1), 6000);
+};
+
+setupCarousel("puja");
+setupCarousel("deva");
+setLanguage("en");
